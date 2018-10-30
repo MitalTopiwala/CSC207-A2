@@ -5,8 +5,8 @@ Name:
 Email: 
 
 Member 2:
-Name:
-Email:
+Name: Manaal Arshad
+Email: manaal.arshad@mail.utoronto.ca
 
 Member 3:
 Name:
