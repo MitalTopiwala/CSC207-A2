@@ -13,5 +13,5 @@ Name: Manahil Masroor
 Email: manahil.masroor@mail.utoronto.ca
 
 Member 4:
-Name:
-Email:
+Name: Erub Khan
+Email: ibbu.khan@mail.utoronto.ca
