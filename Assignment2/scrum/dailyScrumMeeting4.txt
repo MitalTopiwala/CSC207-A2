@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: Erub Khan
 Oct 28, 2018
 	Yesterday :
 	Today     :
@@ -12,17 +12,17 @@ Oct 29, 2018
 
 Oct 30, 2018
 	Yesterday :
-	Today     :
+	Today     :Made a group chat on facebook and contacted all group members.
 	Obstacles :
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
+	Today     :Planned to meet tommorow. 
 	Obstacles :
 
 Nov 1, 2018
-	Yesterday :
-	Today     :
+	Yesterday :Planned to meet as a group. 
+	Today     :Met and divided the tasks in the assignment amongst group members. 
 	Obstacles :
 
 Nov 2, 2018
