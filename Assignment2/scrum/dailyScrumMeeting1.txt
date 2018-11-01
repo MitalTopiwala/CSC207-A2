@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: Mital Topiwala
 Oct 28, 2018
 	Yesterday :
 	Today     :
@@ -12,17 +12,17 @@ Oct 29, 2018
 
 Oct 30, 2018
 	Yesterday :
-	Today     :
+	Today     :Made facebook group chat for members
 	Obstacles :
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Planned to meet in the library
+	Obstacles :It was difficult to find a time that worked for everyone in the group
 
 Nov 1, 2018
 	Yesterday :
-	Today     :
+	Today     :Met at the library and split up the work load for sprint 1 between the           members
 	Obstacles :
 
 Nov 2, 2018
