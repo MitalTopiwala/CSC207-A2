@@ -100,7 +100,7 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
 SO THAT  : 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 7 : UTORID
+TYPE     : USER STORY 7 : arshad33
 NAME     : Line thickness selector
 OWNER    : 
 PRIORITY :
@@ -132,16 +132,7 @@ PRIORITY :
 ESTIMATE : 
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 2 : UTORID
-NAME     : Drawing selection mode not indicated
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : Currently ,you can't tell which mode "Circle", "Rectangle", ...
-           is currently selected. Is JButton correct, is there a way
-           to highlight the currently selected mode?
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 TYPE     : BUG 3 : UTORID
 NAME     : Architecture behind choosing selection mode is poor
@@ -306,6 +297,17 @@ simply switching the PaintPanel's event handlers as appropriate.
 --------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
+
+--------------------------------------------------------------------------
+TYPE     : BUG 2 : arshad33
+NAME     : Drawing selection mode not indicated
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Currently ,you can't tell which mode "Circle", "Rectangle", ...
+           is currently selected. Is JButton correct, is there a way
+           to highlight the currently selected mode?
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 

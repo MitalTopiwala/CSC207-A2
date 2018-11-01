@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: Manaal Arshad
 Oct 28, 2018
 	Yesterday :
 	Today     :
@@ -12,18 +12,19 @@ Oct 29, 2018
 
 Oct 30, 2018
 	Yesterday :
-	Today     :
+	Today     :Contacted group members on facebook chat
 	Obstacles :
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
+	Today     :Planned to meetup with group members
 	Obstacles :
 
 Nov 1, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Decided on how to divide the user stories amongst group members for sprint 1
+				Completed bug 2
+	Obstacles : Tried to accomplish using mouse event for when the mouse is clicked but found a simpler approach using ToggleButton 
 
 Nov 2, 2018
 	Yesterday :
