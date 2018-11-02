@@ -24,7 +24,9 @@ Nov 1, 2018
 	Yesterday :
 	Today     : Decided on how to divide the user stories amongst group members for sprint 1
 				Completed bug 2
-	Obstacles : Tried to accomplish using mouse event for when the mouse is clicked but found a simpler approach using ToggleButton 
+				started user story7
+	Obstacles : Tried to accomplish using mouse event for when the mouse is clicked but found a simpler approach using ToggleButton
+	            Had to change view to add new buttons
 
 Nov 2, 2018
 	Yesterday :

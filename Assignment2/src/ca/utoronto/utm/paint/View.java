@@ -2,12 +2,15 @@ package ca.utoronto.utm.paint;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class View implements EventHandler<ActionEvent> {
@@ -16,6 +19,7 @@ public class View implements EventHandler<ActionEvent> {
 
 	private PaintPanel paintPanel;
 	private ShapeChooserPanel shapeChooserPanel;
+	private ToolChooserPanel toolChooserPanel;
 
 	public View(PaintModel model, Stage stage) {
 
@@ -27,16 +31,32 @@ public class View implements EventHandler<ActionEvent> {
 
 		this.paintPanel = new PaintPanel(this.model, this);
 		this.shapeChooserPanel = new ShapeChooserPanel(this);
+		this.toolChooserPanel = new ToolChooserPanel(this);
 
+		
 		BorderPane root = new BorderPane();
+		
+	
+		VBox vbox = addVBox();							//VBox is added to BorderPane
+		root.setLeft(vbox);
+		
+	
+
 		root.setTop(createMenuBar());
 		root.setCenter(this.paintPanel);
-		root.setLeft(this.shapeChooserPanel);
-
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Paint");
 		stage.show();
+	}
+
+	private VBox addVBox() {                         //added buttons for shapes and tools to VBox
+		VBox vbox = new VBox();
+	    //vbox.setPadding(new Insets(10));
+	    vbox.setSpacing(8);
+		vbox.getChildren().add(shapeChooserPanel);
+		vbox.getChildren().add(toolChooserPanel);
+		return vbox;
 	}
 
 	public PaintPanel getPaintPanel() {
@@ -45,6 +65,10 @@ public class View implements EventHandler<ActionEvent> {
 
 	public ShapeChooserPanel getShapeChooserPanel() {
 		return shapeChooserPanel;
+	}
+	
+	public ToolChooserPanel getToolChooserPanel() {
+		return toolChooserPanel;
 	}
 
 	private MenuBar createMenuBar() {
