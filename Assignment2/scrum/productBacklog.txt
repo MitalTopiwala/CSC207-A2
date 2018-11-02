@@ -5,7 +5,7 @@
 # 2 Implementation of selected color into the drawing stream.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1 : UTORID
+TYPE     : USER STORY 1 : masroor6
 NAME     : Draw Circle
 OWNER    : 
 PRIORITY :
