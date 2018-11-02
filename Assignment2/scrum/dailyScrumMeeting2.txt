@@ -26,10 +26,10 @@ Nov 1, 2018
 				Completed bug 2
 				started user story7
 				Completed user story3
-				Started user story4
+				
 	Obstacles : Tried to accomplish using mouse event for when the mouse is clicked but found a simpler approach using ToggleButton
 	            Had to change view to add new buttons
-		- Got reverse image while dragging mouse for rectangles but proper image when mouse was released
+		
 		
 
 Nov 2, 2018

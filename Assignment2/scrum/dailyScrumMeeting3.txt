@@ -22,8 +22,8 @@ Oct 31, 2018
 
 Nov 1, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Started user story4
+	Obstacles :- Got reverse image while dragging mouse for rectangles but proper image when mouse was released
 
 Nov 2, 2018
 	Yesterday :
