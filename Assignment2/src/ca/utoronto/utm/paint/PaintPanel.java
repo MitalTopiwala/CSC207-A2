@@ -19,7 +19,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private String mode; // modifies how we interpret input (could be better?)
 	private Circle circle; // the circle we are building
-
+	private Rectangle rectangle; // the rectangle we are building
+	
 	private Canvas canvas;
 
 	public PaintPanel(PaintModel model, View view) {
@@ -67,6 +68,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int radius = c.getRadius();
 			g.strokeOval(x, y, radius, radius);
 		}
+		
+		// Draw Rectangles
+		ArrayList<Rectangle> rectangles = this.model.getRectangles();
+		for (Rectangle r : rectangles) {
+			int x = r.getStart().getX();
+			int y = r.getStart().getY();
+			int length = r.getLength();
+			int width = r.getWidth();
+			g.strokeRect(x, y, width, length);
+		}
 	}
 
 	@Override
@@ -108,6 +119,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		} else if (this.mode == "Circle") {
 
+		} else if (this.mode == "Rectangle") {
+			
 		}
 	}
 
@@ -116,14 +129,22 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
 		} else if (this.mode == "Circle") {
 
+		} else if (this.mode == "Rectangle") {
+			int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
+			int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
+			this.rectangle.setLength(length);
+			this.rectangle.setWidth(width);
+			this.model.addRectangle(this.rectangle);
+			}
 		}
-	}
 
 	private void mouseClicked(MouseEvent e) {
 		if (this.mode == "Squiggle") {
 
 		} else if (this.mode == "Circle") {
 
+		} else if (this.mode == "Rectangle") {
+			
 		}
 	}
 
@@ -135,6 +156,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			this.circle = new Circle(centre, radius);
+		} else if (this.mode == "Rectangle") {
+			Point start = new Point((int) e.getX(), (int) e.getY());
+			int length = 0;
+			int width = 0;
+			this.rectangle = new Rectangle(start, length, width);
 		}
 	}
 
@@ -144,13 +170,31 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
 				// Problematic notion of radius and centre!!
-				int radius = Math.abs((int) this.circle.getCentre().getX() - (int) e.getX());
+				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getCentre().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getCentre().getY() - (int) e.getY()), 2));
 				this.circle.setRadius(radius);
+				Point centre = new Point((int) this.circle.getCentre().getX() - (radius/2), (int) this.circle.getCentre().getY()- (radius/2));
+				this.circle.setCentre(centre);
 				this.model.addCircle(this.circle);
 				this.circle = null;
 			}
+		} else if (this.mode == "Rectangle") {
+			if (this.rectangle != null) {
+				int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
+				int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
+				this.rectangle.setLength(length);
+				this.rectangle.setWidth(width);
+				if ((int) this.rectangle.getStart().getX() > (int) e.getX()){
+					Point start = new Point((int) e.getX(), (int) this.rectangle.getStart().getY());
+					this.rectangle.setStart(start);			
+				}
+				if ((int) this.rectangle.getStart().getY() > (int) e.getY()) {
+					Point start = new Point((int) this.rectangle.getStart().getX(), (int) e.getY());
+					this.rectangle.setStart(start);
+				}
+				this.model.addRectangle(this.rectangle);
+				this.rectangle = null;
+			}
 		}
-
 	}
 
 	private void mouseEntered(MouseEvent e) {
@@ -158,6 +202,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		} else if (this.mode == "Circle") {
 
+		} else if (this.mode == "Rectangle") {
+			
 		}
 	}
 
@@ -166,6 +212,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		} else if (this.mode == "Circle") {
 
+		} else if (this.mode == "Rectangle") {
+			
 		}
 	}
 }
