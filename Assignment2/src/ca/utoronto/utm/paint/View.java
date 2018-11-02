@@ -19,7 +19,7 @@ public class View implements EventHandler<ActionEvent> {
 
 	private PaintPanel paintPanel;
 	private ShapeChooserPanel shapeChooserPanel;
-	private ToolChooserPanel toolChooserPanel;
+
 
 	public View(PaintModel model, Stage stage) {
 
@@ -31,7 +31,7 @@ public class View implements EventHandler<ActionEvent> {
 
 		this.paintPanel = new PaintPanel(this.model, this);
 		this.shapeChooserPanel = new ShapeChooserPanel(this);
-		this.toolChooserPanel = new ToolChooserPanel(this);
+	
 
 		
 		BorderPane root = new BorderPane();
@@ -55,7 +55,6 @@ public class View implements EventHandler<ActionEvent> {
 	    //vbox.setPadding(new Insets(10));
 	    vbox.setSpacing(8);
 		vbox.getChildren().add(shapeChooserPanel);
-		vbox.getChildren().add(toolChooserPanel);
 		return vbox;
 	}
 
@@ -67,9 +66,7 @@ public class View implements EventHandler<ActionEvent> {
 		return shapeChooserPanel;
 	}
 	
-	public ToolChooserPanel getToolChooserPanel() {
-		return toolChooserPanel;
-	}
+	
 
 	private MenuBar createMenuBar() {
 
