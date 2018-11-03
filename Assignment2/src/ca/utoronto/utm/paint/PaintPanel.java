@@ -72,8 +72,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		// Draw Rectangles
 		ArrayList<Rectangle> rectangles = this.model.getRectangles();
 		for (Rectangle r : rectangles) {
-			int x = r.getStart().getX();
-			int y = r.getStart().getY();
+			int x = r.getUpperLeft().getX();
+			int y = r.getUpperLeft().getY();
 			int length = r.getLength();
 			int width = r.getWidth();
 			g.strokeRect(x, y, width, length);
@@ -134,6 +134,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
 			this.rectangle.setLength(length);
 			this.rectangle.setWidth(width);
+			int x = this.rectangle.getStart().getX();
+			int y = this.rectangle.getStart().getY();
+			if ((int) this.rectangle.getStart().getX() > (int) e.getX()){
+				x = (int) e.getX();		
+			}
+			if ((int) this.rectangle.getStart().getY() > (int) e.getY()) {
+				y = (int) e.getY();
+			}
+			this.rectangle.setUpperLeft(new Point(x, y));
+			
 			this.model.addRectangle(this.rectangle);
 			}
 		}
@@ -183,14 +193,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
 				this.rectangle.setLength(length);
 				this.rectangle.setWidth(width);
+				int x = this.rectangle.getStart().getX();
+				int y = this.rectangle.getStart().getY();
 				if ((int) this.rectangle.getStart().getX() > (int) e.getX()){
-					Point start = new Point((int) e.getX(), (int) this.rectangle.getStart().getY());
-					this.rectangle.setStart(start);			
+					x = (int) e.getX();		
 				}
 				if ((int) this.rectangle.getStart().getY() > (int) e.getY()) {
-					Point start = new Point((int) this.rectangle.getStart().getX(), (int) e.getY());
-					this.rectangle.setStart(start);
+					y = (int) e.getY();
 				}
+				this.rectangle.setUpperLeft(new Point(x, y));
+				
 				this.model.addRectangle(this.rectangle);
 				this.rectangle = null;
 			}
