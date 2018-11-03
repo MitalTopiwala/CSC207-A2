@@ -12,18 +12,22 @@ Oct 29, 2018
 
 Oct 30, 2018
 	Yesterday :
-	Today     :
+	Today     :Made facebook groupchate for members
 	Obstacles :
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Planned to meet in the library
+	Obstacles :It was difficult to find a time that worked for everyone in the group
 
 Nov 1, 2018
 	Yesterday :
-	Today     :Started user story4
-	Obstacles :- Got reverse image while dragging mouse for rectangles but proper image when mouse was released
+	Today     :	-Met at the library and split up the workloadfor sprint 1 between the members
+			-Completed User Story 1
+			-Completed Bug 6
+			-Comleted User Story 3
+			-Started user Story 4
+	Obstacles : Got reverse image while dragging mouse for rectangles but proper image when mouse was released - User Story 4
 
 Nov 2, 2018
 	Yesterday :
@@ -32,7 +36,7 @@ Nov 2, 2018
 
 Nov 3, 2018
 	Yesterday :
-	Today     :
+	Today     :	Completed User Story 4
 	Obstacles :
 
 Nov 4, 2018
