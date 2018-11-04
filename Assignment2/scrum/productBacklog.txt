@@ -5,17 +5,6 @@
 # 2 Implementation of selected color into the drawing stream.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1 : masroor6
-NAME     : Draw Circle
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : To click the center of the circle, drag, and release to specify
-           a circle to be drawn in the current style.
-SO THAT  : I can add circles to my canvas
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY 2 : UTORID
 NAME     : Draw Circle Feedback
 OWNER    : 
@@ -30,27 +19,7 @@ I WANT   : As a user is specifying a Circle, during the drag, a 'current'
 SO THAT  : I can see the circle I am about to build on release of the mouse
            button.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 3 : masroor6
-NAME     : Draw Rectangle
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : To click on one corner of a rectangle, drag, and release to 
-		   specify two corners of a rectangle to be drawn in the current style.
-SO THAT  : I can add rectangles to my canvas
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 4 : masroor6
-NAME     : Draw Rectangle Feedback
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
-SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 TYPE     : USER STORY 5 : UTORID
 NAME     : Color selector
@@ -167,16 +136,6 @@ ESTIMATE :
 ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 		   of the mouse should be a separate squiggle. Possibly
            the issue is with the representation of the squiggles in the Model.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 6 : UTORID
-NAME     : Circle drawing is broken
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : The first click should specify the center of the circle, with
-           a drag for the radius. This is not the case in the current
-           implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 8 : UTORID
@@ -307,6 +266,48 @@ ESTIMATE :
 ISSUE    : Currently ,you can't tell which mode "Circle", "Rectangle", ...
            is currently selected. Is JButton correct, is there a way
            to highlight the currently selected mode?
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1 : masroor6
+NAME     : Draw Circle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click the center of the circle, drag, and release to specify
+           a circle to be drawn in the current style.
+SO THAT  : I can add circles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 3 : masroor6
+NAME     : Draw Rectangle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click on one corner of a rectangle, drag, and release to 
+		   specify two corners of a rectangle to be drawn in the current style.
+SO THAT  : I can add rectangles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 4 : masroor6
+NAME     : Draw Rectangle Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
+SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 6 : masroor6
+NAME     : Circle drawing is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The first click should specify the center of the circle, with
+           a drag for the radius. This is not the case in the current
+           implementation.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

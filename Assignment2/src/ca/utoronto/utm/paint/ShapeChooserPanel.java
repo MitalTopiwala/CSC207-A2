@@ -1,10 +1,14 @@
 package ca.utoronto.utm.paint;
 
 import javafx.event.ActionEvent;
+
 import javafx.event.EventHandler;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Shape;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
@@ -16,15 +20,20 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		this.view = view;
 		
 	
-		
-		
+		Circle circ = new Circle(9);
+		Rectangle rec = new Rectangle(17, 9);
+		Rectangle sq = new Rectangle(9, 9);
+		Circle circ2 = new Circle(1);
+		Circle circ3 = new Circle(1);
+		Shape[] shapes = {circ, rec, sq, circ2, circ3};
 
 		String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline" };
 
+		
 		int row = 0;
 		ToggleGroup toggleGroup = new ToggleGroup();
-		for (String label : buttonLabels) {
-			ToggleButton button = new ToggleButton(label);		
+		for (int i =0; i < buttonLabels.length; i++) {
+			ToggleButton button = new ToggleButton(buttonLabels[i], shapes[i]);		
 			button.setMinWidth(100);
 			this.add(button, 0, row);
 			row++;

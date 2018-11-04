@@ -2,8 +2,51 @@
 # to the appropriate Sprint below, after the 
 # Sprint Planning Meeting.
 
-# Sprint 1 Dec 28, 2018
+# Sprint 1 Oct 28, 2018
 # Sprint 1 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1 : masroor6
+NAME     : Draw Circle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click the center of the circle, drag, and release to specify
+           a circle to be drawn in the current style.
+SO THAT  : I can add circles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 6 : masroor6
+NAME     : Circle drawing is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The first click should specify the center of the circle, with
+           a drag for the radius. This is not the case in the current
+           implementation.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 3 : masroor6
+NAME     : Draw Rectangle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click on one corner of a rectangle, drag, and release to 
+		   specify two corners of a rectangle to be drawn in the current style.
+SO THAT  : I can add rectangles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 4 : masroor6
+NAME     : Draw Rectangle Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
+SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
+--------------------------------------------------------------------------
 
 # Sprint 2 Nov 3, 2018
 # Sprint 2 Backlog UserStories go below
