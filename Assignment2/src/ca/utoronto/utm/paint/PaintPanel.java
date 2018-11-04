@@ -129,6 +129,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
 		} else if (this.mode == "Circle") {
 
+
+			int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
+			this.circle.setRadius(radius);
+			Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
+			this.circle.setCentre(centre);
+			this.model.addCircle(this.circle);
 		} else if (this.mode == "Rectangle") {
 			int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
 			int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
@@ -180,9 +186,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
 				// Problematic notion of radius and centre!!
-				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getCentre().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getCentre().getY() - (int) e.getY()), 2));
+				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 				this.circle.setRadius(radius);
-				Point centre = new Point((int) this.circle.getCentre().getX() - (radius/2), (int) this.circle.getCentre().getY()- (radius/2));
+				Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 				this.circle.setCentre(centre);
 				this.model.addCircle(this.circle);
 				this.circle = null;

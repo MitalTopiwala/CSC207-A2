@@ -4,10 +4,12 @@ public class Circle {
 	
 	private Point centre;
 	private int radius;
+	private Point start;
 
 	public Circle(Point centre, int radius) {
 		this.centre = centre;
 		this.radius = radius;
+		this.start = centre;
 	}
 
 	public Point getCentre() {
@@ -24,6 +26,13 @@ public class Circle {
 
 	public void setRadius(int radius) {
 		this.radius = radius;
+	}
+	
+	public void setStart(Point start) {
+		this.start = start;
+	}
+	public Point getStart() {
+		return start;
 	}
 
 }
