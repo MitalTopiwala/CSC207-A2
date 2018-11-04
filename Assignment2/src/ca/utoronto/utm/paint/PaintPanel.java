@@ -22,8 +22,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private Rectangle rectangle; // the rectangle we are building
 	
 	private Canvas canvas;
+	
+	//private ToolChooserPanel tcp;
 
-	public PaintPanel(PaintModel model, View view) {
+	public PaintPanel(PaintModel model, View view) {  //ToolChooserPanel tcp {
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);
@@ -39,18 +41,21 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.model.addObserver(this);
 
 		this.view = view;
+		//this.tcp = tcp;
+		
+		
+		
 	}
 
 	public void repaint() {
 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
-
 		// Clear the canvas
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-
 		g.setStroke(Color.WHITE);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
+
 
 		// Draw Lines
 		ArrayList<Point> points = this.model.getPoints();
