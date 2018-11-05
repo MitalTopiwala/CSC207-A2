@@ -24,6 +24,11 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	//public void fillCircle(Circle c, colour) {
+		//this.circles.paint(colour);
+	//}
 
 	public ArrayList<Circle> getCircles() {
 		return circles;
