@@ -4,21 +4,7 @@
 # 1 Color chooser UI (which could be a USER STORY)
 # 2 Implementation of selected color into the drawing stream.
 
---------------------------------------------------------------------------
-TYPE     : USER STORY 2 : UTORID
-NAME     : Draw Circle Feedback
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : As a user is specifying a Circle, during the drag, a 'current'
-           circle should be on display. As the user drags, the 'current'
-           circle changes in real time so that a circle is drawn with
-           centre at users initial circle click, with radius out to
-           the current dragged mouse position.
-SO THAT  : I can see the circle I am about to build on release of the mouse
-           button.
---------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------
 TYPE     : USER STORY 5 : UTORID
@@ -94,7 +80,7 @@ I WANT   : To be able to select the current line thickness, to be applied
 SO THAT  : 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1 : UTORID
+TYPE     : BUG 1 : topiwal3
 NAME     : Icons instead of text for drawing mode selection
 OWNER    : 
 PRIORITY :
