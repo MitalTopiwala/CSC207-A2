@@ -8,6 +8,12 @@ public class PaintModel extends Observable {
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
+	private View view;             //
+	private ToolChooserPanel TCP = new ToolChooserPanel(view);         //
+	
+	public double getLineThickness() {                //
+		return TCP.getLineWidth();
+	}
 
 	public void addPoint(Point p) {
 		this.points.add(p);

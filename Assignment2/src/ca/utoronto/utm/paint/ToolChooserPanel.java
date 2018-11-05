@@ -31,38 +31,24 @@ public class ToolChooserPanel extends GridPane implements EventHandler<ActionEve
 		slider.valueProperty().addListener(e->{
 			value = slider.getValue();
 			String str = String.format("%.1f", value);
-			label.setText("line width=" + str);
-
+			label.setText("line width=" + str);	
+			
 		});	
 	
-
 }
 	
 	public double getLineWidth() {
-		System.out.println(value);
+		//System.out.println(value);
 		return value;
 	}
-	
-
-	/*public void paint() {
-		this.canvas = new Canvas(300, 300);
-		this.getChildren().add(this.canvas);
-		GraphicsContext g = this.canvas.getGraphicsContext2D();
-		g.setLineWidth(getLineWidth());
-	}*/
 
 	@Override
 	public void handle(ActionEvent event) {
-				
-		String command = ((Labeled) event.getSource()).getText();
-		this.view.getPaintPanel().setMode(command);
-		System.out.println(command);
-		//System.out.println(getLineWidth());
-	}
-
-
-
+		// TODO Auto-generated method stub
 		
+	}
+	
+
 	
 	
 }

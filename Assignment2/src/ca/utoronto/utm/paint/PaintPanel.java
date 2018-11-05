@@ -23,9 +23,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 	private Canvas canvas;
 	
-	//private ToolChooserPanel tcp;
+	
 
-	public PaintPanel(PaintModel model, View view) {  //ToolChooserPanel tcp {
+	public PaintPanel(PaintModel model, View view) {  
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);
@@ -41,7 +41,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.model.addObserver(this);
 
 		this.view = view;
-		//this.tcp = tcp;
+		
 		
 		
 		
@@ -55,14 +55,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.setStroke(Color.WHITE);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
-
-
+		g.setLineWidth(model.getLineThickness());
+	
 		// Draw Lines
 		ArrayList<Point> points = this.model.getPoints();
 		for (int i = 0; i < points.size() - 1; i++) {
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+	
 		}
 
 		// Draw Circles
@@ -71,7 +72,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
+			//g.setLineWidth(model.getLineThickness());  
 			g.strokeOval(x, y, radius, radius);
+			
 		}
 		
 		// Draw Rectangles
@@ -81,6 +84,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int y = r.getUpperLeft().getY();
 			int length = r.getLength();
 			int width = r.getWidth();
+			//g.setLineWidth(model.getLineThickness());   
 			g.strokeRect(x, y, width, length);
 		}
 	}
@@ -171,6 +175,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private void mousePressed(MouseEvent e) {
 		if (this.mode == "Squiggle") {
+
 
 		} else if (this.mode == "Circle") {
 			// Problematic notion of radius and centre!!
