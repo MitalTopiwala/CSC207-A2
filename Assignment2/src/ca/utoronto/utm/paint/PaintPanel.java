@@ -55,36 +55,56 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.setStroke(Color.WHITE);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
-		g.setLineWidth(model.getLineThickness());
+		//g.setLineWidth(model.getLineThickness());
 	
 		// Draw Lines
 		ArrayList<Point> points = this.model.getPoints();
+		ArrayList<Double> pointsW = this.model.getPointsW();
 		for (int i = 0; i < points.size() - 1; i++) {
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
+			g.setLineWidth(pointsW.get(i)); 
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 	
 		}
 
 		// Draw Circles
 		ArrayList<Circle> circles = this.model.getCircles();
-		for (Circle c : circles) {
-			int x = c.getCentre().getX();
-			int y = c.getCentre().getY();
-			int radius = c.getRadius();
-			//g.setLineWidth(model.getLineThickness());  
+		ArrayList<Double> circlesW = this.model.getCirclesW();
+	
+		
+		for (int c = 0; c < circles.size() ; c ++) {
+			int x = circles.get(c).getCentre().getX();
+			int y = circles.get(c).getCentre().getY();
+			int radius = circles.get(c).getRadius();
+			g.setLineWidth(circlesW.get(c)); 
+			//g.save();
 			g.strokeOval(x, y, radius, radius);
 			
 		}
 		
+		/*if(this.mode == "Circle") {
+			Circle circ = circles.get(circles.size()-1);
+			int x = circ.getCentre().getX();
+			int y = circ.getCentre().getY();
+			int radius = circ.getRadius();
+			//g.setLineWidth(model.getLineThickness());  
+			
+			g.setLineWidth(model.getLineThickness());
+			g.strokeOval(x, y, radius, radius);
+			
+			}
+		*/
+		
 		// Draw Rectangles
 		ArrayList<Rectangle> rectangles = this.model.getRectangles();
-		for (Rectangle r : rectangles) {
-			int x = r.getUpperLeft().getX();
-			int y = r.getUpperLeft().getY();
-			int length = r.getLength();
-			int width = r.getWidth();
-			//g.setLineWidth(model.getLineThickness());   
+		ArrayList<Double> rectanglesW = this.model.getRectanglesW();
+		for (int r = 0; r < rectangles.size() ; r ++) {
+			int x = rectangles.get(r).getUpperLeft().getX();
+			int y = rectangles.get(r).getUpperLeft().getY();
+			int length = rectangles.get(r).getLength();
+			int width = rectangles.get(r).getWidth();
+			g.setLineWidth(rectanglesW.get(r));   
 			g.strokeRect(x, y, width, length);
 		}
 	}

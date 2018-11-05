@@ -28,6 +28,7 @@ public class ToolChooserPanel extends GridPane implements EventHandler<ActionEve
 		this.add(slider, 0, 6);
 		Label label = new Label();
 		this.add(label, 0, 7);
+		value = 1;
 		slider.valueProperty().addListener(e->{
 			value = slider.getValue();
 			String str = String.format("%.1f", value);
@@ -38,7 +39,7 @@ public class ToolChooserPanel extends GridPane implements EventHandler<ActionEve
 }
 	
 	public double getLineWidth() {
-		//System.out.println(value);
+		System.out.println(value);
 		return value;
 	}
 
