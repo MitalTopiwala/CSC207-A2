@@ -27,7 +27,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		Circle circ3 = new Circle(1);
 		Shape[] shapes = {circ, rec, sq, circ2, circ3};
 
-		String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline" };
+		String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline"};
 
 		
 		int row = 0;
