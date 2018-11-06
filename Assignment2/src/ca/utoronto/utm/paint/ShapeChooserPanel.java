@@ -8,6 +8,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Shape;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 
 
@@ -25,7 +26,14 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		Rectangle sq = new Rectangle(9, 9);
 		Circle circ2 = new Circle(1);
 		Circle circ3 = new Circle(1);
-		Shape[] shapes = {circ, rec, sq, circ2, circ3};
+		
+		Polyline polyline = new Polyline();
+		polyline.getPoints().addAll(new Double[]{
+		    0.0, 0.0,
+		    2.0, 10.0,
+		    10.0, 2.0 , 10.0, 8.0});
+		Shape[] shapes = {circ, rec, sq, circ2, polyline};
+
 
 		String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline"};
 

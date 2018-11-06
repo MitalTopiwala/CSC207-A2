@@ -77,7 +77,7 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 4 : UTORID
+TYPE     : BUG 4 : topiwal3
 NAME     : Architecture behind Model is poor
 OWNER    : 
 PRIORITY :
@@ -171,7 +171,7 @@ DrawingCommands appear on PaintPanel's list right along side
 the Shape type DrawingCommands.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 9 : UTORID
+TYPE     : BUG 9 : topiwal3
 NAME     : Architecture behind choosing drawing mode is poor
 OWNER    : 
 PRIORITY :
@@ -229,6 +229,20 @@ ISSUE    : Currently ,you can't tell which mode "Circle", "Rectangle", ...
            is currently selected. Is JButton correct, is there a way
            to highlight the currently selected mode?
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 2 : topiwal3
+NAME     : Draw Circle Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : As a user is specifying a Circle, during the drag, a 'current'
+           circle should be on display. As the user drags, the 'current'
+           circle changes in real time so that a circle is drawn with
+           centre at users initial circle click, with radius out to
+           the current dragged mouse position.
+SO THAT  : I can see the circle I am about to build on release of the mouse
+           button.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1 : masroor6
 NAME     : Draw Circle
