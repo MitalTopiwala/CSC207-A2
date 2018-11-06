@@ -49,11 +49,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.mode = "Circle"; // bad code here?
 		this.colourMode = "0"; //no colour selected 
-		this.currentColour = Color.RED;
+		this.currentColour = currentColour;
 
 		this.model = model;
 		this.model.addObserver(this);
-
 		this.view = view;
 		//this.tcp = tcp;
 		
@@ -85,23 +84,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int radius = c.getRadius();
 			g.strokeOval(x, y, radius, radius);
 			//////////////////////////////////////////////////////////////////////////
-			if (this.colourMode == "1") {
-				this.currentColour = Color.RED;
-			} else if (this.colourMode == "2") {
-				this.currentColour = Color.BLUE;
-			} else if (this.colourMode == "3") {
-				this.currentColour = Color.GREEN;
-			} else if (this.colourMode == "4") {
-				this.currentColour = Color.PURPLE;
-			} else if (this.colourMode == "5") {
-				this.currentColour = Color.YELLOW;
-			}
-			
+		
 			g.fillOval(x, y, radius, radius);
 			g.setFill(this.currentColour);
-			 
-			//g.setFill(this.currentColour);
-			//g.setFill(Color.BLACK);
 		}
 		
 		// Draw Rectangles
@@ -112,15 +97,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int length = r.getLength();
 			int width = r.getWidth();
 			g.strokeRect(x, y, width, length);
-			
 		}
-		
-		
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-
 		// Not exactly how MVC works, but similar.
 		this.repaint();
 	}
@@ -130,7 +111,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	 */
 	public void setMode(String mode) { ////////////// add colourMode to parameter?
 		this.mode = mode;
-		this.colourMode = colourMode; 
+	}
+	
+	public void setColourMode(String colourMode) {
+		this.colourMode = colourMode;
 	}
 
 	@Override
@@ -155,28 +139,26 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private void mouseMoved(MouseEvent e) {
 		if (this.mode == "Squiggle") {
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
+
 		} else if (this.mode == "Circle") {
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
+
 		} else if (this.mode == "Rectangle") {
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}			
+		
+		}
+		
+		if (this.colourMode == "1") {
+			
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
+			
 		}
 	}
+	
 
 	private void mouseDragged(MouseEvent e) {
 		if (this.mode == "Squiggle") {
@@ -189,14 +171,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 			this.circle.setCentre(centre);
 			this.model.addCircle(this.circle);
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
-			
+
 		} else if (this.mode == "Rectangle") {
 			
 			int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
@@ -214,117 +189,90 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.rectangle.setUpperLeft(new Point(x, y));
 			
 			this.model.addRectangle(this.rectangle);
-			}
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
+			}	
 		
+		if (this.colourMode == "1") {
+			this.
+			
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
 			
 		}
-
+	}
+	
 	private void mouseClicked(MouseEvent e) {
 				
 		if (this.mode == "Squiggle") {
-			
-			if (this.colourMode == "1") {
-				this.currentColour = Color.RED;
-			} else if (this.colourMode == "2") {
-				this.currentColour = Color.BLUE;
-			} else if (this.colourMode == "3") {
-				this.currentColour = Color.GREEN;
-			} else if (this.colourMode == "4") {
-				this.currentColour = Color.PURPLE;
-			} else if (this.colourMode == "5") {
-				this.currentColour = Color.YELLOW;
-			}
 
 		} else if (this.mode == "Circle") {
-			
-			if (this.colourMode == "1") {
-				this.currentColour = Color.RED;
-			} else if (this.colourMode == "2") {
-				this.currentColour = Color.BLUE;
-			} else if (this.colourMode == "3") {
-				this.currentColour = Color.GREEN;
-			} else if (this.colourMode == "4") {
-				this.currentColour = Color.PURPLE;
-			} else if (this.colourMode == "5") {
-				this.currentColour = Color.YELLOW;
-			}
 
 		} else if (this.mode == "Rectangle") {
 			
-			if (this.colourMode == "1") {
-				this.currentColour = Color.RED;
-			} else if (this.colourMode == "2") {
-				this.currentColour = Color.BLUE;
-			} else if (this.colourMode == "3") {
-				this.currentColour = Color.GREEN;
-			} else if (this.colourMode == "4") {
-				this.currentColour = Color.PURPLE;
-			} else if (this.colourMode == "5") {
-				this.currentColour = Color.YELLOW;
-			}
+		}
+		
+		if (this.colourMode == "1") {
+			
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
 			
 		}
 	}
 
 	private void mousePressed(MouseEvent e) {
 		if (this.mode == "Squiggle") {
-
+			
 		} else if (this.mode == "Circle") {
 			// Problematic notion of radius and centre!!
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			this.circle = new Circle(centre, radius);
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
-			
+
 		} else if (this.mode == "Rectangle") {
 			Point start = new Point((int) e.getX(), (int) e.getY());
 			int length = 0;
 			int width = 0;
 			this.rectangle = new Rectangle(start, length, width);
+		}
+		
+		if (this.colourMode == "1") {
 			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
+			
 		}
 	}
+
 
 	private void mouseReleased(MouseEvent e) {
 		if (this.mode == "Squiggle") {
 
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
+				this.currentColour = Color.AQUA; 
 				// Problematic notion of radius and centre!!
 				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 				this.circle.setRadius(radius);
 				Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 				this.circle.setCentre(centre);
 				this.model.addCircle(this.circle);
-				this.circle = null;
-				
-				if (this.colourMode == "1") {
-				} else if (this.colourMode == "2") {
-				} else if (this.colourMode == "3") {	
-				} else if (this.colourMode == "4") {
-				} else if (this.colourMode == "5") {
-				}
-				
+				this.circle = null;	 
 			}
+			
 		} else if (this.mode == "Rectangle") {
 			if (this.rectangle != null) {
 				int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
@@ -344,75 +292,79 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.model.addRectangle(this.rectangle);
 				this.rectangle = null;
 				
-				if (this.colourMode == "1") {
-				} else if (this.colourMode == "2") {
-				} else if (this.colourMode == "3") {	
-				} else if (this.colourMode == "4") {
-				} else if (this.colourMode == "5") {
-				}
+
 			}
+		}
+		
+		if (this.colourMode == "1") {
+				if (this.mode == "Squiggle") {
+
+				} else if (this.mode == "Circle") {
+					if (this.circle != null) {
+						this.currentColour = Color.RED; 
+						// Problematic notion of radius and centre!!
+						int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
+						this.circle.setRadius(radius);
+						Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
+						this.circle.setCentre(centre);
+						this.model.addCircle(this.circle);
+						this.circle = null;	 
+					}
+				}	
+			
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
+			
 		}
 	}
 
 	private void mouseEntered(MouseEvent e) {
 		if (this.mode == "Squiggle") {
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
 
 		} else if (this.mode == "Circle") {
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
 
 		} else if (this.mode == "Rectangle") {
 			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
+		}
+		
+		if (this.colourMode == "1") {
+			
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
 			
 		}
 	}
 
 	private void mouseExited(MouseEvent e) {
 		if (this.mode == "Squiggle") {
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
 
 		} else if (this.mode == "Circle") {
-			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
 
 		} else if (this.mode == "Rectangle") {
 			
-			if (this.colourMode == "1") {
-			} else if (this.colourMode == "2") {
-			} else if (this.colourMode == "3") {	
-			} else if (this.colourMode == "4") {
-			} else if (this.colourMode == "5") {
-			}
+		}
+		
+		if (this.colourMode == "1") {
+			
+		} else if (this.colourMode == "2") {
+			
+		} else if (this.colourMode == "3") {
+			
+		} else if (this.colourMode == "4") {
+			
+		} else if (this.colourMode == "5") {
 			
 		}
+		
 	}
 }
