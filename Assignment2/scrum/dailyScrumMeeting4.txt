@@ -41,8 +41,9 @@ Nov 4, 2018
 	Obstacles :
 
 Nov 5, 2018
-	Yesterday :
-	Today     :
+	Yesterday :Planned to meet as a group the next day. 
+	Today     :Met everyone in the group for an hour and worked on issues with the code for 
+				Sprint 1. 
 	Obstacles :
 
 Nov 6, 2018

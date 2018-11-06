@@ -8,7 +8,7 @@ public class FillColour {
 		this.currentColour = currentColour;
 	}
 		
-	public ColourChoice() {
+	public void ColourChoice() {
 		
 	}
 

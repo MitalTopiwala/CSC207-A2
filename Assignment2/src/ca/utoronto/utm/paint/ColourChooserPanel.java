@@ -16,8 +16,8 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 
 		this.view = view;
 			
-		String[] colourRep = {"1","2","3","4","5"};
-        String[] buttonColours = {"-fx-base: red;", "-fx-base: blue;","-fx-base: green;",
+		String[] colourRep = {"0","1","2","3","4","5"};
+        String[] buttonColours = {"-fx-base: black;", "-fx-base: red;", "-fx-base: blue;","-fx-base: green;",
         		"-fx-base: purple;","-fx-base: yellow;"};
 		
 		int row = 9;
@@ -39,7 +39,8 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((ToggleButton) event.getSource()).getText();
-		this.view.getPaintPanel().setMode(command);
+		//System.out.println("blah:" + command);
+		this.view.getPaintPanel().setColourMode(command);
 		System.out.println(command);
 	}
 	

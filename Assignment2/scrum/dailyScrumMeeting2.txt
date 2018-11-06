@@ -32,23 +32,23 @@ Nov 1, 2018
 		
 
 Nov 2, 2018
-	Yesterday :
-	Today     :
+	Yesterday : finished bug 2
+	Today     : Worked on userstory 7, added a slider
 	Obstacles :
 
 Nov 3, 2018
-	Yesterday :
-	Today     :
+	Yesterday : slider handled and worked properly
+	Today     : worked on userstory 7
 	Obstacles :
 
 Nov 4, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : worked on userstory 7
+	Today     : worked on userstory 7 
+	Obstacles : the thickness of all the shape changes when line thickness is changed
 
 Nov 5, 2018
-	Yesterday :
-	Today     :
+	Yesterday :worked on userstory 7 
+	Today     :completed userstory 7, everything works
 	Obstacles :
 
 Nov 6, 2018

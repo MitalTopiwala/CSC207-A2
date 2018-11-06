@@ -16,18 +16,18 @@ import java.util.Observer;
 
 class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent> {
 
-	private static final Paint BLACK = null;
-	private static final Paint YELLOW = null;
-	private static final Paint PURPLE = null;
-	private static final Paint GREEN = null;
-	private static final Paint BLUE = null;
-	private static final Paint RED = null;
+	//private static final Paint BLACK = null;
+//	private static final Paint YELLOW = null;
+//	private static final Paint PURPLE = null;
+//	private static final Paint GREEN = null;
+//	private static final Paint BLUE = null;
+//	private static final Paint RED = null;
 	private int i = 0;
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
 
 	private String mode; // modifies how we interpret input (could be better?)
-	private String colourMode; //modifies input of colour filled 
+	private String colourMode ="0"; //modifies input of colour filled 
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle; // the rectangle we are building
 	
@@ -146,17 +146,17 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		
 		}
 		
-		if (this.colourMode == "1") {
-			
-		} else if (this.colourMode == "2") {
-			
-		} else if (this.colourMode == "3") {
-			
-		} else if (this.colourMode == "4") {
-			
-		} else if (this.colourMode == "5") {
-			
-		}
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 	
 
@@ -191,18 +191,18 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.model.addRectangle(this.rectangle);
 			}	
 		
-		if (this.colourMode == "1") {
-			this.
-			
-		} else if (this.colourMode == "2") {
-			
-		} else if (this.colourMode == "3") {
-			
-		} else if (this.colourMode == "4") {
-			
-		} else if (this.colourMode == "5") {
-			
-		}
+//		if (this.colourMode == "1") {
+//			this.
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 	
 	private void mouseClicked(MouseEvent e) {
@@ -215,17 +215,17 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 		}
 		
-		if (this.colourMode == "1") {
-			
-		} else if (this.colourMode == "2") {
-			
-		} else if (this.colourMode == "3") {
-			
-		} else if (this.colourMode == "4") {
-			
-		} else if (this.colourMode == "5") {
-			
-		}
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 
 	private void mousePressed(MouseEvent e) {
@@ -236,6 +236,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			this.circle = new Circle(centre, radius);
+			//this.currentColour = Color.RED; 
 
 		} else if (this.mode == "Rectangle") {
 			Point start = new Point((int) e.getX(), (int) e.getY());
@@ -244,16 +245,18 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.rectangle = new Rectangle(start, length, width);
 		}
 		
-		if (this.colourMode == "1") {
-			
+		if (this.colourMode == "0") {
+			this.currentColour = Color.BLACK;
+		} else if (this.colourMode == "1") {
+			this.currentColour = Color.RED;
 		} else if (this.colourMode == "2") {
-			
+			this.currentColour = Color.BLUE;
 		} else if (this.colourMode == "3") {
-			
+			this.currentColour = Color.GREEN;
 		} else if (this.colourMode == "4") {
-			
+			this.currentColour = Color.PURPLE;
 		} else if (this.colourMode == "5") {
-			
+			this.currentColour = Color.YELLOW;			
 		}
 	}
 
@@ -263,7 +266,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
-				this.currentColour = Color.AQUA; 
+				//this.currentColour = Color.AQUA; 
 				// Problematic notion of radius and centre!!
 				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 				this.circle.setRadius(radius);
@@ -291,36 +294,20 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				
 				this.model.addRectangle(this.rectangle);
 				this.rectangle = null;
-				
-
 			}
 		}
 		
-		if (this.colourMode == "1") {
-				if (this.mode == "Squiggle") {
-
-				} else if (this.mode == "Circle") {
-					if (this.circle != null) {
-						this.currentColour = Color.RED; 
-						// Problematic notion of radius and centre!!
-						int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
-						this.circle.setRadius(radius);
-						Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
-						this.circle.setCentre(centre);
-						this.model.addCircle(this.circle);
-						this.circle = null;	 
-					}
-				}	
-			
-		} else if (this.colourMode == "2") {
-			
-		} else if (this.colourMode == "3") {
-			
-		} else if (this.colourMode == "4") {
-			
-		} else if (this.colourMode == "5") {
-			
-		}
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 
 	private void mouseEntered(MouseEvent e) {
@@ -332,17 +319,17 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 		}
 		
-		if (this.colourMode == "1") {
-			
-		} else if (this.colourMode == "2") {
-			
-		} else if (this.colourMode == "3") {
-			
-		} else if (this.colourMode == "4") {
-			
-		} else if (this.colourMode == "5") {
-			
-		}
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 
 	private void mouseExited(MouseEvent e) {
@@ -354,17 +341,20 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 		}
 		
-		if (this.colourMode == "1") {
-			
-		} else if (this.colourMode == "2") {
-			
-		} else if (this.colourMode == "3") {
-			
-		} else if (this.colourMode == "4") {
-			
-		} else if (this.colourMode == "5") {
-			
-		}
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
+	
 		
 	}
-}
+	
+	}
+
