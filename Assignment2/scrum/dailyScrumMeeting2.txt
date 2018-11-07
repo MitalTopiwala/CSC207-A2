@@ -52,9 +52,10 @@ Nov 5, 2018
 	Obstacles :
 
 Nov 6, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Completed userstory 7, looked over stuff needed to be completed for sprint 2
+	Today     : started bug 10, created ShapeManipulatorStrategy and CircleManipultorStrategy
+	Obstacles : Need to figure out an effective way of putting the shapes on the top of PaintModel
+				command stack
 
 Nov 7, 2018
 	Yesterday :
