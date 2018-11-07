@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 
+import javafx.scene.paint.Color;
+
 public class PaintModel extends Observable {
+	
+	Color color;
+	private int strokeWidth;
 
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
@@ -14,16 +19,25 @@ public class PaintModel extends Observable {
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
 	
-	
+	private Stack<Shapes> draw = new Stack<Shapes>();
 	
 	private View view;             
-	private ToolChooserPanel TCP = new ToolChooserPanel(view);         
+	private ToolChooserPanel TCP = new ToolChooserPanel(view);   
+	
+	
+	
+	public void addshape(Shapes shape) {
+		
+		shape.setColor(this.color);
+		shape.setStrokeWidth(this.strokeWidth);
+		this.draw.add(shape);
+		}
+	
+	
 	
 	public double getLineThickness() {               
 		return TCP.getLineWidth();
 	}
-	
-	
 	
 	
 	

@@ -56,5 +56,7 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 }
