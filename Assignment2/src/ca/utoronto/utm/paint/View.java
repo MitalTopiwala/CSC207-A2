@@ -20,6 +20,7 @@ public class View implements EventHandler<ActionEvent> {
 	private PaintPanel paintPanel;
 	private ShapeChooserPanel shapeChooserPanel;
 	private ToolChooserPanel toolChooserPanel;
+	private ColourChooserPanel colourChooserPanel; 
 
 
 	public View(PaintModel model, Stage stage) {
@@ -33,6 +34,7 @@ public class View implements EventHandler<ActionEvent> {
 		this.paintPanel = new PaintPanel(this.model, this);  //this.toolChooserPanel);
 		this.shapeChooserPanel = new ShapeChooserPanel(this);
 		this.toolChooserPanel = new ToolChooserPanel(this);
+		this.colourChooserPanel = new ColourChooserPanel(this);
 	
 
 		
@@ -52,12 +54,13 @@ public class View implements EventHandler<ActionEvent> {
 		stage.show();
 	}
 
-	private VBox addVBox() {                         //added buttons for shapes and tools to VBox
+	private VBox addVBox() {           //added buttons for shapes and tools to VBox
 		VBox vbox = new VBox();
 	    //vbox.setPadding(new Insets(10));
 	    vbox.setSpacing(8);
 		vbox.getChildren().add(shapeChooserPanel);
 		vbox.getChildren().add(toolChooserPanel);
+		vbox.getChildren().add(colourChooserPanel);
 		return vbox;
 	}
 
@@ -73,6 +76,9 @@ public class View implements EventHandler<ActionEvent> {
 		return toolChooserPanel;
 	}
 	
+	public ColourChooserPanel getColourChooserPanel() {  //where is this method
+		return colourChooserPanel;
+	}
 
 	private MenuBar createMenuBar() {
 

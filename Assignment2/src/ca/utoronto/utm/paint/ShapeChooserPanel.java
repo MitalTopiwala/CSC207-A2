@@ -48,6 +48,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			button.setOnAction(this);
 			
 			button.setToggleGroup(toggleGroup);
+		
 		}
 		
 		toggleGroup.getSelectedToggle();

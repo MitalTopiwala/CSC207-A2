@@ -6,6 +6,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+
+import java.applet.Applet;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -13,19 +16,28 @@ import java.util.Observer;
 
 class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent> {
 
+	//private static final Paint BLACK = null;
+//	private static final Paint YELLOW = null;
+//	private static final Paint PURPLE = null;
+//	private static final Paint GREEN = null;
+//	private static final Paint BLUE = null;
+//	private static final Paint RED = null;
 	private int i = 0;
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
 
 	private String mode; // modifies how we interpret input (could be better?)
+	private String colourMode ="0"; //modifies input of colour filled 
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle; // the rectangle we are building
 	
 	private Canvas canvas;
 	
+	private Paint currentColour; 
 	
+	//private ToolChooserPanel tcp;
 
-	public PaintPanel(PaintModel model, View view) {  
+	public PaintPanel(PaintModel model, View view) {  //ToolChooserPanel tcp {
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);
@@ -36,14 +48,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.addEventHandler(MouseEvent.ANY, this);
 
 		this.mode = "Circle"; // bad code here?
+		this.colourMode = "0"; //no colour selected 
+		this.currentColour = currentColour;
 
 		this.model = model;
 		this.model.addObserver(this);
-
 		this.view = view;
-		
-		
-		
+		//this.tcp = tcp;
 		
 	}
 
@@ -55,63 +66,42 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.setStroke(Color.WHITE);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
-		//g.setLineWidth(model.getLineThickness());
-	
+
+
 		// Draw Lines
 		ArrayList<Point> points = this.model.getPoints();
-		ArrayList<Double> pointsW = this.model.getPointsW();
 		for (int i = 0; i < points.size() - 1; i++) {
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
-			g.setLineWidth(pointsW.get(i)); 
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-	
 		}
 
 		// Draw Circles
 		ArrayList<Circle> circles = this.model.getCircles();
-		ArrayList<Double> circlesW = this.model.getCirclesW();
-	
-		
-		for (int c = 0; c < circles.size() ; c ++) {
-			int x = circles.get(c).getCentre().getX();
-			int y = circles.get(c).getCentre().getY();
-			int radius = circles.get(c).getRadius();
-			g.setLineWidth(circlesW.get(c)); 
-			//g.save();
+		for (Circle c : circles) {
+			int x = c.getCentre().getX();
+			int y = c.getCentre().getY();
+			int radius = c.getRadius();
 			g.strokeOval(x, y, radius, radius);
-			
+			//////////////////////////////////////////////////////////////////////////
+		
+			g.fillOval(x, y, radius, radius);
+			g.setFill(this.currentColour);
 		}
-		
-		/*if(this.mode == "Circle") {
-			Circle circ = circles.get(circles.size()-1);
-			int x = circ.getCentre().getX();
-			int y = circ.getCentre().getY();
-			int radius = circ.getRadius();
-			//g.setLineWidth(model.getLineThickness());  
-			
-			g.setLineWidth(model.getLineThickness());
-			g.strokeOval(x, y, radius, radius);
-			
-			}
-		*/
 		
 		// Draw Rectangles
 		ArrayList<Rectangle> rectangles = this.model.getRectangles();
-		ArrayList<Double> rectanglesW = this.model.getRectanglesW();
-		for (int r = 0; r < rectangles.size() ; r ++) {
-			int x = rectangles.get(r).getUpperLeft().getX();
-			int y = rectangles.get(r).getUpperLeft().getY();
-			int length = rectangles.get(r).getLength();
-			int width = rectangles.get(r).getWidth();
-			g.setLineWidth(rectanglesW.get(r));   
+		for (Rectangle r : rectangles) {
+			int x = r.getUpperLeft().getX();
+			int y = r.getUpperLeft().getY();
+			int length = r.getLength();
+			int width = r.getWidth();
 			g.strokeRect(x, y, width, length);
 		}
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-
 		// Not exactly how MVC works, but similar.
 		this.repaint();
 	}
@@ -119,8 +109,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	/**
 	 * Controller aspect of this
 	 */
-	public void setMode(String mode) {
+	public void setMode(String mode) { ////////////// add colourMode to parameter?
 		this.mode = mode;
+	}
+	
+	public void setColourMode(String colourMode) {
+		this.colourMode = colourMode;
 	}
 
 	@Override
@@ -149,22 +143,37 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Circle") {
 
 		} else if (this.mode == "Rectangle") {
-			
+		
 		}
+		
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
+	
 
 	private void mouseDragged(MouseEvent e) {
 		if (this.mode == "Squiggle") {
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
+			
 		} else if (this.mode == "Circle") {
-
 
 			int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 			this.circle.setRadius(radius);
 			Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 			this.circle.setCentre(centre);
 			this.model.addCircle(this.circle);
+
 		} else if (this.mode == "Rectangle") {
+			
 			int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
 			int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
 			this.rectangle.setLength(length);
@@ -180,10 +189,24 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.rectangle.setUpperLeft(new Point(x, y));
 			
 			this.model.addRectangle(this.rectangle);
-			}
-		}
-
+			}	
+		
+//		if (this.colourMode == "1") {
+//			this.
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
+	}
+	
 	private void mouseClicked(MouseEvent e) {
+				
 		if (this.mode == "Squiggle") {
 
 		} else if (this.mode == "Circle") {
@@ -191,38 +214,68 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Rectangle") {
 			
 		}
+		
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 
 	private void mousePressed(MouseEvent e) {
 		if (this.mode == "Squiggle") {
-
-
+			
 		} else if (this.mode == "Circle") {
 			// Problematic notion of radius and centre!!
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			this.circle = new Circle(centre, radius);
+			//this.currentColour = Color.RED; 
+
 		} else if (this.mode == "Rectangle") {
 			Point start = new Point((int) e.getX(), (int) e.getY());
 			int length = 0;
 			int width = 0;
 			this.rectangle = new Rectangle(start, length, width);
 		}
+		
+		if (this.colourMode == "0") {
+			this.currentColour = Color.BLACK;
+		} else if (this.colourMode == "1") {
+			this.currentColour = Color.RED;
+		} else if (this.colourMode == "2") {
+			this.currentColour = Color.BLUE;
+		} else if (this.colourMode == "3") {
+			this.currentColour = Color.GREEN;
+		} else if (this.colourMode == "4") {
+			this.currentColour = Color.PURPLE;
+		} else if (this.colourMode == "5") {
+			this.currentColour = Color.YELLOW;			
+		}
 	}
+
 
 	private void mouseReleased(MouseEvent e) {
 		if (this.mode == "Squiggle") {
 
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
+				//this.currentColour = Color.AQUA; 
 				// Problematic notion of radius and centre!!
 				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 				this.circle.setRadius(radius);
 				Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 				this.circle.setCentre(centre);
 				this.model.addCircle(this.circle);
-				this.circle = null;
+				this.circle = null;	 
 			}
+			
 		} else if (this.mode == "Rectangle") {
 			if (this.rectangle != null) {
 				int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
@@ -243,6 +296,18 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.rectangle = null;
 			}
 		}
+		
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 
 	private void mouseEntered(MouseEvent e) {
@@ -253,6 +318,18 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Rectangle") {
 			
 		}
+		
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
 	}
 
 	private void mouseExited(MouseEvent e) {
@@ -263,5 +340,21 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Rectangle") {
 			
 		}
+		
+//		if (this.colourMode == "1") {
+//			
+//		} else if (this.colourMode == "2") {
+//			
+//		} else if (this.colourMode == "3") {
+//			
+//		} else if (this.colourMode == "4") {
+//			
+//		} else if (this.colourMode == "5") {
+//			
+//		}
+	
+		
 	}
-}
+	
+	}
+

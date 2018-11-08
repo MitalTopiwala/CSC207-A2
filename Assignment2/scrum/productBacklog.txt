@@ -188,7 +188,7 @@ display an ImageIcon. The string attached to the button causes the right choice
 of object creation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 10 : UTORID
+TYPE     : BUG 10 : arshad33
 NAME     : Architecture behind creating shape instances is poor
 OWNER    : 
 PRIORITY :

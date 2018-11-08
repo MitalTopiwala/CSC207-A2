@@ -3,9 +3,9 @@ package ca.utoronto.utm.paint;
 public class Point {
 	int x, y;
 
-	Point(int x, int y) {
-		this.x = x;
-		this.y = y;
+	Point(double d, double e) {
+		this.x = (int) d;
+		this.y = (int) e;
 	}
 
 	public int getX() {

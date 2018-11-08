@@ -2,6 +2,7 @@ package ca.utoronto.utm.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import java.util.Stack;
 
 public class PaintModel extends Observable {
 
@@ -13,13 +14,20 @@ public class PaintModel extends Observable {
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
 	
-	private View view;             //
-	private ToolChooserPanel TCP = new ToolChooserPanel(view);         //
 	
-	public double getLineThickness() {                //
+	
+	private View view;             
+	private ToolChooserPanel TCP = new ToolChooserPanel(view);         
+	
+	public double getLineThickness() {               
 		return TCP.getLineWidth();
 	}
-
+	
+	
+	
+	
+	
+	
 	public void addPoint(Point p) {
 		this.points.add(p);
 		this.pointsW.add(TCP.getLineWidth());
@@ -41,6 +49,11 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	//public void fillCircle(Circle c, colour) {
+		//this.circles.paint(colour);
+	//}
 
 	public ArrayList<Circle> getCircles() {
 		return circles;
