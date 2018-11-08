@@ -65,7 +65,7 @@ ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-TYPE     : BUG 3 : UTORID
+TYPE     : BUG 3 : topiwal3
 NAME     : Architecture behind choosing selection mode is poor
 OWNER    : 
 PRIORITY :
@@ -90,7 +90,7 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 5 : UTORID
+TYPE     : BUG 5 : masroor6
 NAME     : Squiggle is broken
 OWNER    : 
 PRIORITY :
@@ -100,7 +100,7 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
            the issue is with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 8 : UTORID
+TYPE     : USER STORY 8 : masroor6
 NAME     : Implement Poly Line
 OWNER    : 
 PRIORITY :

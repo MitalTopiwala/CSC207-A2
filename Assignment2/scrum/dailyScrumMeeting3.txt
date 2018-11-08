@@ -51,8 +51,8 @@ Nov 5, 2018
 
 Nov 6, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Met and split up Sprint 2 
+	Obstacles : Two members wanted to work on the same user story
 
 Nov 7, 2018
 	Yesterday :
