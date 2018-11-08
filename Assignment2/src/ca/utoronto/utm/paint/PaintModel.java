@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 
+import com.sun.corba.se.impl.ior.GenericTaggedComponent;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
 public class PaintModel extends Observable {
+	
+	int strokeWidth;
+	Color color;
 
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
@@ -14,19 +22,35 @@ public class PaintModel extends Observable {
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
 	
+	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	
 	
 	private View view;             
-	private ToolChooserPanel TCP = new ToolChooserPanel(view);         
+	private ToolChooserPanel TCP = new ToolChooserPanel(view);     
 	
+	/**
+	 * Sets shape with the current color and stroke width and
+	 * pushes shape to the shapes stack .
+	 * @param shape	a shape newly drawn
+	 */
+	public void addShape(Shapes shape) {
+		
+		shape.setColor(color);
+		shape.setStrokeWidth(strokeWidth);
+		this.shapeStack.push(shape);
+		modelChanged();
+
+	}
+	
+	public void modelChanged() {
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+
 	public double getLineThickness() {               
 		return TCP.getLineWidth();
 	}
-	
-	
-	
-	
-	
 	
 	public void addPoint(Point p) {
 		this.points.add(p);
@@ -50,10 +74,7 @@ public class PaintModel extends Observable {
 		this.notifyObservers();
 	}
 	
-	///////////////////////////////////////////////////////////////////////////
-	//public void fillCircle(Circle c, colour) {
-		//this.circles.paint(colour);
-	//}
+
 
 	public ArrayList<Circle> getCircles() {
 		return circles;

@@ -58,9 +58,9 @@ Nov 6, 2018
 				command stack
 
 Nov 7, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :worked on bug10
+	Today     :continued working on bug 10
+	Obstacles :overlap between other bugs, need to use stuff other team members were working on 
 
 Nov 8, 2018
 	Yesterday :

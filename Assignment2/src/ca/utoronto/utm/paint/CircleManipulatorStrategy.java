@@ -1,5 +1,6 @@
 package ca.utoronto.utm.paint;
 
+
 import javafx.scene.input.MouseEvent;
 
 public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
@@ -19,7 +20,7 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 		this.circle.setRadius(radius);
 		Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 		this.circle.setCentre(centre);
-		
+		ShapeManipulatorContext.modelChanged();		
 	}
 
 	@Override
@@ -27,6 +28,7 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 		// TODO Auto-generated method stub
 		Point centre = new Point(e.getX(),e.getY());
 		circle = new Circle(centre, 0);
+		ShapeManipulatorContext.addShape(this.circle);
 		
 	}
 

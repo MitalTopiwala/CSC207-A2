@@ -146,17 +146,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		
 		}
 		
-//		if (this.colourMode == "1") {
-//			
-//		} else if (this.colourMode == "2") {
-//			
-//		} else if (this.colourMode == "3") {
-//			
-//		} else if (this.colourMode == "4") {
-//			
-//		} else if (this.colourMode == "5") {
-//			
-//		}
+
 	}
 	
 
@@ -191,18 +181,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.model.addRectangle(this.rectangle);
 			}	
 		
-//		if (this.colourMode == "1") {
-//			this.
-//			
-//		} else if (this.colourMode == "2") {
-//			
-//		} else if (this.colourMode == "3") {
-//			
-//		} else if (this.colourMode == "4") {
-//			
-//		} else if (this.colourMode == "5") {
-//			
-//		}
+
 	}
 	
 	private void mouseClicked(MouseEvent e) {
@@ -215,17 +194,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 		}
 		
-//		if (this.colourMode == "1") {
-//			
-//		} else if (this.colourMode == "2") {
-//			
-//		} else if (this.colourMode == "3") {
-//			
-//		} else if (this.colourMode == "4") {
-//			
-//		} else if (this.colourMode == "5") {
-//			
-//		}
+
 	}
 
 	private void mousePressed(MouseEvent e) {
@@ -297,17 +266,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			}
 		}
 		
-//		if (this.colourMode == "1") {
-//			
-//		} else if (this.colourMode == "2") {
-//			
-//		} else if (this.colourMode == "3") {
-//			
-//		} else if (this.colourMode == "4") {
-//			
-//		} else if (this.colourMode == "5") {
-//			
-//		}
+
 	}
 
 	private void mouseEntered(MouseEvent e) {
@@ -319,17 +278,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 		}
 		
-//		if (this.colourMode == "1") {
-//			
-//		} else if (this.colourMode == "2") {
-//			
-//		} else if (this.colourMode == "3") {
-//			
-//		} else if (this.colourMode == "4") {
-//			
-//		} else if (this.colourMode == "5") {
-//			
-//		}
+
 	}
 
 	private void mouseExited(MouseEvent e) {
@@ -341,18 +290,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 		}
 		
-//		if (this.colourMode == "1") {
-//			
-//		} else if (this.colourMode == "2") {
-//			
-//		} else if (this.colourMode == "3") {
-//			
-//		} else if (this.colourMode == "4") {
-//			
-//		} else if (this.colourMode == "5") {
-//			
-//		}
-	
+
 		
 	}
 	
