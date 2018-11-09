@@ -7,8 +7,15 @@ import java.util.Stack;
 public class PaintModel extends Observable {
 
 	private ArrayList<Point> points = new ArrayList<Point>();
+	//bug 5
+	//private ArrayList<Squiggle> squiggles = new ArrayList<Squiggle>();
+	
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
+	
+	//bug 5
+	//private ArrayList<Double> squigglesW = new ArrayList<Double>();
+	//
 	
 	private ArrayList<Double> pointsW = new ArrayList<Double>();
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
@@ -22,11 +29,23 @@ public class PaintModel extends Observable {
 	public double getLineThickness() {               
 		return TCP.getLineWidth();
 	}
+
+	//bug 5
+	//public void addSquiggle(Squiggle s) {
+		//this.squiggles.add(s);
+		///this.squigglesW.add(TCP.getLineWidth());
+		//this.setChanged();
+		//this.notifyObservers();
+	//}
 	
-	
-	
-	
-	
+	//public ArrayList<Squiggle> getSquiggles() {
+		//return squiggles;
+	//}
+
+	//public ArrayList<Double> getSquigglesW() {
+		//return squigglesW;
+	//}
+	//
 	
 	public void addPoint(Point p) {
 		this.points.add(p);
@@ -34,15 +53,15 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
-
+	
 	public ArrayList<Point> getPoints() {
 		return points;
 	}
-	
+
 	public ArrayList<Double> getPointsW() {
 		return pointsW;
 	}
-
+	
 	public void addCircle(Circle c) {
 		this.circles.add(c);
 		this.circlesW.add(TCP.getLineWidth());

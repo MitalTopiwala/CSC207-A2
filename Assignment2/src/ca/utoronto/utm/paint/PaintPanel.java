@@ -28,6 +28,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private String mode; // modifies how we interpret input (could be better?)
 	private String colourMode ="0"; //modifies input of colour filled 
+	//bug5
+	//private Squiggle squiggle;
+	//
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle; // the rectangle we are building
 	
@@ -69,8 +72,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 
 		// Draw Lines
+		//original
 		ArrayList<Point> points = this.model.getPoints();
 		for (int i = 0; i < points.size() - 1; i++) {
+		//bug6
+		//ArrayList<Squiggle> squiggles = this.model.getSquiggles();
+		//for (Squiggle s: squiggles) {
+		//
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
@@ -230,6 +238,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private void mousePressed(MouseEvent e) {
 		if (this.mode == "Squiggle") {
+			//BUG5
+			//this.model
+			//this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
+			//
 			
 		} else if (this.mode == "Circle") {
 			// Problematic notion of radius and centre!!
@@ -263,6 +275,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private void mouseReleased(MouseEvent e) {
 		if (this.mode == "Squiggle") {
+			//bug5
+			//if (this.squiggle != null) {
+				//this.squiggle.setEnd(new Point ((int) e.getX(), (int) e.getY());
+			}
 
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
