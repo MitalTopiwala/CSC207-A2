@@ -249,7 +249,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			//bug5
 			//if (this.squiggle != null) {
 				//this.squiggle.setEnd(new Point ((int) e.getX(), (int) e.getY());
-			}
+			
 
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
@@ -293,6 +293,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		
 
 	}
+
 
 	private void mouseEntered(MouseEvent e) {
 		if (this.mode == "Squiggle") {
