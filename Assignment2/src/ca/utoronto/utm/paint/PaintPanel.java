@@ -8,7 +8,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
-import java.applet.Applet;
 
 import java.util.ArrayList;
 import java.util.Observable;

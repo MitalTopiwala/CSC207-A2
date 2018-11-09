@@ -46,8 +46,7 @@ public class PaintModel extends Observable {
 		
 	}
 	
-	
-	
+
 	public void modelChanged() {
 		this.setChanged();
 		this.notifyObservers();
