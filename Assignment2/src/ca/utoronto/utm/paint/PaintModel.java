@@ -52,6 +52,10 @@ public class PaintModel extends Observable {
 		modelChanged();
 		
 	}
+<<<<<<< HEAD
+	
+
+=======
 
 	//bug 5
 	//public void addSquiggle(Squiggle s) {
@@ -70,6 +74,7 @@ public class PaintModel extends Observable {
 	//
 	
 	
+>>>>>>> 4e8033da4ad743a0bdee448ed8579dd00c8641a0
 	public void modelChanged() {
 		this.setChanged();
 		this.notifyObservers();
