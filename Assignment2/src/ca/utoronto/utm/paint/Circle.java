@@ -1,6 +1,10 @@
 package ca.utoronto.utm.paint;
 
-public class Circle extends Shapes{
+
+
+import javafx.scene.canvas.GraphicsContext;
+
+public class Circle extends Shapes implements Draw{
 	
 	private Point centre;
 	private int radius;
@@ -10,6 +14,7 @@ public class Circle extends Shapes{
 		this.centre = centre;
 		this.radius = radius;
 		this.start = centre;
+		
 	}
 
 	public Point getCentre() {
@@ -34,6 +39,9 @@ public class Circle extends Shapes{
 	public Point getStart() {
 		return start;
 	}
-
+	
+	public void draw(GraphicsContext g) {
+	
+	}
 	
 }

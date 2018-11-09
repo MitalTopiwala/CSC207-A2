@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
 
 public class ShapeManipulatorContext implements ShapeManipulatorStrategy{
 	
-	private static PaintModel model;
+	static PaintModel model;
 	private ShapeManipulatorStrategy strategy;
 	
 
@@ -28,46 +28,55 @@ public class ShapeManipulatorContext implements ShapeManipulatorStrategy{
 		model.addShape(shape);
 		
 	}
+
+	
+
 	
 	@Override
-	public void MouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	public void mouseClicked(MouseEvent e) {
+		if (this.strategy!= null)
+			this.strategy.mouseClicked(e);		
 	}
 
 	@Override
-	public void MouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
+	public void mouseDragged(MouseEvent e) {
+		if (this.strategy!= null)
+			this.strategy.mouseDragged(e);	
 		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if (this.strategy!= null)
+			this.strategy.mousePressed(e);	
 		
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if (this.strategy!= null)
+			this.strategy.mouseMoved(e);	
 		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if (this.strategy!= null)
+			this.strategy.mouseReleased(e);	
 		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if (this.strategy!= null)
+			this.strategy.mouseEntered(e);	
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if (this.strategy!= null)
+			this.strategy.mouseExited(e);	
 		
 	}
 	

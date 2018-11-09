@@ -1,15 +1,17 @@
 package ca.utoronto.utm.paint;
 
+
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public abstract class Shapes {
+public abstract class Shapes implements Draw{
 	
 	private Color color;
 	private int strokeWidth;
 	
-	public void setStrokeWidth(int strokeWidth) {
-		this.strokeWidth = strokeWidth;
+	
+	public void setStrokeWidth(double d) {
+		this.strokeWidth = (int) d;
 		
 	}
 	
@@ -23,6 +25,12 @@ public abstract class Shapes {
 	
 	public Color getColor() {
 		return this.color;
+	}
+	
+	public void basicStroke(GraphicsContext g) {
+		g.setLineWidth(strokeWidth);
+		g.setStroke(color);
+		
 	}
 	
 	

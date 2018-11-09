@@ -6,15 +6,16 @@ import javafx.scene.input.MouseEvent;
 public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	
 	private Circle circle;
+	
 
 	@Override
-	public void MouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void MouseDragged(MouseEvent e) {
+	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 		int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 		this.circle.setRadius(radius);
@@ -43,8 +44,8 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		this.circle = null;
+	
 	}
 
 	@Override

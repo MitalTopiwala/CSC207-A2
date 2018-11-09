@@ -1,10 +1,12 @@
 package ca.utoronto.utm.paint;
 
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 
-import com.sun.corba.se.impl.ior.GenericTaggedComponent;
+
+
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -25,28 +27,37 @@ public class PaintModel extends Observable {
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	
 	
+	
 	private View view;             
 	private ToolChooserPanel TCP = new ToolChooserPanel(view);     
 	
 	/**
 	 * Sets shape with the current color and stroke width and
-	 * pushes shape to the shapes stack .
-	 * @param shape	a shape newly drawn
+	 * pushes shape to the shapesStack stack .
+	 * @param shape	a shape that is newly drawn
 	 */
 	public void addShape(Shapes shape) {
 		
 		shape.setColor(color);
-		shape.setStrokeWidth(strokeWidth);
+		shape.setStrokeWidth(TCP.getLineWidth());
 		this.shapeStack.push(shape);
+		System.out.println("shape added to stack:" + this.shapeStack);
 		modelChanged();
-
+		
 	}
+	
+	
 	
 	public void modelChanged() {
 		this.setChanged();
 		this.notifyObservers();
 	}
 	
+	public void draw(GraphicsContext g) {
+		for(Shapes s : shapeStack) {
+			s.draw(g);
+		}
+	}
 
 	public double getLineThickness() {               
 		return TCP.getLineWidth();
@@ -97,4 +108,5 @@ public class PaintModel extends Observable {
 	public ArrayList<Double> getRectanglesW() {
 		return rectanglesW;
 	}
+	
 }

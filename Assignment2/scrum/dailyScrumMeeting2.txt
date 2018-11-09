@@ -63,14 +63,14 @@ Nov 7, 2018
 	Obstacles :overlap between other bugs, need to use stuff other team members were working on 
 
 Nov 8, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :worked on bug10
+	Today     :did git reset --hard and started working on bug10 from the beginning
+	Obstacles :ended up messing up a lost of things
 
 Nov 9, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :continued working on bug10
+	Today     :almost done with bug 10, once implementation of squiggle is fixed will add that to stack
+	Obstacles : bugs regarding radius of shapes not proper will fix after other architectural bugs are fixed
 
 Nov 10, 2018
 	Yesterday :
