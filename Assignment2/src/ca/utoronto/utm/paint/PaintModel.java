@@ -1,10 +1,20 @@
 package ca.utoronto.utm.paint;
 
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 
+
+
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
 public class PaintModel extends Observable {
+	
+	int strokeWidth;
+	Color color;
 
 	private ArrayList<Point> points = new ArrayList<Point>();
 	//bug 5
@@ -21,13 +31,26 @@ public class PaintModel extends Observable {
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
 	
+	private Stack<Shapes> shapeStack = new Stack<Shapes>();
+	
 	
 	
 	private View view;             
-	private ToolChooserPanel TCP = new ToolChooserPanel(view);         
+	private ToolChooserPanel TCP = new ToolChooserPanel(view);     
 	
-	public double getLineThickness() {               
-		return TCP.getLineWidth();
+	/**
+	 * Sets shape with the current color and stroke width and
+	 * pushes shape to the shapesStack stack .
+	 * @param shape	a shape that is newly drawn
+	 */
+	public void addShape(Shapes shape) {
+		
+		shape.setColor(color);
+		shape.setStrokeWidth(TCP.getLineWidth());
+		this.shapeStack.push(shape);
+		System.out.println("shape added to stack:" + this.shapeStack);
+		modelChanged();
+		
 	}
 
 	//bug 5
@@ -37,7 +60,6 @@ public class PaintModel extends Observable {
 		//this.setChanged();
 		//this.notifyObservers();
 	//}
-	
 	//public ArrayList<Squiggle> getSquiggles() {
 		//return squiggles;
 	//}
@@ -46,6 +68,23 @@ public class PaintModel extends Observable {
 		//return squigglesW;
 	//}
 	//
+	
+	
+	public void modelChanged() {
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public void draw(GraphicsContext g) {
+		for(Shapes s : shapeStack) {
+			s.draw(g);
+		}
+	}
+
+	public double getLineThickness() {               
+		return TCP.getLineWidth();
+	}
+
 	
 	public void addPoint(Point p) {
 		this.points.add(p);
@@ -69,10 +108,7 @@ public class PaintModel extends Observable {
 		this.notifyObservers();
 	}
 	
-	///////////////////////////////////////////////////////////////////////////
-	//public void fillCircle(Circle c, colour) {
-		//this.circles.paint(colour);
-	//}
+
 
 	public ArrayList<Circle> getCircles() {
 		return circles;
@@ -95,4 +131,5 @@ public class PaintModel extends Observable {
 	public ArrayList<Double> getRectanglesW() {
 		return rectanglesW;
 	}
+	
 }

@@ -1,6 +1,8 @@
 package ca.utoronto.utm.paint;
 
-public class Rectangle {
+import javafx.scene.canvas.GraphicsContext;
+
+public class Rectangle extends Shapes {
 	
 	private Point start;
 	private int length;
@@ -45,5 +47,11 @@ public class Rectangle {
 	
 	public void setWidth(int width) {
 		this.width = width;
+	}
+
+	@Override
+	public void draw(GraphicsContext g) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -23,6 +23,7 @@ public class View implements EventHandler<ActionEvent> {
 	private ColourChooserPanel colourChooserPanel; 
 
 
+
 	public View(PaintModel model, Stage stage) {
 
 		this.model = model;
@@ -35,6 +36,7 @@ public class View implements EventHandler<ActionEvent> {
 		this.shapeChooserPanel = new ShapeChooserPanel(this);
 		this.toolChooserPanel = new ToolChooserPanel(this);
 		this.colourChooserPanel = new ColourChooserPanel(this);
+	
 	
 
 		
@@ -80,6 +82,11 @@ public class View implements EventHandler<ActionEvent> {
 		return colourChooserPanel;
 	}
 
+	
+	public PaintModel getPaintModel () {
+		return model;
+	}
+	
 	private MenuBar createMenuBar() {
 
 		MenuBar menuBar = new MenuBar();
