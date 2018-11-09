@@ -190,9 +190,9 @@ of object creation.
 --------------------------------------------------------------------------
 TYPE     : BUG 10 : arshad33
 NAME     : Architecture behind creating shape instances is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
+OWNER    : arshad33	
+PRIORITY : high
+ESTIMATE : 2 days
 ISSUE    : A better architecture for creating shape instances so that it is 
 more flexible, and easier to work with can be created using the Strategy Design 
 pattern as follows:
