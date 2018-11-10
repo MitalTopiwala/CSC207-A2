@@ -71,18 +71,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 
 		// Draw Lines
-		//original
 		ArrayList<Point> points = this.model.getPoints();
 		for (int i = 0; i < points.size() - 1; i++) {
-		//bug6
-		//ArrayList<Squiggle> squiggles = this.model.getSquiggles();
-		//for (Squiggle s: squiggles) {
-		//
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
-
+		
 		// Draw Circles
 		ArrayList<Circle> circles = this.model.getCircles();
 		for (Circle c : circles) {
@@ -104,6 +99,17 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int length = r.getLength();
 			int width = r.getWidth();
 			g.strokeRect(x, y, width, length);
+		}
+		// Draw Polyline
+		//userstory8
+		ArrayList<Point> polylines = this.model.getPolylinePoints();
+		double[] xArray = new double[polylines.size()];
+		double[] yArray = new double[polylines.size()];
+		for (int i = 0; i < polylines.size() - 1; i++) {
+			Point point = polylines.get(i);
+			xArray[i] = (double) point.getX();
+			yArray[i] = (double) point.getY();	
+		g.strokePolyline(xArray, yArray, i);
 		}
 	}
 
@@ -158,7 +164,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 
 	private void mouseDragged(MouseEvent e) {
-		if (this.mode == "Squiggle") {                                         //fix squiggle bug
+		if (this.mode == "Squiggle") { //fix squiggle bug
 		
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
 			
@@ -189,7 +195,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 			
 			this.model.addRectangle(this.rectangle);
-			}	
+			}//userstory10
+		else if (this.mode == "Polyline") {	
+			}
 		
 
 	}
@@ -226,6 +234,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int length = 0;
 			int width = 0;
 			this.rectangle = new Rectangle(start, length, width);
+		}
+		//userstory10
+		else if (this.mode == "Polyline") {
+			this.model.addPolylinePoint(new Point((int) e.getX(), (int) e.getY()));
 		}
 		
 		if (this.colourMode == "0") {
@@ -288,6 +300,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.model.addShape(rectangle);
 				
 				this.rectangle = null;
+			}
+			//userstory10
+			else if (this.mode == "Polyline") {
+				
 			}
 		}
 
