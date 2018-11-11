@@ -17,9 +17,6 @@ public class PaintModel extends Observable {
 	Color color;
 
 	private ArrayList<Point> points = new ArrayList<Point>();
-	//bug 5
-	//private ArrayList<Squiggle> squiggles = new ArrayList<Squiggle>();
-	
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
 	

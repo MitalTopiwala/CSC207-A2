@@ -28,9 +28,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private String mode; // modifies how we interpret input (could be better?)
 	private String colourMode ="0"; //modifies input of colour filled 
-	//bug5
-	//private Squiggle squiggle;
-	//
+
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle; // the rectangle we are building
 	
@@ -102,14 +100,20 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		}
 		// Draw Polyline
 		//userstory8
+		//ArrayList<Point> polylines = this.model.getPolylinePoints();
+		//double[] xArray = new double[polylines.size()];
+		//double[] yArray = new double[polylines.size()];
+		//for (int i = 0; i < polylines.size() - 1; i++) {
+			//Point point = polylines.get(i);
+			//xArray[i] = (double) point.getX();
+			//yArray[i] = (double) point.getY();	
+			//g.strokePolyline(xArray, yArray, i);
+		//}
 		ArrayList<Point> polylines = this.model.getPolylinePoints();
-		double[] xArray = new double[polylines.size()];
-		double[] yArray = new double[polylines.size()];
 		for (int i = 0; i < polylines.size() - 1; i++) {
-			Point point = polylines.get(i);
-			xArray[i] = (double) point.getX();
-			yArray[i] = (double) point.getY();	
-		g.strokePolyline(xArray, yArray, i);
+			Point p1 = polylines.get(i);
+			Point p2 = polylines.get(i + 1);
+			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 	}
 
