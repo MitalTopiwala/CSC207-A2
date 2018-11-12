@@ -79,13 +79,13 @@ Nov 10, 2018
 	
 Nov 11, 2018
 	Yesterday :
-	Today     :
+	Today     :Figure out if their were ways to further simplify the architecture
 	Obstacles :
 	
 Nov 12, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : worked on undo option
+	Obstacles : Does'nt work properly,waiting for bug7 to be fixed so that it can be drawn properly
 
 Nov 13, 2018
 	Yesterday :

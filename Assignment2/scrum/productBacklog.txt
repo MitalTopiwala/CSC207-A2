@@ -5,7 +5,17 @@
 # 2 Implementation of selected color into the drawing stream.
 
 
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY 9 : arshad33
+NAME     : Undo
+OWNER    : arshad33
+PRIORITY : medium
+ESTIMATE : 30 mins 
+AS A     : user
+I WANT   : To click undo button and remove the last drawn shape from the canvas
+          
+SO THAT  : I can remove the last shape that was drawn on canvas
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 5 : khanerub
 NAME     : Color selector
