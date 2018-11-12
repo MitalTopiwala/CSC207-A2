@@ -1,11 +1,26 @@
 package ca.utoronto.utm.paint;
 
+//import java.awt.Stroke;
+//import java.awt.Color;
+
+import javafx.scene.paint.Color;
+
 public class Circle {
 	
 	private Point centre;
 	private int radius;
 	private Point start;
+	private Color colour; 
+//	private Stroke stroke; 
 
+	public Circle(Point centre, int radius, Color colour) {
+		this.centre = centre;
+		this.radius = radius;
+		this.start = centre;
+		this.colour = colour; 
+//		this.stroke = stroke; 
+	}
+	
 	public Circle(Point centre, int radius) {
 		this.centre = centre;
 		this.radius = radius;
@@ -31,9 +46,17 @@ public class Circle {
 	public void setStart(Point start) {
 		this.start = start;
 	}
+	
 	public Point getStart() {
 		return start;
 	}
 
+	public Color getColour() {
+		return this.colour;
+  	}
+	
+	public void SetColour(Color c) {
+		this.colour = c;
+	}
 	
 }

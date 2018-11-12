@@ -23,11 +23,6 @@ public class PaintModel extends Observable {
 		return TCP.getLineWidth();
 	}
 	
-	
-	
-	
-	
-	
 	public void addPoint(Point p) {
 		this.points.add(p);
 		this.pointsW.add(TCP.getLineWidth());
@@ -49,11 +44,7 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	//public void fillCircle(Circle c, colour) {
-		//this.circles.paint(colour);
-	//}
+
 
 	public ArrayList<Circle> getCircles() {
 		return circles;

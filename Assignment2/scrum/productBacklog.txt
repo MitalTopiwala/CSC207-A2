@@ -7,7 +7,7 @@
 
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY 5 : UTORID
+TYPE     : USER STORY 5 : khanerub
 NAME     : Color selector
 OWNER    : 
 PRIORITY :
@@ -31,7 +31,7 @@ I WANT   : To be able to select the current drawing color, to be applied
 SO THAT  : 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 6 : UTORID
+TYPE     : USER STORY 6 : khanerub
 NAME     : Fill style selector
 OWNER    : 
 PRIORITY :
@@ -108,7 +108,7 @@ ESTIMATE :
 ISSUE    : YOU FILL THIS ONE IN!!
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 7 : UTORID
+TYPE     : BUG 7 : khanerub
 NAME     : Architecture for drawing shapes can be improved
 OWNER    : 
 PRIORITY :

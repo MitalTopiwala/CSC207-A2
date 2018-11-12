@@ -24,7 +24,7 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		ToggleGroup toggleGroup = new ToggleGroup();
 		for (int i =0; i < buttonColours.length; i++) {
 			ToggleButton button = new ToggleButton(colourRep[i]);		
-			button.setMinWidth(30);
+			button.setMinWidth(10);
 			button.setStyle(buttonColours[i]);
 			this.add(button, 0, row);
 			row++;
