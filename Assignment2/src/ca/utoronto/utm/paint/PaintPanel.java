@@ -33,7 +33,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 	
 
-	public PaintPanel(PaintModel model, View view) {  //ToolChooserPanel tcp {
+	public PaintPanel(PaintModel model, View view) {  
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);

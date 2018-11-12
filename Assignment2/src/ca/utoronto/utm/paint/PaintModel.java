@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 
-
-
-
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -35,6 +32,7 @@ public class PaintModel extends Observable {
 	
 	
 	
+	
 	private View view;             
 	private ToolChooserPanel TCP = new ToolChooserPanel(view);     
 	
@@ -52,6 +50,22 @@ public class PaintModel extends Observable {
 		modelChanged();
 		
 	}
+	
+	public void undo() {
+
+		if(this.shapeStack.size() > 0) {
+			Stack<Shapes> shapeStack = new Stack<Shapes>();
+			shapeStack.push(this.shapeStack.pop());
+			
+		}
+		
+	}
+	
+	public Stack<Shapes> getStack() {
+		return shapeStack;
+	}
+	
+	
 //<<<<<<< HEAD
 
 //=======
