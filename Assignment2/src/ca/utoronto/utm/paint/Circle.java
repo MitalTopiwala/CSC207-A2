@@ -1,11 +1,9 @@
 package ca.utoronto.utm.paint;
 
-//import java.awt.Stroke;
-//import java.awt.Color;
-
 import javafx.scene.paint.Color;
+import javafx.scene.canvas.GraphicsContext;
 
-public class Circle {
+public class Circle extends Shapes implements Draw{
 	
 	private Point centre;
 	private int radius;
@@ -25,6 +23,7 @@ public class Circle {
 		this.centre = centre;
 		this.radius = radius;
 		this.start = centre;
+		
 	}
 
 	public Point getCentre() {
@@ -57,6 +56,9 @@ public class Circle {
 	
 	public void SetColour(Color c) {
 		this.colour = c;
+	}
+	
+	public void draw(GraphicsContext g) {
 	}
 	
 }

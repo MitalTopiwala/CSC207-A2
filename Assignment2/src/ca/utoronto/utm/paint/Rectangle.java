@@ -1,7 +1,9 @@
 package ca.utoronto.utm.paint;
 import javafx.scene.paint.Color;
 
-public class Rectangle {
+import javafx.scene.canvas.GraphicsContext;
+
+public class Rectangle extends Shapes {
 	
 	private Point start;
 	private int length;
@@ -64,5 +66,10 @@ public class Rectangle {
 	public void SetColour(Color c) {
 		this.colour = c;
 	}
-	
+
+	@Override
+	public void draw(GraphicsContext g) {
+		// TODO Auto-generated method stub
+		
+	}
 }

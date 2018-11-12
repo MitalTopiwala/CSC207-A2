@@ -1,6 +1,6 @@
 package ca.utoronto.utm.paint;
 
-public class Point {
+public class Point  {
 	int x, y;
 
 	Point(double d, double e) {
