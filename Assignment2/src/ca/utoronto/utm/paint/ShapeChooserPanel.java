@@ -31,11 +31,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		CubicCurve cubic = new CubicCurve();
 		cubic.setStartX(0.0f);
 		cubic.setStartY(50.0f);
-		cubic.setControlX1(25.0f);
+		cubic.setControlX1(10.0f);
 		cubic.setControlY1(0.0f);
-		cubic.setControlX2(75.0f);
+		cubic.setControlX2(20.0f);
 		cubic.setControlY2(100.0f);
-		cubic.setEndX(100.0f);
+		cubic.setEndX(30.0f);
 		cubic.setEndY(50.0f);
 		cubic.setFill(null);
 		cubic.setStroke(Color.BLACK);
@@ -54,7 +54,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		int row = 0;
 		ToggleGroup toggleGroup = new ToggleGroup();
 		for (int i =0; i < buttonLabels.length; i++) {
-			ToggleButton button = new ToggleButton(buttonLabels[i], shapes[i]);		
+			ToggleButton button = new ToggleButton();	
+			button.setGraphic(shapes[i]);
 			button.setMinWidth(100);
 			this.add(button, 0, row);
 			row++;
