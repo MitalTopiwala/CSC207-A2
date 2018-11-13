@@ -1,7 +1,7 @@
 package ca.utoronto.utm.paint;
 
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 import javafx.scene.canvas.GraphicsContext;
@@ -12,7 +12,7 @@ public class PaintModel extends Observable {
 	int strokeWidth;
 	Color color;
 
-	private ArrayList<Point> points = new ArrayList<Point>();
+	/*private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
 	private ArrayList<Polyline> polylines = new ArrayList<Polyline>();
@@ -20,7 +20,7 @@ public class PaintModel extends Observable {
 	private ArrayList<Double> pointsW = new ArrayList<Double>();
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
-	private ArrayList<Double> polylinesW = new ArrayList<Double>();
+	private ArrayList<Double> polylinesW = new ArrayList<Double>();*/
 	
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	private Stack <Stack<Shapes>> deletedShapes = new Stack <Stack<Shapes>>();
@@ -89,7 +89,7 @@ public class PaintModel extends Observable {
 	}
 	
 	public void draw(GraphicsContext g) {
-		for(Shapes s : shapeStack) {
+		for(Shapes s : this.shapeStack) {
 			s.draw(g);
 		}
 	}
@@ -98,7 +98,7 @@ public class PaintModel extends Observable {
 		return TCP.getLineWidth();
 	}
 
-	public void addPoint(Point p) {
+	/*public void addPoint(Point p) {
 		this.points.add(p);
 		this.pointsW.add(TCP.getLineWidth());
 		this.setChanged();
@@ -156,6 +156,6 @@ public class PaintModel extends Observable {
 	
 	public ArrayList<Double> getPolylinesW() {
 		return polylinesW;
-	}
+	}*/
 	
 }

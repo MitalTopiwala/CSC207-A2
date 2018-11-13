@@ -147,7 +147,7 @@ PaintModel.
 --------------------------------------------------------------------------
 TYPE     : BUG 8 : UTORID
 NAME     : Architecture for handling shape modifiers can be improved 
-OWNER    : 
+OWNER    : arshad33
 PRIORITY :
 ESTIMATE : 
 ISSUE    : The architecture can be improved if we implement the Command Design 

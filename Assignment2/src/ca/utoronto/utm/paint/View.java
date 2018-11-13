@@ -7,6 +7,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -161,7 +162,7 @@ public class View implements EventHandler<ActionEvent> {
 			System.out.println(model.getDeletedShapes());
 		}
 		
-			
+		model.modelChanged();	
 		}
 	
 }
