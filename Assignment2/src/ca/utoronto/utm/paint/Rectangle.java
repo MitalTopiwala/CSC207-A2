@@ -63,7 +63,7 @@ public class Rectangle extends Shapes {
 		return this.colour;
   	}
 	
-	public void SetColour(Color c) {
+	public void setColour(Color c) {
 		this.colour = c;
 	}
 
