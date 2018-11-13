@@ -150,11 +150,15 @@ public class View implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent event) {
-		String action = (((MenuItem)event.getSource()).getText());
-		System.out.println(action);
-		if(action == "Undo") {
+		String button = (((MenuItem)event.getSource()).getText());
+		System.out.println(button);
+		if(button == "Undo") {
 			model.undo();
 			System.out.println(model.getStack());
+			
 		}
-	}
+		
+			
+		}
+	
 }
