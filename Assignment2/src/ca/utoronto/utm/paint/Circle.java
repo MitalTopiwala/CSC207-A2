@@ -1,7 +1,6 @@
 package ca.utoronto.utm.paint;
 
-
-
+import javafx.scene.paint.Color;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Circle extends Shapes implements Draw{
@@ -9,7 +8,17 @@ public class Circle extends Shapes implements Draw{
 	private Point centre;
 	private int radius;
 	private Point start;
+	private Color colour; 
+//	private Stroke stroke; 
 
+	public Circle(Point centre, int radius, Color colour) {
+		this.centre = centre;
+		this.radius = radius;
+		this.start = centre;
+		this.colour = colour; 
+//		this.stroke = stroke; 
+	}
+	
 	public Circle(Point centre, int radius) {
 		this.centre = centre;
 		this.radius = radius;
@@ -36,12 +45,19 @@ public class Circle extends Shapes implements Draw{
 	public void setStart(Point start) {
 		this.start = start;
 	}
+	
 	public Point getStart() {
 		return start;
 	}
+
+	public Color getColour() {
+		return this.colour;
+  	}
 	
-	public void draw(GraphicsContext g) {
-	
+	public void setColour(Color c) {
+		this.colour = c;
 	}
+	public void draw(GraphicsContext g) {
+}
 	
 }

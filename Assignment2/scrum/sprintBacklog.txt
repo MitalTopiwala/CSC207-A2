@@ -1,3 +1,188 @@
+<<<<<<< HEAD
+# Copy User Stories from the ProductBacklog 
+# to the appropriate Sprint below, after the 
+# Sprint Planning Meeting.
+
+# Sprint 1 Oct 28, 2018
+# Sprint 1 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1 : masroor6
+NAME     : Draw Circle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click the center of the circle, drag, and release to specify
+           a circle to be drawn in the current style.
+SO THAT  : I can add circles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 2 : topiwal3
+NAME     : Draw Circle Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : As a user is specifying a Circle, during the drag, a 'current'
+           circle should be on display. As the user drags, the 'current'
+           circle changes in real time so that a circle is drawn with
+           centre at users initial circle click, with radius out to
+           the current dragged mouse position.
+SO THAT  : I can see the circle I am about to build on release of the mouse
+           button.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 6 : masroor6
+NAME     : Circle drawing is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The first click should specify the center of the circle, with
+           a drag for the radius. This is not the case in the current
+           implementation.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 3 : masroor6
+NAME     : Draw Rectangle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click on one corner of a rectangle, drag, and release to 
+		   specify two corners of a rectangle to be drawn in the current style.
+SO THAT  : I can add rectangles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 4 : masroor6
+NAME     : Draw Rectangle Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
+SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 2 : arshad33
+NAME     : Drawing selection mode not indicated
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Currently ,you can't tell which mode "Circle", "Rectangle", ...
+           is currently selected. Is JButton correct, is there a way
+           to highlight the currently selected mode?
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 7 : arshad33
+NAME     : Line thickness selector
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To be able to select the current line thickness, to be applied
+           to subsequent shapes. Example:
+           		select fill style outline 
+           		selects line thickness 1
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select line thickness 9
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two thinly outlined circles and a thinly outlined 
+           	rectangle as well as two thickly outlined rectangles and a thick squiggle
+SO THAT  : 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 5 : khanerub
+NAME     : Color selector
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To be able to select the current drawing color, to be applied
+           to subsequent shapes. Example: 
+           		selects color red 
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select color green
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two red circles and a red rectangle as well as
+           	two green rectangles and a green squiggle
+SO THAT  : 
+--------------------------------------------------------------------------
+
+# Sprint 2 Nov 3, 2018
+# Sprint 2 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 9 : arshad33
+NAME     : Undo
+OWNER    : arshad33
+PRIORITY : medium
+ESTIMATE : 30 mins 
+AS A     : user
+I WANT   : To click undo button and remove the last drawn shape from the canvas
+          
+SO THAT  : I can remove the last shape that was drawn on canvas
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 10 : arshad33
+NAME     : Redo
+OWNER    : arshad33
+PRIORITY : medium
+ESTIMATE : 1 hr 
+AS A     : user
+I WANT   : To click redo button and add the shape that was removed
+          
+SO THAT  : I can have the removed shape redrawn on the canvas
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+TYPE     : BUG 10 : arshad33
+NAME     : Architecture behind creating shape instances is poor
+OWNER    : arshad33	
+PRIORITY : high
+ESTIMATE : 2 days
+ISSUE    : A better architecture for creating shape instances so that it is 
+more flexible, and easier to work with can be created using the Strategy Design 
+pattern as follows:
+
+Create class/abstract class/interface  ShapeManipulatorStrategy as well 
+as subclasses/implementators for each type of Shape. Call these the
+concrete ShapeNamipulatorStrategies
+
+The concrete ShapeManipulatorStrategies are responsible for 
+
+1. Creating instances of Shape and putting them on top of 
+   the PaintModel command stack.
+
+2. Understanding how mouse events modify the shape at the top of the 
+   PaintModel command stack.
+
+3. Calling the PaintPanel repaint at appropriate times.
+
+This strategy can be put in place either by having PaintPanel's mouse 
+events forwarded through PaintPanel into the current strategy, or by 
+simply switching the PaintPanel's event handlers as appropriate.
+
+--------------------------------------------------------------------------
+
+# Sprint 2 Nov 9, 2018
+# Sprint 2 Backlog UserStories go below
+=======
 # Copy User Stories from the ProductBacklog 
 # to the appropriate Sprint below, after the 
 # Sprint Planning Meeting.
@@ -102,3 +287,4 @@ SO THAT  :
 
 # Sprint 2 Nov 9, 2018
 # Sprint 2 Backlog UserStories go below
+>>>>>>> refs/heads/userStory8

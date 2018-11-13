@@ -4,10 +4,6 @@ package ca.utoronto.utm.paint;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
-
-
-
-
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -17,21 +13,18 @@ public class PaintModel extends Observable {
 	Color color;
 
 	private ArrayList<Point> points = new ArrayList<Point>();
-	//bug 5
-	//private ArrayList<Squiggle> squiggles = new ArrayList<Squiggle>();
-	
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
-	
-	//bug 5
-	//private ArrayList<Double> squigglesW = new ArrayList<Double>();
-	//
-	
+	private ArrayList<Polyline> polylines = new ArrayList<Polyline>();
+
 	private ArrayList<Double> pointsW = new ArrayList<Double>();
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
+	private ArrayList<Double> polylinesW = new ArrayList<Double>();
 	
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
+	private Stack <Stack<Shapes>> deletedShapes = new Stack <Stack<Shapes>>();
+	
 	
 	
 	
@@ -52,29 +45,44 @@ public class PaintModel extends Observable {
 		modelChanged();
 		
 	}
-//<<<<<<< HEAD
 	
-
-//=======
-
-	//bug 5
-	//public void addSquiggle(Squiggle s) {
-		//this.squiggles.add(s);
-		///this.squigglesW.add(TCP.getLineWidth());
-		//this.setChanged();
-		//this.notifyObservers();
-	//}
-	//public ArrayList<Squiggle> getSquiggles() {
-		//return squiggles;
-	//}
-
-	//public ArrayList<Double> getSquigglesW() {
-		//return squigglesW;
-	//}
-	//
+	/**
+	 * Removes the last drawn shape shape from the canvas
+	 */
 	
+	public void undo() {
+
+		if(this.shapeStack.size() > 0) {
+			Stack<Shapes> shapeStack = new Stack<Shapes>();
+			shapeStack.push(this.shapeStack.pop());
+			this.deletedShapes.push(shapeStack);
+			
+		}
+		
+	}
 	
-//>>>>>>> 4e8033da4ad743a0bdee448ed8579dd00c8641a0
+	/**
+	 * Adds the shape back to the canvas that was removed using undo option
+	 */
+	
+	public void redo () {
+		if(this.deletedShapes.size()>0) {
+			Stack<Shapes> shapeStack = this.deletedShapes.pop();
+			while(shapeStack.size() != 0) {
+				this.shapeStack.push(shapeStack.pop());
+			}				
+		}
+		
+	}
+	
+	public Stack<Shapes> getShapeStack() {
+		return this.shapeStack;
+	}
+	
+	public Stack<Stack<Shapes>> getDeletedShapes(){
+		return this.deletedShapes;
+	}
+	
 	public void modelChanged() {
 		this.setChanged();
 		this.notifyObservers();
@@ -90,7 +98,6 @@ public class PaintModel extends Observable {
 		return TCP.getLineWidth();
 	}
 
-	
 	public void addPoint(Point p) {
 		this.points.add(p);
 		this.pointsW.add(TCP.getLineWidth());
@@ -112,7 +119,6 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
-	
 
 
 	public ArrayList<Circle> getCircles() {
@@ -135,6 +141,21 @@ public class PaintModel extends Observable {
 	
 	public ArrayList<Double> getRectanglesW() {
 		return rectanglesW;
+	}
+	
+	public void addPolyline(Polyline p) {
+		this.polylines.add(p);
+		this.polylinesW.add(TCP.getLineWidth());
+		this.setChanged();
+		this.notifyObservers();
+	}
+
+	public ArrayList<Polyline> getPolylines() {
+		return polylines;
+	}
+	
+	public ArrayList<Double> getPolylinesW() {
+		return polylinesW;
 	}
 	
 }
