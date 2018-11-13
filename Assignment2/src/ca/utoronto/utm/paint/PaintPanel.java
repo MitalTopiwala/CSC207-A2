@@ -197,8 +197,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Rectangle") {
 			
 		}
-		
-
 	}
 
 	private void mousePressed(MouseEvent e) {
@@ -212,9 +210,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			// Problematic notion of radius and centre!!
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
-			//Color colour = Color.ALICEBLUE;
-			this.circle = new Circle(centre, radius, this.currentColour);
-			//this.currentColour = Color.RED; 
+			this.circle = new Circle(centre, radius, this.currentColour); 
 
 		} else if (this.mode == "Rectangle") {
 			Point start = new Point((int) e.getX(), (int) e.getY());

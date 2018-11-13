@@ -16,10 +16,6 @@ I WANT   : To click undo button and remove the last drawn shape from the canvas
           
 SO THAT  : I can remove the last shape that was drawn on canvas
 --------------------------------------------------------------------------
-
-<<<<<<< HEAD
-
-=======
 --------------------------------------------------------------------------
 TYPE     : USER STORY 10 : arshad33
 NAME     : Redo
@@ -31,31 +27,6 @@ I WANT   : To click redo button and add the shape that was removed
           
 SO THAT  : I can have the removed shape redrawn on the canvas
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 5 : khanerub
-NAME     : Color selector
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : To be able to select the current drawing color, to be applied
-           to subsequent shapes. Example: 
-           		selects color red 
-           		mode circle
-           		draw a circle
-           		draw a circle
-           		mode rectangle
-           		draw a rectangle
-           		select color green
-           		draw a rectangle
-           		draw a rectangle
-           		select mode squiggle
-           		draw a squiggle
-           	results in two red circles and a red rectangle as well as
-           	two green rectangles and a green squiggle
-SO THAT  : 
---------------------------------------------------------------------------
->>>>>>> 229489f10a45b5a5487db5796cef77433bd882e3
 --------------------------------------------------------------------------
 TYPE     : USER STORY 6 : khanerub
 NAME     : Fill style selector
@@ -80,8 +51,6 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
            	two outlined rectangles and a squiggle
 SO THAT  : 
 --------------------------------------------------------------------------
-
-
 --------------------------------------------------------------------------
 TYPE     : BUG 3 : topiwal3
 NAME     : Architecture behind choosing selection mode is poor

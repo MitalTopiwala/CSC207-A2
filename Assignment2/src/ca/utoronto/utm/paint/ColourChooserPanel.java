@@ -1,4 +1,6 @@
 package ca.utoronto.utm.paint;
+import javax.swing.JFrame;
+
 import com.sun.prism.paint.Color;
 
 import javafx.collections.FXCollections;
@@ -12,7 +14,8 @@ import javafx.scene.shape.Rectangle;
 	
 public class ColourChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 		
-	private View view; 
+	private View view;
+	private JFrame colourFrame; 
 	public String fillStatus;
 
 	public ColourChooserPanel(View view) {
