@@ -66,4 +66,4 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	}
 
 }
->>>>>>> 9bffccb91fd1947af31365347c5d10976dec7d92
+
