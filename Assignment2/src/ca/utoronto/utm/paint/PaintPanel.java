@@ -33,7 +33,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 	
 
-	public PaintPanel(PaintModel model, View view) {  //ToolChooserPanel tcp {
+	public PaintPanel(PaintModel model, View view) {  
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);
@@ -152,7 +152,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 
 	private void mouseDragged(MouseEvent e) {
-		if (this.mode == "Squiggle") {                                         //fix squiggle bug
+		if (this.mode == "Squiggle") {         //fix squiggle bug
 		
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
 			

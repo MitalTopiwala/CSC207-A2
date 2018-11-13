@@ -125,5 +125,59 @@ SO THAT  :
 # Sprint 2 Nov 3, 2018
 # Sprint 2 Backlog UserStories go below
 
+--------------------------------------------------------------------------
+TYPE     : USER STORY 9 : arshad33
+NAME     : Undo
+OWNER    : arshad33
+PRIORITY : medium
+ESTIMATE : 30 mins 
+AS A     : user
+I WANT   : To click undo button and remove the last drawn shape from the canvas
+          
+SO THAT  : I can remove the last shape that was drawn on canvas
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 10 : arshad33
+NAME     : Redo
+OWNER    : arshad33
+PRIORITY : medium
+ESTIMATE : 1 hr 
+AS A     : user
+I WANT   : To click redo button and add the shape that was removed
+          
+SO THAT  : I can have the removed shape redrawn on the canvas
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+TYPE     : BUG 10 : arshad33
+NAME     : Architecture behind creating shape instances is poor
+OWNER    : arshad33	
+PRIORITY : high
+ESTIMATE : 2 days
+ISSUE    : A better architecture for creating shape instances so that it is 
+more flexible, and easier to work with can be created using the Strategy Design 
+pattern as follows:
+
+Create class/abstract class/interface  ShapeManipulatorStrategy as well 
+as subclasses/implementators for each type of Shape. Call these the
+concrete ShapeNamipulatorStrategies
+
+The concrete ShapeManipulatorStrategies are responsible for 
+
+1. Creating instances of Shape and putting them on top of 
+   the PaintModel command stack.
+
+2. Understanding how mouse events modify the shape at the top of the 
+   PaintModel command stack.
+
+3. Calling the PaintPanel repaint at appropriate times.
+
+This strategy can be put in place either by having PaintPanel's mouse 
+events forwarded through PaintPanel into the current strategy, or by 
+simply switching the PaintPanel's event handlers as appropriate.
+
+--------------------------------------------------------------------------
+
 # Sprint 2 Nov 9, 2018
 # Sprint 2 Backlog UserStories go below
