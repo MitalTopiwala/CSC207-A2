@@ -1,3 +1,97 @@
+<<<<<<< HEAD
+# Fill in, commit and push each day.
+# Group Member: Erub Khan
+Oct 28, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Oct 29, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Oct 30, 2018
+	Yesterday :
+	Today     :Made a group chat on facebook and contacted all group members.
+	Obstacles :
+
+Oct 31, 2018
+	Yesterday :
+	Today     :Planned to meet tommorow. 
+	Obstacles :
+
+Nov 1, 2018
+	Yesterday :Planned to meet as a group. 
+	Today     :Met and divided the tasks in the assignment amongst group members. 
+	Obstacles :
+
+Nov 2, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 3, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 4, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 5, 2018
+	Yesterday :Planned to meet as a group the next day. 
+	Today     :Met everyone in the group for an hour and worked on issues with the code for 
+				Sprint 1. 
+	Obstacles :
+
+Nov 6, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 7, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 8, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 9, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 10, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+	
+Nov 11, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+	
+Nov 12, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 13, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+
+Nov 14, 2018
+	Yesterday :
+	Today     :
+	Obstacles :
+=======
 # Fill in, commit and push each day.
 # Group Member: Erub Khan
 Oct 28, 2018
@@ -90,3 +184,4 @@ Nov 14, 2018
 	Yesterday :
 	Today     :
 	Obstacles :
+>>>>>>> branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_Grey.git

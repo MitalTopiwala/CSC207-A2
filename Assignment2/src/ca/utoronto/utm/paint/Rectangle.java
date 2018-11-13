@@ -66,7 +66,7 @@ public class Rectangle extends Shapes {
 	public void setColour(Color c) {
 		this.colour = c;
 	}
-
+	
 	@Override
 	public void draw(GraphicsContext g) {
 		// TODO Auto-generated method stub

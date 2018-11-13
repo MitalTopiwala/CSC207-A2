@@ -1,3 +1,61 @@
+<<<<<<< HEAD
+package ca.utoronto.utm.paint;
+
+import javafx.scene.input.MouseEvent;
+
+public class SquiggleManipulatorStrategy implements ShapeManipulatorStrategy{
+	
+	private Point squiggle;
+	
+	public SquiggleManipulatorStrategy() {
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}
+=======
 package ca.utoronto.utm.paint;
 
 import javafx.scene.input.MouseEvent;
@@ -50,3 +108,4 @@ public class SquiggleManipulatorStrategy implements ShapeManipulatorStrategy{
 	
 
 }
+>>>>>>> 9bffccb91fd1947af31365347c5d10976dec7d92

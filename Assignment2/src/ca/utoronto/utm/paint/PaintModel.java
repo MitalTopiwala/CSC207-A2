@@ -13,19 +13,14 @@ public class PaintModel extends Observable {
 	Color color;
 
 	private ArrayList<Point> points = new ArrayList<Point>();
-	//bug 5
-	//private ArrayList<Squiggle> squiggles = new ArrayList<Squiggle>();
-	
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
-	
-	//bug 5
-	//private ArrayList<Double> squigglesW = new ArrayList<Double>();
-	//
-	
+	private ArrayList<Polyline> polylines = new ArrayList<Polyline>();
+
 	private ArrayList<Double> pointsW = new ArrayList<Double>();
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
+	private ArrayList<Double> polylinesW = new ArrayList<Double>();
 	
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	private Stack <Stack<Shapes>> deletedShapes = new Stack <Stack<Shapes>>();
@@ -88,29 +83,6 @@ public class PaintModel extends Observable {
 		return this.deletedShapes;
 	}
 	
-	
-//<<<<<<< HEAD
-
-//=======
-
-	//bug 5
-	//public void addSquiggle(Squiggle s) {
-		//this.squiggles.add(s);
-		///this.squigglesW.add(TCP.getLineWidth());
-		//this.setChanged();
-		//this.notifyObservers();
-	//}
-	//public ArrayList<Squiggle> getSquiggles() {
-		//return squiggles;
-	//}
-
-	//public ArrayList<Double> getSquigglesW() {
-		//return squigglesW;
-	//}
-	//
-	
-	
-//>>>>>>> 4e8033da4ad743a0bdee448ed8579dd00c8641a0
 	public void modelChanged() {
 		this.setChanged();
 		this.notifyObservers();
@@ -169,6 +141,21 @@ public class PaintModel extends Observable {
 	
 	public ArrayList<Double> getRectanglesW() {
 		return rectanglesW;
+	}
+	
+	public void addPolyline(Polyline p) {
+		this.polylines.add(p);
+		this.polylinesW.add(TCP.getLineWidth());
+		this.setChanged();
+		this.notifyObservers();
+	}
+
+	public ArrayList<Polyline> getPolylines() {
+		return polylines;
+	}
+	
+	public ArrayList<Double> getPolylinesW() {
+		return polylinesW;
 	}
 	
 }

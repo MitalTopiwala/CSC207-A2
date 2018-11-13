@@ -1,3 +1,4 @@
+
 package ca.utoronto.utm.paint;
 
 
@@ -65,3 +66,4 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	}
 
 }
+
