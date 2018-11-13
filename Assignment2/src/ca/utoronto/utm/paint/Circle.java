@@ -54,7 +54,7 @@ public class Circle extends Shapes implements Draw{
 		return this.colour;
   	}
 	
-	public void SetColour(Color c) {
+	public void setColour(Color c) {
 		this.colour = c;
 	}
 	public void draw(GraphicsContext g) {
