@@ -19,15 +19,12 @@ public class PaintModel extends Observable {
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
+	private ArrayList<Polyline> polylines = new ArrayList<Polyline>();
 	
 	private ArrayList<Double> pointsW = new ArrayList<Double>();
 	private ArrayList<Double> circlesW = new ArrayList<Double>();
 	private ArrayList<Double> rectanglesW = new ArrayList<Double>();
-	
-	//userstory8
-	private ArrayList<Point> polylines = new ArrayList<Point>();
 	private ArrayList<Double> polylinesW = new ArrayList<Double>();
-	//
 	
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	
@@ -64,7 +61,6 @@ public class PaintModel extends Observable {
 		return TCP.getLineWidth();
 	}
 
-	
 	public void addPoint(Point p) {
 		this.points.add(p);
 		this.pointsW.add(TCP.getLineWidth());
@@ -79,6 +75,7 @@ public class PaintModel extends Observable {
 	public ArrayList<Double> getPointsW() {
 		return pointsW;
 	}
+	//
 	
 	public void addCircle(Circle c) {
 		this.circles.add(c);
@@ -110,16 +107,15 @@ public class PaintModel extends Observable {
 	public ArrayList<Double> getRectanglesW() {
 		return rectanglesW;
 	}
-	
-	//userstory8
-	public void addPolylinePoint(Point p) {
-		this.polylines.add(p);
+
+	public void addPolyline(Polyline pl) {
+		this.polylines.add(pl);
 		this.polylinesW.add(TCP.getLineWidth());
 		this.setChanged();
 		this.notifyObservers();
 	}
 	
-	public ArrayList<Point> getPolylinePoints() {
+	public ArrayList<Polyline> getPolylines() {
 		return polylines;
 	}
 
