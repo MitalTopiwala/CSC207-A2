@@ -16,12 +16,6 @@ import java.util.Observer;
 
 class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent> {
 
-	//private static final Paint BLACK = null;
-//	private static final Paint YELLOW = null;
-//	private static final Paint PURPLE = null;
-//	private static final Paint GREEN = null;
-//	private static final Paint BLUE = null;
-//	private static final Paint RED = null;
 	private int i = 0;
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
@@ -36,11 +30,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 	private Canvas canvas;
 	
-	private Paint currentColour; 
+	private Color currentColour; 
 	
 	
 
-	public PaintPanel(PaintModel model, View view) {  //ToolChooserPanel tcp {
+	public PaintPanel(PaintModel model, View view) {  
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);
@@ -81,6 +75,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+			//g.setFill(this.currentColour);
 		}
 
 		// Draw Circles
@@ -89,11 +84,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
-			g.strokeOval(x, y, radius, radius);
-			//////////////////////////////////////////////////////////////////////////
-		
+			g.strokeOval(x, y, radius, radius);	
 			g.fillOval(x, y, radius, radius);
-			g.setFill(this.currentColour);
+			g.setFill(c.getColour());
 		}
 		
 		// Draw Rectangles
@@ -104,6 +97,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int length = r.getLength();
 			int width = r.getWidth();
 			g.strokeRect(x, y, width, length);
+			g.fillRect(x, y, width, length);
+			g.setFill(r.getColour());
 		}
 	}
 
@@ -169,6 +164,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.circle.setRadius(radius);
 			Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 			this.circle.setCentre(centre);
+			this.circle.SetColour(this.currentColour);////////////////////////////
 			this.model.addCircle(this.circle);
 
 		} else if (this.mode == "Rectangle") {
@@ -177,7 +173,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
 			this.rectangle.setLength(length);
 			this.rectangle.setWidth(width);
-			int x = this.rectangle.getStart().getX();
+			this.rectangle.SetColour(this.currentColour);
+			int x = this.rectangle.getStart().getX(); //////////////////////
 			int y = this.rectangle.getStart().getY();
 			if ((int) this.rectangle.getStart().getX() > (int) e.getX()){
 				x = (int) e.getX();		
@@ -190,8 +187,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			
 			this.model.addRectangle(this.rectangle);
 			}	
-		
-
 	}
 	
 	private void mouseClicked(MouseEvent e) {
@@ -218,7 +213,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			// Problematic notion of radius and centre!!
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
-			this.circle = new Circle(centre, radius);
+			//Color colour = Color.ALICEBLUE;
+			this.circle = new Circle(centre, radius, this.currentColour);
 			//this.currentColour = Color.RED; 
 
 		} else if (this.mode == "Rectangle") {
@@ -253,7 +249,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
-				//this.currentColour = Color.AQUA; 
 				// Problematic notion of radius and centre!!
 				int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
 				this.circle.setRadius(radius);
