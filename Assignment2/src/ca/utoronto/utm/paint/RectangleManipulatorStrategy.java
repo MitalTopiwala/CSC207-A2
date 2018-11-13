@@ -7,6 +7,9 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	
 	Rectangle rectangle;
 
+    public RectangleManipulatorStrategy() {
+		
+	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

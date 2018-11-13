@@ -5,6 +5,10 @@ import javafx.scene.input.MouseEvent;
 public class SquiggleManipulatorStrategy implements ShapeManipulatorStrategy{
 	
 	private Point squiggle;
+	
+	public SquiggleManipulatorStrategy() {
+		
+	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {

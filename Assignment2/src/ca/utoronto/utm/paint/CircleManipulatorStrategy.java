@@ -8,6 +8,9 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	private Circle circle;
 	
 
+    public CircleManipulatorStrategy() {
+		
+	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

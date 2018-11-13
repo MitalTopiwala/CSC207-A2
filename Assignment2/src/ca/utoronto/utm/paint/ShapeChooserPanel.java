@@ -3,6 +3,7 @@ package ca.utoronto.utm.paint;
 import javafx.event.ActionEvent;
 
 import javafx.event.EventHandler;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
@@ -54,8 +55,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		int row = 0;
 		ToggleGroup toggleGroup = new ToggleGroup();
 		for (int i =0; i < buttonLabels.length; i++) {
-			ToggleButton button = new ToggleButton();	
-			button.setGraphic(shapes[i]);
+			ToggleButton button = new ToggleButton(buttonLabels[i], shapes[i]);	
+			button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
 			button.setMinWidth(100);
 			this.add(button, 0, row);
 			row++;
