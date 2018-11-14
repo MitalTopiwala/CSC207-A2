@@ -56,24 +56,6 @@ ISSUE    : Having a list of different types of drawable things in the
            Consider some design patterns, or change of responsibility
            here.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 5 : masroor6
-NAME     : Squiggle is broken
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : Squiggles are connected to each other by a straight line. Each drag
-		   of the mouse should be a separate squiggle. Possibly
-           the issue is with the representation of the squiggles in the Model.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 8 : masroor6
-NAME     : Implement Poly Line
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : YOU FILL THIS ONE IN!!
---------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 TYPE     : BUG 9 : topiwal3
@@ -335,6 +317,29 @@ events forwarded through PaintPanel into the current strategy, or by
 simply switching the PaintPanel's event handlers as appropriate.
 
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 5 : masroor6
+NAME     : Squiggle is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Squiggles are connected to each other by a straight line. Each drag
+		   of the mouse should be a separate squiggle. Possibly
+           the issue is with the representation of the squiggles in the Model.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 8 : masroor6
+NAME     : Implement Poly Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To press a point of polyline, drag/press, and release to connect it to other points by a line (for a polygon to be drawn in the current style.)
+
+SO THAT  : I can add polygons to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 

@@ -66,28 +66,30 @@ Nov 8, 2018
 
 Nov 9, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Created branch and started user story 8 
+	Obstacles : Seleted polyline would raise an error and the program would crash
 
 Nov 10, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Deleted old userstory 8 branch and created a new one and got polyline to work but with bugs
+	Obstacles : Polyline worked but it was always two clicks behind
 	
 Nov 11, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Restarted polyline with different approach (same approach as squiggle) and got it to work
+	Obstacles : All Polylines were attached to one big polyline (because polylines was set as an arraylist of points instead of arraylist of arraylist of points) 
 	
 Nov 12, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Asked TA how they want polyline to work and got polylines to to draw polylines properly (without feedback, don't know if feedback needed)
+	Obstacles : Tried to merge with master but alot of merge conflicts were made
 
 Nov 13, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : 	- Merged polyline to master
+			- Created and merged a new branch to modify polyline with current design pattern
+			- Created, finished and merged Bug5 (fixed broken squiggle bug to match current design pattern)
+	Obstacles : When merged polyline userstory8 to master, resulted in merge conflicts and compiling errors are merge conflicts were solved
 
 Nov 14, 2018
 	Yesterday :

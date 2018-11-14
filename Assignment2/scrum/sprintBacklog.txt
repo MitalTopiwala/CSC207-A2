@@ -6,6 +6,7 @@
 # Sprint 1 Oct 28, 2018
 # Sprint 1 Backlog UserStories go below
 
+
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1 : masroor6
 NAME     : Draw Circle
@@ -286,7 +287,27 @@ SO THAT  :
 # Sprint 2 Backlog UserStories go below
 
 
+--------------------------------------------------------------------------
+TYPE     : BUG 5 : masroor6
+NAME     : Squiggle is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Squiggles are connected to each other by a straight line. Each drag
+		   of the mouse should be a separate squiggle. Possibly
+           the issue is with the representation of the squiggles in the Model.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 8 : masroor6
+NAME     : Implement Poly Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To press a point of polyline, drag/press, and release to connect it to other points by a line (for a polygon to be drawn in the current style.)
 
+SO THAT  : I can add polygons to my canvas
+--------------------------------------------------------------------------
 # Sprint 2 Nov 9, 2018
 # Sprint 2 Backlog UserStories go below
 
