@@ -27,7 +27,7 @@ public class ShapeManipulatorContext implements ShapeManipulatorStrategy{
 	
 	public static void addShape(Shapes shape) {
 		paintModel.addShape(shape);
-		System.out.println("dahsd");		
+		//System.out.println("dahsd");		
 	}
 
 	public void newStrategy(ShapeManipulatorStrategy strategy) {

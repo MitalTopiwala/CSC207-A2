@@ -22,7 +22,7 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 		Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 		this.circle.setCentre(centre);
 		ShapeManipulatorContext.modelChanged();		
-		System.out.println("adsba");
+		
 	}
 
 	@Override

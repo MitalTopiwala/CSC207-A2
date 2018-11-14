@@ -3,7 +3,7 @@ import javafx.scene.paint.Color;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Rectangle extends Shapes {
+public class Rectangle extends Shapes implements Draw {
 	
 	private Point start;
 	private int length;
@@ -66,10 +66,22 @@ public class Rectangle extends Shapes {
 	public void setColour(Color c) {
 		this.colour = c;
 	}
-	
+
 	@Override
 	public void draw(GraphicsContext g) {
-		// TODO Auto-generated method stub
+	
+		this.basicStroke(g);
+		int x = this.getUpperLeft().getX();
+		int y = this.getUpperLeft().getY();
+		int length = this.getLength();
+		int width = this.getWidth();
+		g.strokeRect(x, y, width, length);
+		g.fillRect(x, y, width, length);
+		g.setFill(this.getColour());
+		
 		
 	}
-}
+	
+
+		
+	}

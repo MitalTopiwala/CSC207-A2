@@ -1,6 +1,6 @@
 package ca.utoronto.utm.paint;
 
-import javafx.event.ActionEvent;
+
 
 public class ShapeManipulatorFactory {
 	
@@ -16,19 +16,21 @@ public class ShapeManipulatorFactory {
 			strategy = new CircleManipulatorStrategy();
 		}
 			 
-		if(Mode == Rectangle.class.getName()){
+		if(Mode == "Rectangle"){
 			strategy = new RectangleManipulatorStrategy();
 		}
 		if(Mode == "Square"){
 			
 		}
-
+		if(Mode == "Squiggle"){
+			
+		}
 		
 		if(Mode == "Polyline"){
 			
 		}
 		//change return statement
-		System.out.println("factory             " + strategy);
+		//System.out.println("factory             " + strategy);
 		return strategy;
 		
 	}

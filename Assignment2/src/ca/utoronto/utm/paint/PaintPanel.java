@@ -1,6 +1,6 @@
 package ca.utoronto.utm.paint;
 
-import javafx.event.ActionEvent;
+
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import ca.utoronto.utm.paint.manipulatorstrategy.ShapeManipulatorContext;
-import ca.utoronto.utm.paint.manipulatorstrategy.ShapeManipulatorStrategy;
-import ca.utoronto.utm.paint.manipulatorstrategy.ShapeManipulatorStrategyFactory;
+
 
 class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> {
 
@@ -25,11 +23,9 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
 
-	private String mode; // modifies how we interpret input (could be better?)
 	private String colourMode ="0"; //modifies input of colour filled 
 	
-	private Circle circle; // the circle we are building
-	private Rectangle rectangle; // the rectangle we are building
+
 	private Polyline polyline;// the polyline we are building
 	
 	private Canvas canvas;
@@ -54,7 +50,6 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		//this.addEventHandler(ActionEvent.ANY, this);
 		
 
-		this.mode = "Circle"; // bad code here?
 		this.colourMode = "0"; //no colour selected 
 		this.currentColour = currentColour;
 
@@ -85,28 +80,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 //			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 //		}
 //
-//		// Draw Circles
-//		ArrayList<Circle> circles = this.model.getCircles();
-//		for (Circle c : circles) {
-//			int x = c.getCentre().getX();
-//			int y = c.getCentre().getY();
-//			int radius = c.getRadius();
-//			g.strokeOval(x, y, radius, radius);	
-//			g.fillOval(x, y, radius, radius);
-//			g.setFill(c.getColour());
-//		}
-//		
-//		// Draw Rectangles
-//		ArrayList<Rectangle> rectangles = this.model.getRectangles();
-//		for (Rectangle r : rectangles) {
-//			int x = r.getUpperLeft().getX();
-//			int y = r.getUpperLeft().getY();
-//			int length = r.getLength();
-//			int width = r.getWidth();
-//			g.strokeRect(x, y, width, length);
-//			g.fillRect(x, y, width, length);
-//			g.setFill(r.getColour());
-//		}
+
 //		
 //		// Draw Polyline
 //		ArrayList<Polyline> polylines = this.model.getPolylines();
@@ -136,25 +110,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 //		this.colourMode = colourMode;
 //	}
 //
-//	@Override
-//	public void handle(MouseEvent event) {
-//
-//		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-//			mouseDragged(event);
-//		} else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-//			mousePressed(event);
-//		} else if (event.getEventType() == MouseEvent.MOUSE_MOVED) {
-//			mouseMoved(event);
-//		} else if (event.getEventType() == MouseEvent.MOUSE_CLICKED) {
-//			mouseClicked(event);
-//		} else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
-//			mouseReleased(event);
-//		} else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
-//			mouseEntered(event);
-//		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
-//			mouseExited(event);
-//		}
-//	}
+
 //
 //	private void mouseMoved(MouseEvent e) {
 //		if (this.mode == "Squiggle") {
@@ -325,38 +281,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 //	}
 //		
 
-	
-	
 
-	
-	
-	
-	/*public void handle(ActionEvent event) {
-
-		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-			this.context.mouseDragged(event);
-		} 
-		else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-			this.context.mousePressed(event);
-		}
-		else if (event.getEventType() == MouseEvent.MOUSE_MOVED) {
-			this.context.mouseMoved(event);
-		}
-		else if (event.getEventType() == MouseEvent.MOUSE_CLICKED) {
-			this.context.mouseClicked(event);
-		}
-		else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
-			this.context.mouseReleased(event);
-		}
-		else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
-			this.context.mouseEntered(event);
-		}
-		else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
-			this.context.mouseExited(event);
-		}
-	}*/
-
-	
 	public void update(Observable o, Object arg) {
 		this.repaint();		
 	}
@@ -394,26 +319,10 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		this.context.mouseExited(e);
 	}
 
-	/*@Override
-	public void handle(ActionEvent event) {
-		
-		String mode = event.getSource().toString();
-		ShapeManipulatorStrategy strategy = ShapeManipulatorFactory.getStrategy(mode);
-		System.out.print(strategy);
-		this.view.getPaintModel().modelChanged();
-		this.context.changeStrategy(strategy);
-		System.out.println("paintpanel" + mode);
-			
-		}*/
+	
 	public void setMode(String mode) {
 		String Mode = this.scp.getMode();
-		//System.out.println("setMode in paintPanel" + Mode);
-		
-		//System.out.println("adasd" + ShapeManipulatorFactory.getStrategy(Mode));
-		
 		ShapeManipulatorStrategy strategy = ShapeManipulatorFactory.getStrategy(Mode);
-		//System.out.println(strategy);
-		
 		this.view.getPaintModel().modelChanged();
 		this.context.newStrategy(strategy);
 		
