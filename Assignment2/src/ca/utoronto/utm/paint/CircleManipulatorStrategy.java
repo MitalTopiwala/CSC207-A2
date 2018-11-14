@@ -9,6 +9,9 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	private Circle circle;
 	
 
+    public CircleManipulatorStrategy() {
+		
+	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -23,7 +26,6 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 		Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
 		this.circle.setCentre(centre);
 		ShapeManipulatorContext.modelChanged();		
-		
 	}
 
 	@Override
@@ -63,5 +65,4 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	}
 
 }
-
 
