@@ -11,6 +11,8 @@ public class PolylineManipulatorStrategy implements ShapeManipulatorStrategy{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+
+		ShapeManipulatorContext.addShape(this.polyline);
 		
 	}
 
@@ -21,10 +23,9 @@ public class PolylineManipulatorStrategy implements ShapeManipulatorStrategy{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		
 		this.polyline.addPolylinePoint(new Point((int) e.getX(), (int) e.getY()));
 		ShapeManipulatorContext.modelChanged();
-
-		ShapeManipulatorContext.addShape(this.polyline);
 		
 	}
 
@@ -32,16 +33,18 @@ public class PolylineManipulatorStrategy implements ShapeManipulatorStrategy{
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
+		
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e) {	
+	public void mouseReleased(MouseEvent e) {
+		this.polyline.addPolylinePoint(new Point((int) e.getX(), (int) e.getY()));
+		ShapeManipulatorContext.modelChanged();
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		this.polyline = new Polyline();
-		
 	}
 
 	@Override

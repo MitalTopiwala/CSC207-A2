@@ -23,6 +23,7 @@ public class ShapeManipulatorFactory {
 			
 		}
 		if(Mode == "Squiggle"){
+			strategy = new SquiggleManipulatorStrategy();
 			
 		}
 		
