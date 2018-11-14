@@ -18,7 +18,6 @@ public class Polyline extends Shapes implements Draw{
 	
 	public Polyline() {
 		this.polylinePoints = new ArrayList<Point>();
-		System.out.println("New Polyline Made");
 	}
 	
 	public void addPolylinePoint(Point point) {

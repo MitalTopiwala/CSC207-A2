@@ -41,7 +41,6 @@ public class PolylineManipulatorStrategy implements ShapeManipulatorStrategy{
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		this.polyline = new Polyline();
-		System.out.println("Asked to make new shape polyline");
 		
 	}
 
