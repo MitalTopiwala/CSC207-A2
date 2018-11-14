@@ -1,3 +1,4 @@
+
 package ca.utoronto.utm.paint;
 
 
@@ -62,4 +63,5 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	}
 
 }
+
 
