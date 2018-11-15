@@ -280,7 +280,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		this.repaint();		
 	}
 	
-	
+	/*
 	public void mouseMoved(MouseEvent e) {
 		this.context.mouseMoved(e);
 	}
@@ -313,6 +313,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		this.context.mouseExited(e);
 	}
 
+*/
 	
 	public void setMode(String mode) {
 		String Mode = this.scp.getMode();
@@ -330,19 +331,19 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	public void handle(MouseEvent event) {
 
 		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-			mouseDragged(event);
+			this.context.mouseDragged(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-			mousePressed(event);
+			this.context.mousePressed(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_MOVED) {
-			mouseMoved(event);
+			this.context.mouseMoved(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_CLICKED) {
-			mouseClicked(event);
+			this.context.mouseClicked(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
-			mouseReleased(event);
+			this.context.mouseReleased(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
-			mouseEntered(event);
+			this.context.mouseEntered(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
-			mouseExited(event);
+			this.context.mouseExited(event);
 		}
 	}
 }

@@ -18,6 +18,9 @@ public class PolylineManipulatorStrategy implements ShapeManipulatorStrategy{
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
+		this.polyline.delLastPolylinePoint();
+		this.polyline.addPolylinePoint(new Point((int) e.getX(), (int) e.getY()));
+		ShapeManipulatorContext.modelChanged();
 		
 	}
 
