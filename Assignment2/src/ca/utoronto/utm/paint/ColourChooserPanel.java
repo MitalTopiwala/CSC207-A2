@@ -1,9 +1,5 @@
 package ca.utoronto.utm.paint;
 
-
-
-
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.ChoiceBox;
@@ -12,7 +8,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+
 	
 public class ColourChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 		
@@ -71,7 +67,7 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	
 	
 	public Color GETCOLOR() {
-		System.out.println("colorchooserpanel    " + ColourChooserPanel.color);
+		//System.out.println("colorchooserpanel    " + ColourChooserPanel.color);
 		return ColourChooserPanel.color;
 	}
 	
@@ -83,8 +79,21 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		command = ((ToggleButton) event.getSource()).getText();
 		if (command == "red") {
 			ColourChooserPanel.color = Color.RED;
-		
-			System.out.println("djasda " + ColourChooserPanel.color);
+		}
+		if (command == "black") {
+			ColourChooserPanel.color = Color.BLACK;
+		}
+		if (command == "blue") {
+			ColourChooserPanel.color = Color.BLUE;
+		}
+		if (command == "green") {
+			ColourChooserPanel.color = Color.GREEN;
+		}
+		if (command == "purple") {
+			ColourChooserPanel.color = Color.PURPLE;
+		}
+		if (command == "yellow") {
+			ColourChooserPanel.color = Color.YELLOW;
 		}
 		//System.out.println("blah:" + command);
 		this.view.getPaintPanel().setColourMode(ColourChooserPanel.color);

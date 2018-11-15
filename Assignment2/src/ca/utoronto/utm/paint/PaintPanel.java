@@ -23,10 +23,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
 
-	private String colourMode ="0"; //modifies input of colour filled 
-	
 
-	private Polyline polyline;// the polyline we are building
 	
 	private Canvas canvas;
 	
@@ -48,14 +45,10 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		this.getChildren().add(this.canvas);
 		// The canvas is transparent, so the background color of the
 		// containing pane serves as the background color of the canvas.
-		this.setStyle("-fx-background-color: blue");
+		this.setStyle("-fx-background-color: white");
 
 		this.addEventHandler(MouseEvent.ANY, this);
-		//this.addEventHandler(ActionEvent.ANY, this);
-		
 
-		//this.colourMode = "0"; //no colour selected 
-		//this.currentColour = currentColour;
 
 		this.model = model;
 		this.model.addObserver(this);
@@ -71,7 +64,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
 		// Clear the canvas
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-		g.setStroke(Color.WHITE);
+		g.setStroke(Color.BLACK);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 		this.model.draw(g);
