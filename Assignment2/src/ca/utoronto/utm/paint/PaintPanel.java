@@ -34,11 +34,6 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	private ShapeChooserPanel scp;
 	
-	
-	
-	
-	
-	
 
 	public PaintPanel(PaintModel model, View view) {  
 
@@ -65,7 +60,7 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
 		// Clear the canvas
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-		g.setStroke(Color.BLACK);
+		g.setStroke(this.currentColor);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 		this.model.draw(g);

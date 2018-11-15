@@ -22,7 +22,7 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 
 		this.view = view;
 			
-		String[] colourRep = {"black","red","blue","green","purple","yellow"};
+		String[] colourRep = {"1","2","3","4","5","6"};
         String[] buttonColours = {"-fx-base: black;", "-fx-base: red;", "-fx-base: blue;","-fx-base: green;",
         		"-fx-base: purple;","-fx-base: yellow;"};
 		
@@ -37,26 +37,23 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 			row++;
 			button.setOnAction(this);
 			button.setToggleGroup(toggleGroup);
-		
 		}
 		
 		toggleGroup.getSelectedToggle();
 		////////////////////new/////////////////////////////////
 		ChoiceBox fillOptions = new ChoiceBox();
-		fillOptions.getItems().addAll("Empty", "Fill Shape", "Fill Outline");
-		fillOptions.setValue("Empty"); //Set default value
-//		fillOptions.setItems(FXCollections.observableArrayList("Empty", "Fill Shape", "Fill Outline"));
+		fillOptions.getItems().addAll("Fill Shape", "Fill Outline");
+		fillOptions.setValue("Fill Outline"); //Set default value
 		this.add(fillOptions, 0, 8);
 		fillOptions.setOnAction(this);
 		this.fillStatus = fillOptions(fillOptions);
 		
 	}
-	//////////////////////new/////////////////////////
+	
+	
 	public String fillOptions(ChoiceBox fillOptions) {
 		String selectedOption = (String) fillOptions.getValue();
-		if (selectedOption == "Empty") {
-			return this.fillStatus = "Empty";
-		}else if (selectedOption == "Fill Shape") {
+		if (selectedOption == "Fill Shape") {
 			return this.fillStatus = "Fill Shape";
 		}else if (selectedOption == "Fill Outline") {
 			return this.fillStatus = "Fill Outline";
@@ -67,34 +64,32 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	
 	
 	public Color GETCOLOR() {
-		//System.out.println("colorchooserpanel    " + ColourChooserPanel.color);
 		return ColourChooserPanel.color;
 	}
-	
-	
 
 	
 	@Override
 	public void handle(ActionEvent event) {
 		command = ((ToggleButton) event.getSource()).getText();
-		if (command == "red") {
-			ColourChooserPanel.color = Color.RED;
-		}
-		if (command == "black") {
+		if (command == "1") {
 			ColourChooserPanel.color = Color.BLACK;
 		}
-		if (command == "blue") {
+		if (command == "2") {
+			ColourChooserPanel.color = Color.RED;
+		}
+		if (command == "3") {
 			ColourChooserPanel.color = Color.BLUE;
 		}
-		if (command == "green") {
+		if (command == "4") {
 			ColourChooserPanel.color = Color.GREEN;
 		}
-		if (command == "purple") {
+		if (command == "5") {
 			ColourChooserPanel.color = Color.PURPLE;
 		}
-		if (command == "yellow") {
+		if (command == "6") {
 			ColourChooserPanel.color = Color.YELLOW;
 		}
+		
 		//System.out.println("blah:" + command);
 		this.view.getPaintPanel().setColourMode(ColourChooserPanel.color);
 		System.out.println(this.GETCOLOR());

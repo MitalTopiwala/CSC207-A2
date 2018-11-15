@@ -1,18 +1,17 @@
 package ca.utoronto.utm.paint;
-
+import java.awt.Stroke;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public abstract class Shapes implements Draw{
 	
-	private Color color;
+	private Color colour;
+	private Stroke stroke;
 	private int strokeWidth;
-	
 	
 	public void setStrokeWidth(double d) {
 		this.strokeWidth = (int) d;
-		
 	}
 	
 	public int getStrokeWidth() {
@@ -20,16 +19,21 @@ public abstract class Shapes implements Draw{
 	}
 	
 	public void setColor(Color color) {
-		this.color = color;
+		this.colour = color;
+	}
+	
+	public void setStroke(Stroke stroke) {
+		this.stroke = stroke; 
 	}
 	
 	public Color getColor() {
-		return this.color;
+		return this.colour;
 	}
 	
 	public void basicStroke(GraphicsContext g) {
 		g.setLineWidth(strokeWidth);
-		g.setStroke(color);
+		g.setStroke(colour);
+		//g.setFill(colour);
 		
 	}
 	
