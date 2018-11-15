@@ -7,7 +7,7 @@ public class Circle extends Shapes implements Draw{
 	
 	private Point centre;
 	private int radius;
-	private Point start;
+	//private Point start;
 	private Color colour; 
 //	private Stroke stroke; 
 
@@ -22,7 +22,7 @@ public class Circle extends Shapes implements Draw{
 	public Circle(Point centre, int radius) {
 		this.centre = centre;
 		this.radius = radius;
-		this.start = centre;
+		//this.start = centre;
 		
 	}
 
@@ -42,13 +42,13 @@ public class Circle extends Shapes implements Draw{
 		this.radius = radius;
 	}
 	
-	public void setStart(Point start) {
-		this.start = start;
-	}
-	
-	public Point getStart() {
-		return start;
-	}
+//	public void setStart(Point start) {
+//		this.start = start;
+//	}
+//	
+//	public Point getStart() {
+//		return start;
+//	}
 
 	public Color getColour() {
 		return this.colour;

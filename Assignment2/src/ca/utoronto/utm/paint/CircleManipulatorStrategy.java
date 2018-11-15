@@ -12,6 +12,14 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
     public CircleManipulatorStrategy() {
 		
 	}
+    
+    
+    public int circleRadius(MouseEvent e) {
+    	int x = (int) (this.circle.getCentre().getX()-e.getX());
+		int y = (int) (this.circle.getCentre().getY()-e.getY());
+		return (int) Math.pow(x*x + y*y, .5);
+    	
+    }
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -20,19 +28,15 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
-		int radius = 2*(int) Math.sqrt(Math.pow(Math.abs((int) this.circle.getStart().getX() - (int) e.getX()), 2)+ Math.pow(Math.abs((int) this.circle.getStart().getY() - (int) e.getY()), 2));
+		int radius = circleRadius(e);
 		this.circle.setRadius(radius);
-		Point centre = new Point((int) this.circle.getStart().getX() - (radius/2), (int) this.circle.getStart().getY()- (radius/2));
-		this.circle.setCentre(centre);
 		ShapeManipulatorContext.modelChanged();		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		Point centre = new Point(e.getX(),e.getY());
-		circle = new Circle(centre, 0);
+		Point centre = new Point(e.getX(), e.getY());
+		this.circle=new Circle(centre, 0);
 		ShapeManipulatorContext.addShape(this.circle);
 		
 	}
@@ -48,19 +52,18 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		this.circle = null;
 	
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
