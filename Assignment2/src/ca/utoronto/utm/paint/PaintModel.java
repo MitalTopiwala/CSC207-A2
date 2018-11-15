@@ -29,7 +29,8 @@ public class PaintModel extends Observable {
 	
 	
 	private View view;             
-	private ToolChooserPanel TCP = new ToolChooserPanel(view);     
+	private ToolChooserPanel TCP = new ToolChooserPanel(view);   
+	private ColourChooserPanel CCP = new ColourChooserPanel(view);
 	
 	/**
 	 * Sets shape with the current color and stroke width and
@@ -44,6 +45,10 @@ public class PaintModel extends Observable {
 		System.out.println("shape added to stack:" + this.shapeStack);
 		modelChanged();
 		
+	}
+	
+	public String getFillStatus() { ///////////new///////////////
+		return CCP.fillStatus;
 	}
 	
 	/**

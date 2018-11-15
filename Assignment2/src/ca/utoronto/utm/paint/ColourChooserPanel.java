@@ -15,7 +15,7 @@ import javafx.scene.shape.Rectangle;
 public class ColourChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 		
 	private View view;
-	private JFrame colourFrame; 
+	//private JFrame colourFrame; 
 	public String fillStatus;
 
 	public ColourChooserPanel(View view) {
@@ -25,26 +25,32 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		String[] colourRep = {"0","1","2","3","4","5"};
         String[] buttonColours = {"-fx-base: black;", "-fx-base: red;", "-fx-base: blue;","-fx-base: green;",
         		"-fx-base: purple;","-fx-base: yellow;"};
+        
+//        ToggleButton fill = new ToggleButton("Fill");
+//        fill.setMinWidth(100);
+//        //fill.setStyle("Fill");
+//        this.add(fill, 0, 7);
+//        fill.setOnAction(this);
 		
 		int row = 9;
 		ToggleGroup toggleGroup = new ToggleGroup();
 		for (int i =0; i < buttonColours.length; i++) {
-			ToggleButton button = new ToggleButton(colourRep[i]);		
+			ToggleButton button = new ToggleButton(colourRep[i]);
 			button.setMinWidth(10);
 			button.setStyle(buttonColours[i]);
 			this.add(button, 0, row);
 			row++;
 			button.setOnAction(this);
 			button.setToggleGroup(toggleGroup);
-		
 		}
 		
 		toggleGroup.getSelectedToggle();
+		
 		////////////////////new/////////////////////////////////
 		ChoiceBox fillOptions = new ChoiceBox();
 		fillOptions.getItems().addAll("Empty", "Fill Shape", "Fill Outline");
 		fillOptions.setValue("Empty"); //Set default value
-//		fillOptions.setItems(FXCollections.observableArrayList("Empty", "Fill Shape", "Fill Outline"));
+		fillOptions.setItems(FXCollections.observableArrayList("Empty", "Fill Shape", "Fill Outline"));
 		this.add(fillOptions, 0, 8);
 		fillOptions.setOnAction(this);
 		this.fillStatus = fillOptions(fillOptions);
@@ -67,8 +73,8 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((ToggleButton) event.getSource()).getText();
-		//System.out.println("blah:" + command);
 		this.view.getPaintPanel().setColourMode(command);
+		//this.view.getPaintPanel().setFillMode(command);
 		System.out.println(command);
 	}
 	

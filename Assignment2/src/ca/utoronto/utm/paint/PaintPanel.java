@@ -22,6 +22,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private String mode; // modifies how we interpret input (could be better?)
 	private String colourMode ="0"; //modifies input of colour filled 
+	//private String fillMode = "NoFill"; 
 	
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle; // the rectangle we are building
@@ -46,6 +47,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.mode = "Circle"; // bad code here?
 		this.colourMode = "0"; //no colour selected 
 		this.currentColour = currentColour;
+		//this.fillMode = fillMode; 
 
 		this.model = model;
 		this.model.addObserver(this);
@@ -78,8 +80,22 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
 			g.strokeOval(x, y, radius, radius);	
-			g.fillOval(x, y, radius, radius);
+			//this.model.getFillStatus(); //create a method to get Fill status?
+			g.fillOval(x, y, radius, radius);  //comment these two lines to check if statement
 			g.setFill(c.getColour());
+			
+			if (this.model.getFillStatus() == "Empty") { 
+				g.fillOval(x, y, radius, radius);
+				g.setFill(Color.TRANSPARENT);
+				System.out.println(this.model.getFillStatus());//////////////////
+			}else if (this.model.getFillStatus() == "Fill Shape") {
+				g.setFill(c.getColour());
+				g.fillOval(x, y, radius, radius);
+			}else if (this.model.getFillStatus() == "Fill Outline") { //use stroke
+				g.fillOval(x, y, radius, radius);
+				g.setFill(c.getColour());
+			}
+			
 		}
 		
 		// Draw Rectangles
@@ -121,6 +137,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	public void setColourMode(String colourMode) {
 		this.colourMode = colourMode;
 	}
+	
+//	public void setFillMode(String fillMode) {
+//		this.fillMode = fillMode; 
+//	}
 
 	@Override
 	public void handle(MouseEvent event) {
@@ -238,6 +258,27 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.colourMode == "5") {
 			this.currentColour = Color.YELLOW;			
 		}
+		
+//		if (this.fillMode == "NotFill") { 
+//			this.currentColour = Color.TRANSPARENT;
+//		}else if (this.fillMode == "Fill"){
+//		
+//			if (this.colourMode == "0") {
+//				this.currentColour = Color.BLACK;
+//			} else if (this.colourMode == "1") {
+//				this.currentColour = Color.RED;
+//			} else if (this.colourMode == "2") {
+//				this.currentColour = Color.BLUE;
+//			} else if (this.colourMode == "3") {
+//				this.currentColour = Color.GREEN;
+//			} else if (this.colourMode == "4") {
+//				this.currentColour = Color.PURPLE;
+//			} else if (this.colourMode == "5") {
+//				this.currentColour = Color.YELLOW;			
+//			}
+//		}
+//		
+//		System.out.println(this.fillMode);
 	}
 
 

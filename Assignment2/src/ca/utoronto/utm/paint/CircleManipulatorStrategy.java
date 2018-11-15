@@ -1,17 +1,14 @@
-<<<<<<< HEAD
 package ca.utoronto.utm.paint;
-
 
 import javafx.scene.input.MouseEvent;
 
 public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	
 	private Circle circle;
-	
 
     public CircleManipulatorStrategy() {
-		
 	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -65,7 +62,7 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	}
 
 }
-=======
+
 package ca.utoronto.utm.paint;
 
 
@@ -129,4 +126,3 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 	}
 
 }
->>>>>>> 9bffccb91fd1947af31365347c5d10976dec7d92

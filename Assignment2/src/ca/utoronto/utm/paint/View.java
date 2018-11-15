@@ -34,13 +34,9 @@ public class View implements EventHandler<ActionEvent> {
 		this.shapeChooserPanel = new ShapeChooserPanel(this);
 		this.toolChooserPanel = new ToolChooserPanel(this);
 		this.colourChooserPanel = new ColourChooserPanel(this);
-	
-	
-
-		
+			
 		BorderPane root = new BorderPane();
 		
-	
 		VBox vbox = addVBox();							//VBox is added to BorderPane
 		root.setLeft(vbox);
 		
@@ -76,10 +72,9 @@ public class View implements EventHandler<ActionEvent> {
 		return toolChooserPanel;
 	}
 	
-	public ColourChooserPanel getColourChooserPanel() {  //where is this method
+	public ColourChooserPanel getColourChooserPanel() {  
 		return colourChooserPanel;
 	}
-
 	
 	public PaintModel getPaintModel () {
 		return model;
