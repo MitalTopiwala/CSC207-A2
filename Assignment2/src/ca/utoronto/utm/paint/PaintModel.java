@@ -23,11 +23,9 @@ public class PaintModel extends Observable {
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	private Stack <Stack<Shapes>> deletedShapes = new Stack <Stack<Shapes>>();
 	
-	
-	
-	
 	private View view;             
 	private ToolChooserPanel TCP = new ToolChooserPanel(view);     
+	private ColourChooserPanel CCP = new ColourChooserPanel(view);
 	
 	/**
 	 * Sets shape with the current color and stroke width and
@@ -36,7 +34,10 @@ public class PaintModel extends Observable {
 	 */
 	public void addShape(Shapes shape) {
 		
-		shape.setColor(color);
+		shape.setColor(CCP.GETCOLOR());
+		
+		System.out.println("paintmodel" + CCP.GETCOLOR());
+		
 		shape.setStrokeWidth(TCP.getLineWidth());
 		this.shapeStack.push(shape);
 		System.out.println("shape added to stack:" + this.shapeStack);

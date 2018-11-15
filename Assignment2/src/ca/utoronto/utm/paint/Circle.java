@@ -11,13 +11,13 @@ public class Circle extends Shapes implements Draw{
 	private Color colour; 
 //	private Stroke stroke; 
 
-	public Circle(Point centre, int radius, Color colour) {
+	/*public Circle(Point centre, int radius, Color colour) {
 		this.centre = centre;
 		this.radius = radius;
 		this.start = centre;
 		this.colour = colour; 
 //		this.stroke = stroke; 
-	}
+	}*/
 	
 	public Circle(Point centre, int radius) {
 		this.centre = centre;
@@ -64,8 +64,8 @@ public class Circle extends Shapes implements Draw{
 		int y = this.getCentre().getY();
 		int radius = this.getRadius();
 		g.strokeOval(x, y, radius, radius);	
-		g.fillOval(x, y, radius, radius);
-		g.setFill(this.getColour());
+		//g.fillOval(x, y, radius, radius);
+		//g.setFill(this.getColour());
 }
 	
 }

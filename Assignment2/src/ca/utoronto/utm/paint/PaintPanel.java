@@ -30,11 +30,15 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	private Canvas canvas;
 	
-	private Color currentColour; 
+	public Color currentColor; 
 	
 	private ShapeManipulatorContext context;
 	
 	private ShapeChooserPanel scp;
+	
+	
+	
+	
 	
 	
 
@@ -50,14 +54,15 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		//this.addEventHandler(ActionEvent.ANY, this);
 		
 
-		this.colourMode = "0"; //no colour selected 
-		this.currentColour = currentColour;
+		//this.colourMode = "0"; //no colour selected 
+		//this.currentColour = currentColour;
 
 		this.model = model;
 		this.model.addObserver(this);
 		this.view = view;
 		this.context = new ShapeManipulatorContext(model); 
 		this.scp = new ShapeChooserPanel(view);
+	
 		
 	}
 
@@ -326,6 +331,10 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		this.view.getPaintModel().modelChanged();
 		this.context.newStrategy(strategy);
 		
+	}
+	
+	public void setColourMode(Color color) {
+		this.currentColor = color;
 	}
 	
 	@Override
