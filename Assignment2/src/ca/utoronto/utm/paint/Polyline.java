@@ -23,6 +23,9 @@ public class Polyline extends Shapes implements Draw{
 	public void addPolylinePoint(Point point) {
 		this.polylinePoints.add(point);
 	}
+	public void delLastPolylinePoint() {
+		this.polylinePoints.remove(polylinePoints.size() -1 );
+	}
 	
 	public Color getColour() {
 		return this.colour;
@@ -43,4 +46,5 @@ public class Polyline extends Shapes implements Draw{
 		
 		
 	}
+	
 }
