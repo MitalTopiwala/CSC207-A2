@@ -89,12 +89,12 @@ Nov 12, 2018
 	Obstacles : Does'nt make changes to the canvas,waiting for bug7 to be fixed so that it can be drawn properly
 
 Nov 13, 2018
-	Yesterday :completed userystory9 and userstroy10
+	Yesterday :completed userystory9 and userstory10
 	Today     :completed architecture, implemented strategy and command design pattern. Worked on bug 10 and 8 
 			   which also technically took care of other bugs which called for improvement of architecture 
 	Obstacles : the color function needs to be taken care of 
 
 Nov 14, 2018
-	Yesterday :
-	Today     :
+	Yesterday : fixed architecture
+	Today     : completed bug11, color selector works
 	Obstacles :

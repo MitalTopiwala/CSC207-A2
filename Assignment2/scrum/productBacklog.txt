@@ -339,6 +339,14 @@ I WANT   : To press a point of polyline, drag/press, and release to connect it t
 SO THAT  : I can add polygons to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG11 : arshad33
+NAME     : color selector is broken
+OWNER    : arshad33
+PRIORITY : high
+ESTIMATE : 3 hours
+ISSUE    : fills the entire shape, after architecture was changed userstory5 had glitches
+--------------------------------------------------------------------------
 
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
