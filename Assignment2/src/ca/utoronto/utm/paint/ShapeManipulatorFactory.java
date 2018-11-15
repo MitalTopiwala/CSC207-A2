@@ -30,6 +30,11 @@ public class ShapeManipulatorFactory {
 		if(Mode == "Polyline"){
 			strategy = new PolylineManipulatorStrategy();
 		}
+		
+		if(Mode == "Eraser") {
+			strategy = new EraserManipulatorStrategy();
+			System.out.println("factoryyyyyy");
+		}
 		//change return statement
 		//System.out.println("factory             " + strategy);
 		return strategy;

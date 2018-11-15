@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 public class Squiggle extends Shapes implements Draw{
-	private ArrayList<Point> squigglePoints;
+	protected ArrayList<Point> squigglePoints;
 	private Color colour;
 	
 	public Squiggle(Color colour) {
@@ -29,6 +29,9 @@ public class Squiggle extends Shapes implements Draw{
 	public void setColour(Color c) {
 		this.colour = c;
 	}
+
+
+
 	@Override
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);

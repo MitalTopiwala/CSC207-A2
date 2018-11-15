@@ -7,6 +7,7 @@ public class SquiggleManipulatorStrategy implements ShapeManipulatorStrategy{
 
 	Squiggle squiggle;
 	
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

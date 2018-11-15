@@ -34,6 +34,8 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	private ShapeChooserPanel scp;
 	
+	private ToolChooserPanel tcp;
+	
 	
 	
 	
@@ -321,6 +323,16 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	public void setMode(String mode) {
 		String Mode = this.scp.getMode();
+		ShapeManipulatorStrategy strategy = ShapeManipulatorFactory.getStrategy(Mode);
+		this.view.getPaintModel().modelChanged();
+		this.context.newStrategy(strategy);
+		
+	}
+	
+	public void setEraserMode(String mode) {
+		
+		System.out.println("pp  " + this.tcp.getEraserMode());
+		String Mode = this.tcp.getEraserMode();
 		ShapeManipulatorStrategy strategy = ShapeManipulatorFactory.getStrategy(Mode);
 		this.view.getPaintModel().modelChanged();
 		this.context.newStrategy(strategy);
