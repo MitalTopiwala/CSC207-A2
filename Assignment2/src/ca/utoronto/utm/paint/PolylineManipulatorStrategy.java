@@ -1,29 +1,31 @@
 package ca.utoronto.utm.paint;
 
 
+
+
 import javafx.scene.input.MouseEvent;
+public class PolylineManipulatorStrategy implements ShapeManipulatorStrategy{
 
-public class SquiggleManipulatorStrategy implements ShapeManipulatorStrategy{
-
-	Squiggle squiggle;
+	Polyline polyline;
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+
+		ShapeManipulatorContext.addShape(this.polyline);
 		
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		this.squiggle.addSquigglePoint(new Point ((int) e.getX(), (int) e.getY()));
-		ShapeManipulatorContext.modelChanged();
+		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		this.squiggle = new Squiggle();
-		this.squiggle.addSquigglePoint(new Point ((int) e.getX(), (int) e.getY()));
-		ShapeManipulatorContext.addShape(this.squiggle);
+		
+		this.polyline.addPolylinePoint(new Point((int) e.getX(), (int) e.getY()));
+		ShapeManipulatorContext.modelChanged();
 		
 	}
 
@@ -31,16 +33,18 @@ public class SquiggleManipulatorStrategy implements ShapeManipulatorStrategy{
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
+		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		this.squiggle = null;
+		this.polyline.addPolylinePoint(new Point((int) e.getX(), (int) e.getY()));
+		ShapeManipulatorContext.modelChanged();
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		
+		this.polyline = new Polyline();
 	}
 
 	@Override

@@ -25,9 +25,6 @@ public class PaintModel extends Observable {
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	private Stack <Stack<Shapes>> deletedShapes = new Stack <Stack<Shapes>>();
 	
-	
-	
-	
 	private View view;             
 	private ToolChooserPanel TCP = new ToolChooserPanel(view);   
 	private ColourChooserPanel CCP = new ColourChooserPanel(view);
@@ -61,9 +58,7 @@ public class PaintModel extends Observable {
 			Stack<Shapes> shapeStack = new Stack<Shapes>();
 			shapeStack.push(this.shapeStack.pop());
 			this.deletedShapes.push(shapeStack);
-			
 		}
-		
 	}
 	
 	/**
@@ -77,7 +72,6 @@ public class PaintModel extends Observable {
 				this.shapeStack.push(shapeStack.pop());
 			}				
 		}
-		
 	}
 	
 	public Stack<Shapes> getShapeStack() {
@@ -163,4 +157,4 @@ public class PaintModel extends Observable {
 		return polylinesW;
 	}
 	
-}
+	}

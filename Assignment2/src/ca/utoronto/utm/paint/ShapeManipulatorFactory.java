@@ -1,27 +1,38 @@
 package ca.utoronto.utm.paint;
 
-import javafx.scene.shape.Shape;
+
 
 public class ShapeManipulatorFactory {
 	
-	public static ShapeManipulatorStrategy getStrategy(String mode) {
-		if (mode == "Circle") {
-			//CircleManipulatorStrategy();
-		}
-		if(mode == "Rectangle"){
+	
+	
+	
+	public static ShapeManipulatorStrategy getStrategy(String Mode) {
 		
+	
+		
+		ShapeManipulatorStrategy strategy = null;
+		if (Mode == "Circle") {
+			strategy = new CircleManipulatorStrategy();
 		}
-		if(mode == "Square"){
+			 
+		if(Mode == "Rectangle"){
+			strategy = new RectangleManipulatorStrategy();
+		}
+		if(Mode == "Square"){
 			
 		}
-		if(mode == "Squiggle"){
+		if(Mode == "Squiggle"){
+			strategy = new SquiggleManipulatorStrategy();
 			
 		}
-		if(mode == "Polyline"){
-			
+		
+		if(Mode == "Polyline"){
+			strategy = new PolylineManipulatorStrategy();
 		}
 		//change return statement
-		return null;
+		//System.out.println("factory             " + strategy);
+		return strategy;
 		
 	}
 

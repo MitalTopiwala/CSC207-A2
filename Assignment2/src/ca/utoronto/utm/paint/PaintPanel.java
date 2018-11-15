@@ -22,7 +22,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private String mode; // modifies how we interpret input (could be better?)
 	private String colourMode ="0"; //modifies input of colour filled 
-	//private String fillMode = "NoFill"; 
+	private String fillMode = "NoFill"; 
 	
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle; // the rectangle we are building
@@ -47,7 +47,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.mode = "Circle"; // bad code here?
 		this.colourMode = "0"; //no colour selected 
 		this.currentColour = currentColour;
-		//this.fillMode = fillMode; 
+		this.fillMode = fillMode; 
 
 		this.model = model;
 		this.model.addObserver(this);
@@ -138,9 +138,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.colourMode = colourMode;
 	}
 	
-//	public void setFillMode(String fillMode) {
-//		this.fillMode = fillMode; 
-//	}
+	public void setFillMode(String fillMode) {
+		this.fillMode = fillMode; 
+	}
 
 	@Override
 	public void handle(MouseEvent event) {

@@ -2,6 +2,7 @@
 package ca.utoronto.utm.paint;
 
 
+
 import javafx.scene.input.MouseEvent;
 
 public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
@@ -64,6 +65,6 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }
 

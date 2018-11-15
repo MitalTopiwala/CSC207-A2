@@ -1,5 +1,6 @@
 package ca.utoronto.utm.paint;
 
+
 import javafx.scene.input.MouseEvent;
 
 
@@ -10,26 +11,28 @@ import javafx.scene.input.MouseEvent;
 
 public class ShapeManipulatorContext implements ShapeManipulatorStrategy{
 	
-	static PaintModel model;
+	static PaintModel paintModel;
 	private ShapeManipulatorStrategy strategy;
 	
 
 	
 	public ShapeManipulatorContext(PaintModel model) {
-		ShapeManipulatorContext.model = model;
+		ShapeManipulatorContext.paintModel = model;
 		this.strategy = null;
 		
 	}
 	static void modelChanged() {
-		model.modelChanged();
+		paintModel.modelChanged();
 	}
 	
 	public static void addShape(Shapes shape) {
-		model.addShape(shape);
-		
+		paintModel.addShape(shape);
+		//System.out.println("dahsd");		
 	}
 
-	
+	public void newStrategy(ShapeManipulatorStrategy strategy) {
+		this.strategy = strategy;
+	}
 
 	
 	@Override

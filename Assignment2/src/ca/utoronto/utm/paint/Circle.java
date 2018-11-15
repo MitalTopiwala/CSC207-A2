@@ -16,7 +16,7 @@ public class Circle extends Shapes implements Draw{
 		this.radius = radius;
 		this.start = centre;
 		this.colour = colour; 
-//		this.stroke = stroke; 
+		//this.stroke = stroke; 
 	}
 	
 	public Circle(Point centre, int radius) {
@@ -57,7 +57,15 @@ public class Circle extends Shapes implements Draw{
 	public void setColour(Color c) {
 		this.colour = c;
 	}
+	
 	public void draw(GraphicsContext g) {
+		this.basicStroke(g);
+		int x = this.getCentre().getX();
+		int y = this.getCentre().getY();
+		int radius = this.getRadius();
+		g.strokeOval(x, y, radius, radius);	
+		//g.fillOval(x, y, radius, radius);
+		//g.setFill(this.getColour());
 }
 	
 }

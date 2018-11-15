@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Fill in, commit and push each day.
 # Group Member: Manaal Arshad
 Oct 28, 2018
@@ -89,111 +89,12 @@ Nov 12, 2018
 	Obstacles : Does'nt make changes to the canvas,waiting for bug7 to be fixed so that it can be drawn properly
 
 Nov 13, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :completed userystory9 and userstory10
+	Today     :completed architecture, implemented strategy and command design pattern. Worked on bug 10 and 8 
+			   which also technically took care of other bugs which called for improvement of architecture 
+	Obstacles : the color function needs to be taken care of 
 
 Nov 14, 2018
-	Yesterday :
-	Today     :
+	Yesterday : fixed architecture
+	Today     : completed bug11, color selector works
 	Obstacles :
-=======
-# Fill in, commit and push each day.
-# Group Member: Manaal Arshad
-Oct 28, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
-
-Oct 29, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
-
-Oct 30, 2018
-	Yesterday :
-	Today     :Contacted group members on facebook chat
-	Obstacles :
-
-Oct 31, 2018
-	Yesterday :
-	Today     :Planned to meetup with group members
-	Obstacles :
-
-Nov 1, 2018
-	Yesterday :
-	Today     : Decided on how to divide the user stories amongst group members for sprint 1
-				Completed bug 2
-				started user story7
-				
-	Obstacles : Tried to accomplish using mouse event for when the mouse is clicked but found a simpler approach using ToggleButton
-	            Had to change view to add new buttons
-		
-		
-
-Nov 2, 2018
-	Yesterday : finished bug 2
-	Today     : Worked on userstory 7, added a slider
-	Obstacles :
-
-Nov 3, 2018
-	Yesterday : slider handled and worked properly
-	Today     : worked on userstory 7
-	Obstacles :
-
-Nov 4, 2018
-	Yesterday : worked on userstory 7
-	Today     : worked on userstory 7 
-	Obstacles : the thickness of all the shape changes when line thickness is changed
-
-Nov 5, 2018
-	Yesterday :worked on userstory 7 
-	Today     :completed userstory 7, everything works
-	Obstacles :
-
-Nov 6, 2018
-	Yesterday : Completed userstory 7, looked over stuff needed to be completed for sprint 2
-	Today     : started bug 10, created ShapeManipulatorStrategy and CircleManipultorStrategy
-	Obstacles : Need to figure out an effective way of putting the shapes on the top of PaintModel
-				command stack
-
-Nov 7, 2018
-	Yesterday :worked on bug10
-	Today     :continued working on bug 10
-	Obstacles :overlap between other bugs, need to use stuff other team members were working on 
-
-Nov 8, 2018
-	Yesterday :worked on bug10
-	Today     :did git reset --hard and started working on bug10 from the beginning
-	Obstacles :ended up messing up a lost of things
-
-Nov 9, 2018
-	Yesterday :continued working on bug10
-	Today     :almost done with bug 10, once implementation of squiggle is fixed will add that to stack
-	Obstacles : bugs regarding radius of shapes not proper will fix after other architectural bugs are fixed
-
-Nov 10, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
-	
-Nov 11, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
-	
-Nov 12, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
-
-Nov 13, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
-
-Nov 14, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
->>>>>>> refs/heads/userStory8
