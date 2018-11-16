@@ -1,21 +1,31 @@
-
 package ca.utoronto.utm.paint;
 
 
 
 import javafx.scene.input.MouseEvent;
 
+/**
+ * 
+ * @author Manah
+ *
+ */
 public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	
-	Rectangle rectangle;
-
+	private Rectangle rectangle;
+	
 	@Override
+	/**
+	 * 
+	 */
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void mouseDragged(MouseEvent e) {
 		int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
 		int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
@@ -34,6 +44,9 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void mousePressed(MouseEvent e) {
 		Point start = new Point((int) e.getX(), (int) e.getY());
 		int length = 0;
@@ -44,25 +57,34 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void mouseReleased(MouseEvent e) {
 		this.rectangle = null;		
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 	

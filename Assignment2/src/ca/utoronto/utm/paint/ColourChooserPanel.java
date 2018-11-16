@@ -9,7 +9,12 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-	
+/**
+ * Creating Buttons for choosing colours.
+ * 
+ * @author Erub Khan 
+ *
+ */	
 public class ColourChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 		
 	private View view;
@@ -17,7 +22,11 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	public String fillStatus;
 	static Color color;
 	static String command;
-
+	
+	/**
+	 * Construct ColourChooserPanel with parameter view
+	 * @param view	Implements the visual of paint. 
+	 */
 	public ColourChooserPanel(View view) {
 
 		this.view = view;
@@ -50,7 +59,10 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		
 	}
 	
-	
+	/**
+	 * Returns the selected option in ChoiceBox
+	 * @param fillOptions    a choice box used to get the String value of selection by user
+	 */
 	public String fillOptions(ChoiceBox fillOptions) {
 		String selectedOption = (String) fillOptions.getValue();
 		if (selectedOption == "Fill Shape") {
@@ -62,12 +74,17 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		}
 	}
 	
-	
+	/**
+	 * Returns the Color selected by user
+	 */
 	public Color GETCOLOR() {
 		return ColourChooserPanel.color;
 	}
 
-	
+	/**
+	 * Changes the color to the colour of selected Toggle button
+	 * @param event 		Takes in the mouse event of selecting Toggle Button
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		command = ((ToggleButton) event.getSource()).getText();
@@ -98,3 +115,4 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	}
 	
 }
+

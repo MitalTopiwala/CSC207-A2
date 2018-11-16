@@ -156,5 +156,4 @@ public class View implements EventHandler<ActionEvent> {
 		
 			
 		}
-	
 	}

@@ -65,3 +65,4 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 }
 
 
+
