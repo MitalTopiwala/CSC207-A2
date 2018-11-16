@@ -4,32 +4,58 @@ import javafx.scene.paint.Color;
 import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
 
-
+/**
+ * 
+ * @author Manah
+ *
+ */
 public class Squiggle extends Shapes implements Draw{
 	private ArrayList<Point> squigglePoints;
 	private Color colour;
 	
+	/**
+	 * 
+	 * @param colour
+	 */
 	public Squiggle(Color colour) {
 		this.squigglePoints = new ArrayList<Point>();
 		this.colour = colour;
 	}
 	
+	/**
+	 * 
+	 */
 	public Squiggle() {
 		this.squigglePoints = new ArrayList<Point>();
 	}
 	
+	/**
+	 * 
+	 * @param point
+	 */
 	public void addSquigglePoint(Point point) {
 		this.squigglePoints.add(point);
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public Color getColour() {
 		return this.colour;
   	}
 	
+	/**
+	 * 
+	 * @param c
+	 */
 	public void setColour(Color c) {
 		this.colour = c;
 	}
 	@Override
+	/**
+	 * 
+	 */
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
 		for (int i = 0; i < this.squigglePoints.size() - 1; i++) {
