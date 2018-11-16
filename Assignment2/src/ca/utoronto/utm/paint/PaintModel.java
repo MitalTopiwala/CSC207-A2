@@ -12,13 +12,6 @@ public class PaintModel extends Observable {
 	int strokeWidth;
 	Color color;
 
-	/*private ArrayList<Point> points = new ArrayList<Point>();
-	
-	private ArrayList<Polyline> polylines = new ArrayList<Polyline>();
-
-	private ArrayList<Double> pointsW = new ArrayList<Double>();
-
-	private ArrayList<Double> polylinesW = new ArrayList<Double>();*/
 	
 	private Stack<Shapes> shapeStack = new Stack<Shapes>();
 	private Stack <Stack<Shapes>> deletedShapes = new Stack <Stack<Shapes>>();
@@ -93,40 +86,8 @@ public class PaintModel extends Observable {
 		}
 	}
 
-	public double getLineThickness() {               
-		return TCP.getLineWidth();
-	}
+	
 	
 }
 
-	/*public void addPoint(Point p) {
-		this.points.add(p);
-		this.pointsW.add(TCP.getLineWidth());
-		this.setChanged();
-		this.notifyObservers();
-	}
 	
-	public ArrayList<Point> getPoints() {
-		return points;
-	}
-
-	public ArrayList<Double> getPointsW() {
-		return pointsW;
-	}
-	
-	
-	
-	public void addPolyline(Polyline p) {
-		this.polylines.add(p);
-		this.polylinesW.add(TCP.getLineWidth());
-		this.setChanged();
-		this.notifyObservers();
-	}
-
-	public ArrayList<Polyline> getPolylines() {
-		return polylines;
-	}
-	
-	public ArrayList<Double> getPolylinesW() {
-		return polylinesW;
-	}*/

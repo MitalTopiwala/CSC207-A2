@@ -1,16 +1,11 @@
 package ca.utoronto.utm.paint;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+
 import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.Slider;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 
-public class ToolChooserPanel extends GridPane implements EventHandler<ActionEvent> {
+public class ToolChooserPanel extends GridPane {
 	
 	private View view; // So we can talk to our parent or other components of the view
 	private Slider slider;
@@ -43,13 +38,5 @@ public class ToolChooserPanel extends GridPane implements EventHandler<ActionEve
 		return value;
 	}
 
-	@Override
-	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
-	
 	
 }

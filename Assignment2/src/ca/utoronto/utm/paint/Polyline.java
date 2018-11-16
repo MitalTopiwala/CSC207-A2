@@ -3,10 +3,9 @@ import javafx.scene.paint.Color;
 
 import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
-//import javafx.scene.canvas.GraphicsContext;
 
 
-//extends shape commented out
+
 public class Polyline extends Shapes implements Draw{
 	private ArrayList<Point> polylinePoints;
 	private Color colour;

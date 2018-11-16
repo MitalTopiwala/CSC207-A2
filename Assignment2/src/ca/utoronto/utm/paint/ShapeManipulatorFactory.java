@@ -30,8 +30,7 @@ public class ShapeManipulatorFactory {
 		if(Mode == "Polyline"){
 			strategy = new PolylineManipulatorStrategy();
 		}
-		//change return statement
-		//System.out.println("factory             " + strategy);
+		
 		return strategy;
 		
 	}

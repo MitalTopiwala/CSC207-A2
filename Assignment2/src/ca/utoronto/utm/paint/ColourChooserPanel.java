@@ -90,10 +90,9 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 			ColourChooserPanel.color = Color.YELLOW;
 		}
 		
-		//System.out.println("blah:" + command);
+
 		this.view.getPaintPanel().setColourMode(ColourChooserPanel.color);
-		System.out.println(this.GETCOLOR());
-		//System.out.println(command);
+		
 		
 	}
 	
