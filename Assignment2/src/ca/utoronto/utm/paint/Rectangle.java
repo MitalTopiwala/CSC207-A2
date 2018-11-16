@@ -146,8 +146,7 @@ public class Rectangle extends Shapes implements Draw {
 		int length = this.getLength();
 		int width = this.getWidth();
 		g.strokeRect(x, y, width, length);
-		g.fillRect(x, y, width, length);
-		g.setFill(this.getColour());
+		
 	}
 
 }
