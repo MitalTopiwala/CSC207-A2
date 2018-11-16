@@ -45,6 +45,7 @@ public class PaintModel extends Observable {
 			Stack<Shapes> shapeStack = new Stack<Shapes>();
 			shapeStack.push(this.shapeStack.pop());
 			this.deletedShapes.push(shapeStack);
+			modelChanged();
 		}
 		
 	}
@@ -58,6 +59,7 @@ public class PaintModel extends Observable {
 			Stack<Shapes> shapeStack = this.deletedShapes.pop();
 			while(shapeStack.size() != 0) {
 				this.shapeStack.push(shapeStack.pop());
+				modelChanged();
 			}				
 		}
 		
