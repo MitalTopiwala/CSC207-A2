@@ -20,6 +20,13 @@ import javafx.scene.shape.Rectangle;
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
 	private View view; // So we can talk to our parent or other components of the view
+	
+	static String command;//the name of the  shape ToggleButton that is currently selected
+	
+	/**
+	* Creates five ToggleButton's with icons of shapes as their label.
+	* @param view 
+	*/
 
 	public ShapeChooserPanel(View view) {
 
@@ -67,11 +74,20 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		}
 		
 		toggleGroup.getSelectedToggle();
-		
-		
-		
 	}
 
+	/**
+	 * Returns the mode.
+	 * @return command
+	 */
+	public String getMode() {
+		return command;
+	}
+	
+	/**
+	 *  Communicates which button is selected to the PaintPanel.
+	 *  @param event the action that occurred/the button that was selected
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((ToggleButton) event.getSource()).getText();

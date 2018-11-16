@@ -12,7 +12,7 @@ Oct 29, 2018
 
 Oct 30, 2018
 	Yesterday :
-	Today     :Made facebook groupchate for members
+	Today     :Made facebook groupchat for members
 	Obstacles :
 
 Oct 31, 2018
@@ -23,14 +23,14 @@ Oct 31, 2018
 Nov 1, 2018
 	Yesterday :
 	Today     :	-Met at the library and split up the workloadfor sprint 1 between the members
-			-Completed User Story 1
-			-Completed Bug 6
-			-Comleted User Story 3
-			-Started user Story 4
+				-Completed User Story 1
+				-Completed Bug 6
+				-Comlpeted User Story 3
+				-Started user Story 4
 	Obstacles : Got reverse image while dragging mouse for rectangles but proper image when mouse was released - User Story 4
 
 Nov 2, 2018
-	Yesterday :
+	Yesterday :	
 	Today     :
 	Obstacles :
 
@@ -86,12 +86,13 @@ Nov 12, 2018
 
 Nov 13, 2018
 	Yesterday :
-	Today     : 	- Merged polyline to master
-			- Created and merged a new branch to modify polyline with current design pattern
-			- Created, finished and merged Bug5 (fixed broken squiggle bug to match current design pattern)
+	Today     : - Merged polyline to master
+				- Created and merged a new branch to modify polyline with current design pattern
+				- Created, finished and merged Bug5 (fixed broken squiggle bug to match current design pattern)
 	Obstacles : When merged polyline userstory8 to master, resulted in merge conflicts and compiling errors are merge conflicts were solved
 
 Nov 14, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :		
+	Today     :	-Finished userstory 11 and 13 (square and square feedback)
+				-Added Javadoc's to all shape classes
+	Obstacles :		

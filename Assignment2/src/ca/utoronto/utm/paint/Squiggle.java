@@ -55,12 +55,13 @@ public class Squiggle extends Shapes implements Draw{
 	public void setColour(Color colour) {
 		this.colour = colour;
 	}
-	@Override
+	
 	/**
 	 * Implement draw method from Draw interface
 	 * Draws the squiggle
 	 * @param g 	a GraphicsContext	used to issue draw calls to Canvas 
 	 **/
+	@Override
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
 		for (int i = 0; i < this.squigglePoints.size() - 1; i++) {

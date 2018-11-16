@@ -29,7 +29,7 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	 */
 	public ColourChooserPanel(View view) {
 
-		this.view = view;
+		this.view = view; // So we can talk to our parent or other components of the view
 			
 		String[] colourRep = {"1","2","3","4","5","6"};
         String[] buttonColours = {"-fx-base: black;", "-fx-base: red;", "-fx-base: blue;","-fx-base: green;",
