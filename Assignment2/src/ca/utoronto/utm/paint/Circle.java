@@ -10,11 +10,9 @@ public class Circle extends Shapes implements Draw{
 	private Point start;
 	private Color colour; 
 	private Color colour2;
-	private Boolean shapeFilled = false; 
-	private Boolean shapeOutlined = false; 
  
 
-	public Circle(Point centre, int radius, Color colour, Color colour2) { //Boolean shapeFilled, Boolean shapeOutlined) {
+	public Circle(Point centre, int radius, Color colour, Color colour2) {
 		this.centre = centre;
 		this.radius = radius;
 		this.start = centre;
@@ -56,9 +54,18 @@ public class Circle extends Shapes implements Draw{
 		return this.colour;
   	}
 	
+	public Color getColour2() {
+		return this.colour2;
+	}
+	
 	public void setColour(Color c) {
 		this.colour = c;
 	}
+	
+	public void setColour2(Color c2) {
+		this.colour2 = c2;
+	}
+	
 	
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
@@ -66,16 +73,16 @@ public class Circle extends Shapes implements Draw{
 		int y = this.getCentre().getY();
 		int radius = this.getRadius();
 		
-//		g.strokeOval(x, y, radius, radius);
-//		g.fillOval(x, y, radius, radius);
-//		g.setFill(this.getColour());
+		g.strokeOval(x, y, radius, radius);
+		g.fillOval(x, y, radius, radius);
+		g.setFill(this.getColour());
 		
-		if (this.shapeFilled) {
+		if (this.getShapeFilled()) {
 			g.fillOval(x, y, radius, radius);
 			g.setFill(this.getColour());
-		}else if (this.shapeOutlined) {
+		}else if (this.getShapeOutlined()) {
 			g.strokeOval(x, y, radius, radius);
-			g.setFill(this.getColour());
+			g.setFill(this.getColour2());
 		}else {
 			g.strokeOval(x, y, radius, radius);		
 		}

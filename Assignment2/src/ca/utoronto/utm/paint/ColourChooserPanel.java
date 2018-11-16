@@ -41,12 +41,12 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		
 		toggleGroup.getSelectedToggle();
 		////////////////////new/////////////////////////////////
-		ChoiceBox fillOptions = new ChoiceBox();
-		fillOptions.getItems().addAll("Fill Shape", "Fill Outline");
-		fillOptions.setValue("Fill Outline"); //Set default value
-		this.add(fillOptions, 0, 8);
-		fillOptions.setOnAction(this);
-		this.fillStatus = fillOptions(fillOptions);
+		ChoiceBox fillChoice = new ChoiceBox();
+		fillChoice.getItems().addAll("Fill Shape", "Fill Outline");
+		fillChoice.setValue("Fill Outline"); //Set default value
+		this.add(fillChoice, 0, 8);
+		fillChoice.setOnAction(this);
+		this.fillStatus = fillOptions(fillChoice);
 		
 	}
 	

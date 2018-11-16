@@ -9,6 +9,8 @@ public abstract class Shapes implements Draw{
 	private Color colour;
 	private Stroke stroke;
 	private int strokeWidth;
+	private Boolean shapeFilled = false;
+	private Boolean shapeOutlined = false;
 	
 	public void setStrokeWidth(double d) {
 		this.strokeWidth = (int) d;
@@ -24,6 +26,22 @@ public abstract class Shapes implements Draw{
 	
 	public void setStroke(Stroke stroke) {
 		this.stroke = stroke; 
+	}
+	
+	public void setShapeOutlined (Boolean x) {
+		this.shapeOutlined = x;
+	}
+	
+	public void setShapeFilled (Boolean x) {
+		this.shapeFilled = x;
+	}
+	
+	public boolean getShapeOutlined() {
+		return this.shapeOutlined;
+	}
+	
+	public boolean getShapeFilled() {
+		return this.shapeFilled;
 	}
 	
 	public Color getColor() {

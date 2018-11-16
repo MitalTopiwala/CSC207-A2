@@ -19,9 +19,7 @@ import javafx.scene.shape.Rectangle;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
-	private View view;// So we can talk to our parent or other components of the view
-	
-	static String command;
+	private View view; // So we can talk to our parent or other components of the view
 
 	public ShapeChooserPanel(View view) {
 
@@ -71,23 +69,13 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		toggleGroup.getSelectedToggle();
 		
 		
-	}
-	
-	//public String getMode(ActionEvent event) {
-	//	String mode = ((ToggleButton) event.getSource()).getText();
-	//	return mode;
-	//}
-	
-	public String getMode() {
-		return command;
+		
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-		command = ((ToggleButton) event.getSource()).getText();
+		String command = ((ToggleButton) event.getSource()).getText();
 		this.view.getPaintPanel().setMode(command);
 		System.out.println(command);
-		//System.out.println(this.getMode(event));
-		
 	}
 }

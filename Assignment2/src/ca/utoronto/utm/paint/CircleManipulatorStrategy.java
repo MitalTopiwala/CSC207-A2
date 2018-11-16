@@ -8,6 +8,7 @@ public class CircleManipulatorStrategy implements ShapeManipulatorStrategy{
 
     public CircleManipulatorStrategy() {
 	}
+    
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
