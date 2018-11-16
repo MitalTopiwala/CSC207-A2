@@ -1,4 +1,3 @@
-
 package ca.utoronto.utm.paint;
 
 
@@ -347,4 +346,3 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		}
 	}
 }
-

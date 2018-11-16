@@ -98,3 +98,4 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	}
 	
 }
+
