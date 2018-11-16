@@ -9,7 +9,12 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-	
+/**
+ * Creating Buttons for choosing colours.
+ * 
+ * @author Erub Khan 
+ *
+ */	
 public class ColourChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 		
 	private View view;
@@ -17,10 +22,14 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 	public String fillStatus;
 	static Color color;
 	static String command;
-
+	
+	/**
+	 * Construct ColourChooserPanel with parameter view
+	 * @param view	Implements the visual of paint. 
+	 */
 	public ColourChooserPanel(View view) {
 
-		this.view = view;
+		this.view = view; // So we can talk to our parent or other components of the view
 			
 		String[] colourRep = {"1","2","3","4","5","6"};
         String[] buttonColours = {"-fx-base: black;", "-fx-base: red;", "-fx-base: blue;","-fx-base: green;",
@@ -41,16 +50,19 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		
 		toggleGroup.getSelectedToggle();
 		////////////////////new/////////////////////////////////
-		ChoiceBox fillOptions = new ChoiceBox();
-		fillOptions.getItems().addAll("Fill Shape", "Fill Outline");
-		fillOptions.setValue("Fill Outline"); //Set default value
-		this.add(fillOptions, 0, 8);
-		fillOptions.setOnAction(this);
-		this.fillStatus = fillOptions(fillOptions);
+		ChoiceBox fillChoice = new ChoiceBox();
+		fillChoice.getItems().addAll("Fill Shape", "Fill Outline");
+		fillChoice.setValue("Fill Outline"); //Set default value
+		this.add(fillChoice, 0, 8);
+		fillChoice.setOnAction(this);
+		this.fillStatus = fillOptions(fillChoice);
 		
 	}
 	
-	
+	/**
+	 * Returns the selected option in ChoiceBox
+	 * @param fillOptions    a choice box used to get the String value of selection by user
+	 */
 	public String fillOptions(ChoiceBox fillOptions) {
 		String selectedOption = (String) fillOptions.getValue();
 		if (selectedOption == "Fill Shape") {
@@ -62,12 +74,17 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		}
 	}
 	
-	
+	/**
+	 * Returns the Color selected by user
+	 */
 	public Color GETCOLOR() {
 		return ColourChooserPanel.color;
 	}
 
-	
+	/**
+	 * Changes the color to the colour of selected Toggle button
+	 * @param event 		Takes in the mouse event of selecting Toggle Button
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		command = ((ToggleButton) event.getSource()).getText();

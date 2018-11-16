@@ -17,8 +17,8 @@ public class Circle extends Shapes implements Draw{
 	private Point centre;
 	private int radius;
 	private Point start;
-	private Color colour; 
-	
+
+
  
 	/**
 	 * Construct a Circle with the specified paramters
@@ -86,7 +86,7 @@ public class Circle extends Shapes implements Draw{
 	public Color getColour() {
 		return this.colour;
   	}
-	
+
 	/**
 	 * Set the Color colour to a new specified Color colour
 	 * @param colour		Colour representing new colour of circle
@@ -94,7 +94,9 @@ public class Circle extends Shapes implements Draw{
 	public void setColour(Color c) {
 		this.colour = c;
 	}
-	
+
+
+
 	/**
 	 * Implement draw method from Draw interface.
 	 * Draws the circle.
@@ -106,9 +108,12 @@ public class Circle extends Shapes implements Draw{
 		int x = this.getCentre().getX();
 		int y = this.getCentre().getY();
 		int radius = this.getRadius();
+
+
 		g.strokeOval(x, y, radius, radius);
-		
+			
+		}		
 	}
-	}
+
 	
 

@@ -182,6 +182,6 @@ Nov 13, 2018
 
 Nov 14, 2018
 	Yesterday :
-	Today     :
+	Today     :Met with group to fix merge conflicts
 	Obstacles :
 >>>>>>> branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_Grey.git

@@ -20,8 +20,6 @@ public class View implements EventHandler<ActionEvent> {
 	private ToolChooserPanel toolChooserPanel;
 	private ColourChooserPanel colourChooserPanel; 
 
-
-
 	public View(PaintModel model, Stage stage) {
 
 		this.model = model;
@@ -158,5 +156,4 @@ public class View implements EventHandler<ActionEvent> {
 		
 			
 		}
-	
 	}
