@@ -5,8 +5,10 @@ import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
 
 /**
+ * Model a Squiggle. The Squigle has an arraylist of points representing the points
+ * of Squiggle, and a Color colour of the Squiggle.
  * 
- * @author Manah
+ * @author Manahil
  *
  */
 public class Squiggle extends Shapes implements Draw{
@@ -14,7 +16,8 @@ public class Squiggle extends Shapes implements Draw{
 	private Color colour;
 	
 	/**
-	 * 
+	 * Construct a squiggle as a new empty arraylist of points, with specified Color
+	 * colour.
 	 * @param colour
 	 */
 	public Squiggle(Color colour) {
@@ -23,39 +26,41 @@ public class Squiggle extends Shapes implements Draw{
 	}
 	
 	/**
-	 * 
+	 * Construct a squiggle with a new empty arraylist of points.
 	 */
 	public Squiggle() {
 		this.squigglePoints = new ArrayList<Point>();
 	}
 	
 	/**
-	 * 
-	 * @param point
+	 * Add a new point to arraylist squigglePoints
+	 * @param point		a new Point
 	 */
 	public void addSquigglePoint(Point point) {
 		this.squigglePoints.add(point);
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the color representing the color of squiggle
+	 * @return colour 	a color representing the color of the squiggle
 	 */
 	public Color getColour() {
 		return this.colour;
   	}
 	
 	/**
-	 * 
-	 * @param c
+	 * Sets the Color colour to a new specified color 
+	 * @param colour 	a Color representing the new colour of squiggle
 	 */
-	public void setColour(Color c) {
-		this.colour = c;
+	public void setColour(Color colour) {
+		this.colour = colour;
 	}
 	@Override
 	/**
-	 * 
-	 */
+	 * Implement draw method from Draw interface
+	 * Draws the squiggle
+	 * @param g 	a GraphicsContext	used to issue draw calls to Canvas 
+	 **/
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
 		for (int i = 0; i < this.squigglePoints.size() - 1; i++) {

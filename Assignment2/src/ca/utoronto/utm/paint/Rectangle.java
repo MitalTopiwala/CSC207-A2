@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- * Model a Rectangle. The rectangle has a point representing start/origin 
+ * Models a Rectangle. The rectangle has a point representing start/origin 
  * vertex of the rectangle, a point representing the upper left vertex of rectangle,
  * a non-negative integer width of the rectangle, non-negative integer length of
  * rectangle, and a Color colour of the rectangle.
@@ -134,8 +134,8 @@ public class Rectangle extends Shapes implements Draw {
 
 	@Override
 	/**
-	 * Implement draw method from Draw interface
-	 * Draws the rectangle
+	 * Implement draw method from Draw interface.
+	 * Draws the rectangle.
 	 * @param g 	GraphicsContext	used to issue draw calls to Canvas 
 	 **/
 	public void draw(GraphicsContext g) {
