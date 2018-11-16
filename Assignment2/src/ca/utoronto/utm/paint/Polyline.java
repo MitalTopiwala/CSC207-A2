@@ -62,12 +62,13 @@ public class Polyline extends Shapes implements Draw{
 	public void setColour(Color c) {
 		this.colour = c;
 	}
-	@Override
+	
 	/**
-	 * Implement draw method from Draw interface
-	 * Draws the polyline
+	 * Implement draw method from Draw interface.
+	 * Draws the polyline.
 	 * @param g 	GraphicsContext	used to issue draw calls to Canvas 
 	 **/
+	@Override
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
 		for (int i = 0; i < this.polylinePoints.size() - 1; i++) {

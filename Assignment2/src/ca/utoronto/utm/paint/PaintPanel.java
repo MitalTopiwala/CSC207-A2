@@ -17,8 +17,6 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
-
-
 	
 	private Canvas canvas;
 	
@@ -28,7 +26,11 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	private ShapeChooserPanel scp;
 	
-
+	/**
+	 * Constructs a PaintPanel using information from model and view.
+	 * @param model the current PaintModel
+	 * @param view the current View
+	 */
 	public PaintPanel(PaintModel model, View view) {  
 
 		this.canvas = new Canvas(300, 300);
@@ -48,7 +50,10 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 		
 	}
-
+	
+	/**
+	 * Repaints the Paint application to match current model.
+	 */
 	public void repaint() {
 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
@@ -60,10 +65,20 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	}
 	
 
+	/**
+	 * Initiates the repaint of the Paint application.
+	 */
+
 	public void update(Observable o, Object arg) {
 		this.repaint();		
 	}
 	
+
+	/**
+	 * Creates a ShapeManipualatorStrategy based on mode.
+	 * @param mode the name of the shape button selected
+	 */
+
 
 	public void setMode(String mode) {
 		String Mode = this.scp.getMode();
@@ -73,10 +88,18 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		
 	}
 	
+	/**
+	 * Sets currentColour instance variable to new specified color.
+	 * @param color new current color
+	 */
 	public void setColourMode(Color color) {
 		this.currentColor = color;
 	}
 	
+	/**
+	 * A mouse event handler that calls the appropriate shape strategy.
+	 * @param event the MouseEvent that occurred
+	 */
 	@Override
 	public void handle(MouseEvent event) {
 

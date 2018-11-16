@@ -1,4 +1,3 @@
-
 # Copy User Stories from the ProductBacklog 
 # to the appropriate Sprint below, after the 
 # Sprint Planning Meeting.
@@ -283,10 +282,6 @@ I WANT   : To be able to select the current line thickness, to be applied
            	rectangle as well as two thickly outlined rectangles and a thick squiggle
 SO THAT  : 
 --------------------------------------------------------------------------
-# Sprint 2 Nov 3, 2018
-# Sprint 2 Backlog UserStories go below
-
-
 --------------------------------------------------------------------------
 TYPE     : BUG 5 : masroor6
 NAME     : Squiggle is broken
@@ -308,6 +303,27 @@ I WANT   : To press a point of polyline, drag/press, and release to connect it t
 
 SO THAT  : I can add polygons to my canvas
 --------------------------------------------------------------------------
-# Sprint 2 Nov 9, 2018
-# Sprint 2 Backlog UserStories go below
 
+# Sprint 3 Nov 9, 2018
+# Sprint 3 Backlog UserStories go below
+--------------------------------------------------------------------------
+TYPE     : USER STORY 11 : masroor6
+NAME     : Draw Square
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hour
+AS A     : user
+I WANT   : To click on one corner of a square, drag, and release to 
+		   specify two corners of a square to be drawn in the current style.
+SO THAT  : I can add square to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 13 : masroor6
+NAME     : Draw Square Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 0.5 hours
+AS A     : user
+I WANT   : Similarly to Draw Circle Feedback, display the square in mid construction.
+SO THAT  : I can see the square I am about to build on release of the mouse button.
+--------------------------------------------------------------------------

@@ -95,12 +95,12 @@ public class Circle extends Shapes implements Draw{
 		this.colour = c;
 	}
 	
-	@Override
 	/**
 	 * Implement draw method from Draw interface.
 	 * Draws the circle.
 	 * @param g 	GraphicsContext	used to issue draw calls to Canvas 
 	 **/
+	@Override
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
 		int x = this.getCentre().getX();
