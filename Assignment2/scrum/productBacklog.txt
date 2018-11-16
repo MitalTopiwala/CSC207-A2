@@ -30,44 +30,6 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
 SO THAT  : 
 --------------------------------------------------------------------------
 
---------------------------------------------------------------------------
-TYPE     : USER STORY 12: topiwal3
-NAME     : Draw Polyline Feedback
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : As a user is specifying a Polyline, during the drag, a 'current'
-           polyline should be on display. As the user drags, the 'current'
-           polyline changes in real time so that a polyline is drawn with
-           users initial polyline points, with next polyline point out to
-           the current dragged mouse position.
-SO THAT  : I can see the polyline I am about to build on release of the mouse
-           button.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 11 : masroor6
-NAME     : Draw Square
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : To click on one corner of a square, drag, and release to 
-		   specify two corners of a square to be drawn in the current style.
-SO THAT  : I can add square to my canvas
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 13 : masroor6
-NAME     : Draw Square Feedback
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-AS A     : user
-I WANT   : Similarly to Draw Circle Feedback, display the square in mid construction.
-SO THAT  : I can see the square I am about to build on release of the mouse button.
---------------------------------------------------------------------------
-
-
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 
 --------------------------------------------------------------------------
@@ -106,9 +68,9 @@ SO THAT  : I can see the circle I am about to build on release of the mouse
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1 : masroor6
 NAME     : Draw Circle
-OWNER    : 
+OWNER    : masroor6
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 0.5 hours
 AS A     : user
 I WANT   : To click the center of the circle, drag, and release to specify
            a circle to be drawn in the current style.
@@ -117,9 +79,9 @@ SO THAT  : I can add circles to my canvas
 --------------------------------------------------------------------------
 TYPE     : USER STORY 3 : masroor6
 NAME     : Draw Rectangle
-OWNER    : 
+OWNER    : masroor6
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 3 hours
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to 
 		   specify two corners of a rectangle to be drawn in the current style.
@@ -130,7 +92,7 @@ TYPE     : USER STORY 4 : masroor6
 NAME     : Draw Rectangle Feedback
 OWNER    : 
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 4 hours
 AS A     : user
 I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
 SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
@@ -140,7 +102,7 @@ TYPE     : BUG 6 : masroor6
 NAME     : Circle drawing is broken
 OWNER    : 
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 0.5 hours
 ISSUE    : The first click should specify the center of the circle, with
            a drag for the radius. This is not the case in the current
            implementation.
@@ -315,7 +277,7 @@ TYPE     : BUG 5 : masroor6
 NAME     : Squiggle is broken
 OWNER    : 
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 1 hour
 ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 		   of the mouse should be a separate squiggle. Possibly
            the issue is with the representation of the squiggles in the Model.
@@ -325,12 +287,11 @@ TYPE     : USER STORY 8 : masroor6
 NAME     : Implement Poly Line
 OWNER    : 
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 3 hours
 AS A     : user
 I WANT   : To press a point of polyline, drag/press, and release to connect it to other points by a line (for a polygon to be drawn in the current style.)
 
 SO THAT  : I can add polygons to my canvas
---------------------------------------------------------------------------
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG11 : arshad33
@@ -383,6 +344,43 @@ Note that you can associate text with a button, even if you
 display an ImageIcon. The string attached to the button causes the right choice 
 of object creation.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 12: topiwal3
+NAME     : Draw Polyline Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : As a user is specifying a Polyline, during the drag, a 'current'
+           polyline should be on display. As the user drags, the 'current'
+           polyline changes in real time so that a polyline is drawn with
+           users initial polyline points, with next polyline point out to
+           the current dragged mouse position.
+SO THAT  : I can see the polyline I am about to build on release of the mouse
+           button.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 11 : masroor6
+NAME     : Draw Square
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hour
+AS A     : user
+I WANT   : To click on one corner of a square, drag, and release to 
+		   specify two corners of a square to be drawn in the current style.
+SO THAT  : I can add square to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 13 : masroor6
+NAME     : Draw Square Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 0.5 hours
+AS A     : user
+I WANT   : Similarly to Draw Circle Feedback, display the square in mid construction.
+SO THAT  : I can see the square I am about to build on release of the mouse button.
+--------------------------------------------------------------------------
+
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 

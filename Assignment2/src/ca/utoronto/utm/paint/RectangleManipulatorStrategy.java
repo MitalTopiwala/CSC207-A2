@@ -5,27 +5,30 @@ package ca.utoronto.utm.paint;
 import javafx.scene.input.MouseEvent;
 
 /**
- * 
- * @author Manah
+ * Handles all mouse events for Rectangle.
+ * @author 
  *
  */
 public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 	
 	private Rectangle rectangle;
 	
-	@Override
 	/**
-	 * 
+	 * Handles event if mouse clicked.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	/**
-	 * 
+	 * Handles event if mouse dragged.
+	 * Makes rectangle if mouse dragged and modfies it as mouse is dragged.
+	 * Shows rectangle feedback.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e) {
 		int width = Math.abs((int) this.rectangle.getStart().getX() - (int) e.getX());
 		int length = Math.abs((int) this.rectangle.getStart().getY() - (int) e.getY());
@@ -42,11 +45,12 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 		this.rectangle.setUpperLeft(new Point(x, y));
 		ShapeManipulatorContext.modelChanged();
 	}
-
-	@Override
-	/**
-	 * 
+	
+	/** 
+	 * Handles event if mouse pressed.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mousePressed(MouseEvent e) {
 		Point start = new Point((int) e.getX(), (int) e.getY());
 		int length = 0;
@@ -55,35 +59,38 @@ public class RectangleManipulatorStrategy implements ShapeManipulatorStrategy {
 		ShapeManipulatorContext.addShape(this.rectangle);
 		
 	}
-
-	@Override
-	/**
-	 * 
+	/** 
+	 * Handles event if mouse moved.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e) {
 		
 	}
-
-	@Override
-	/**
-	 * 
+	
+	/** 
+	 * Handles event if mouse released.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e) {
 		this.rectangle = null;		
 	}
 
-	@Override
-	/**
-	 * 
+	/** 
+	 * Handles event if mouse entered.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mouseEntered(MouseEvent e) {
 		
 	}
-
-	@Override
-	/**
-	 * 
+	
+	/** 
+	 * Handles event if mouse exited.
+	 * @param e		a Mouse event
 	 */
+	@Override
 	public void mouseExited(MouseEvent e) {
 		
 	}

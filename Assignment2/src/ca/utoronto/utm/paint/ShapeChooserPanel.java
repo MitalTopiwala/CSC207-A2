@@ -21,8 +21,12 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
 	private View view;// So we can talk to our parent or other components of the view
 	
-	static String command;
-
+	static String command;//the name of the  shape ToggleButton that is currently selected
+	
+	/**
+	* Creates five ToggleButton's with icons of shapes as their label.
+	* @param view 
+	*/
 	public ShapeChooserPanel(View view) {
 
 		this.view = view;
@@ -73,15 +77,18 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		
 	}
 	
-	//public String getMode(ActionEvent event) {
-	//	String mode = ((ToggleButton) event.getSource()).getText();
-	//	return mode;
-	//}
-	
+	/**
+	 * Returns the mode.
+	 * @return command
+	 */
 	public String getMode() {
 		return command;
 	}
-
+	
+	/**
+	 *  Communicates which button is selected to the PaintPanel.
+	 *  @param event the action that occurred/the button that was selected
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		command = ((ToggleButton) event.getSource()).getText();
