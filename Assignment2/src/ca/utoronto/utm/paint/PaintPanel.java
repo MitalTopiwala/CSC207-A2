@@ -7,11 +7,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-
-import java.applet.Applet;
-
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -64,24 +59,64 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
 		// Clear the canvas
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-		g.setStroke(this.currentColor);
-		g.strokeText("i=" + i, 50, 75);
-		i = i + 1;
+		g.setStroke(Color.BLACK);
 		this.model.draw(g);
 
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * Initiates the repaint of the Paint application.
 	 */
+=======
+
+>>>>>>> ce68a29aebe67a8362580537d522fd87a1ad8aba
 	public void update(Observable o, Object arg) {
 		this.repaint();		
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * Creates a ShapeManipualatorStrategy based on mode.
 	 * @param mode the name of the shape button selected
 	 */
+=======
+	
+	public void mouseMoved(MouseEvent e) {
+		this.context.mouseMoved(e);
+	}
+
+	public void mouseDragged(MouseEvent e) {
+		this.context.mouseDragged(e);
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		this.context.mouseClicked(e);
+	}
+	
+
+	public void mousePressed(MouseEvent e) {
+		this.context.mousePressed(e);
+	}
+
+
+	public void mouseReleased(MouseEvent e) {
+		this.context.mouseReleased(e);
+	}
+
+
+	public void mouseEntered(MouseEvent e) {
+		this.context.mouseEntered(e);
+	}
+
+
+	public void mouseExited(MouseEvent e) {
+		this.context.mouseExited(e);
+	}
+
+
+	
+>>>>>>> ce68a29aebe67a8362580537d522fd87a1ad8aba
 	public void setMode(String mode) {
 		String Mode = this.scp.getMode();
 		ShapeManipulatorStrategy strategy = ShapeManipulatorFactory.getStrategy(Mode);
@@ -106,19 +141,20 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	public void handle(MouseEvent event) {
 
 		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-			this.context.mouseDragged(event);
+			mouseDragged(event);
+			//this.context.mouseDragged(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-			this.context.mousePressed(event);
+			mousePressed(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_MOVED) {
-			this.context.mouseMoved(event);
+			mouseMoved(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_CLICKED) {
-			this.context.mouseClicked(event);
+			mouseClicked(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
-			this.context.mouseReleased(event);
+			mouseReleased(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
-			this.context.mouseEntered(event);
+			mouseEntered(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
-			this.context.mouseExited(event);
+			mouseExited(event);
 		}
 	}
 }

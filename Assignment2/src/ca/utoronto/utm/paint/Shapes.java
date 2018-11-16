@@ -33,7 +33,7 @@ public abstract class Shapes implements Draw{
 	public void basicStroke(GraphicsContext g) {
 		g.setLineWidth(strokeWidth);
 		g.setStroke(colour);
-		//g.setFill(colour);
+		
 		
 	}
 	
