@@ -30,6 +30,8 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	public Color currentColor; 
 	
+	public boolean status;
+	
 	private ShapeManipulatorContext context;
 	
 	private ShapeChooserPanel scp;
@@ -330,6 +332,12 @@ class PaintPanel extends StackPane implements Observer,EventHandler<MouseEvent> 
 	
 	public void setColourMode(Color color) {
 		this.currentColor = color;
+		
+	}
+	
+	public void setStatus(boolean style) {
+		this.status = style;
+		
 	}
 	
 	@Override

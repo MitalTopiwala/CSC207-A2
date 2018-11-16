@@ -14,10 +14,11 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		
 	private View view;
 	//private JFrame colourFrame; 
-	public String fillStatus;
+	public Boolean fillStatus;
 	static Color color;
 	static String command;
 
+	@SuppressWarnings("unchecked")
 	public ColourChooserPanel(View view) {
 
 		this.view = view;
@@ -31,7 +32,7 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		for (int i =0; i < buttonColours.length; i++) {
 			ToggleButton button = new ToggleButton(colourRep[i]);	
 			button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-			button.setMinWidth(10);
+			button.setMinWidth(100);
 			button.setStyle(buttonColours[i]);
 			this.add(button, 0, row);
 			row++;
@@ -41,17 +42,34 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		}
 		
 		toggleGroup.getSelectedToggle();
-		////////////////////new/////////////////////////////////
+		
+		String[] style = {"Fill", "Outline"};
+		
+		ToggleGroup toggleGroup1 = new ToggleGroup();
+		for(int i = 0; i < style.length; i++) {
+			ToggleButton fillOption = new ToggleButton(style[i]);
+			this.add(fillOption, 0, row);
+			row ++;
+			fillOption.setOnAction(this);
+		}
+		
+		
+		
+		
+		
+	}	
+		
+	/*	@SuppressWarnings("rawtypes")
 		ChoiceBox fillOptions = new ChoiceBox();
-		fillOptions.getItems().addAll("Empty", "Fill Shape", "Fill Outline");
-		fillOptions.setValue("Empty"); //Set default value
-//		fillOptions.setItems(FXCollections.observableArrayList("Empty", "Fill Shape", "Fill Outline"));
-		this.add(fillOptions, 0, 8);
+		fillOptions.getItems().addAll("Fill", "Outline");
+		fillOptions.setValue("Outline"); //Set default value
+
+		this.add(fillOptions, 0, 7);
 		fillOptions.setOnAction(this);
 		this.fillStatus = fillOptions(fillOptions);
 		
 	}
-	//////////////////////new/////////////////////////
+	
 	public String fillOptions(ChoiceBox fillOptions) {
 		String selectedOption = (String) fillOptions.getValue();
 		if (selectedOption == "Empty") {
@@ -64,14 +82,16 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 			return selectedOption;
 		}
 	}
-	
+	*/
 	
 	public Color GETCOLOR() {
 		//System.out.println("colorchooserpanel    " + ColourChooserPanel.color);
 		return ColourChooserPanel.color;
 	}
 	
-	
+	public Boolean getStatus() {
+		return this.fillStatus;
+	}
 
 	
 	@Override
@@ -95,11 +115,19 @@ public class ColourChooserPanel extends GridPane implements EventHandler<ActionE
 		if (command == "yellow") {
 			ColourChooserPanel.color = Color.YELLOW;
 		}
-		//System.out.println("blah:" + command);
+		
+		if(command == "Fill") {
+			this.fillStatus = true;
+		}
+		if(command == "Outline") {
+			this.fillStatus = false;
+		}
+	
+		
 		this.view.getPaintPanel().setColourMode(ColourChooserPanel.color);
 		System.out.println(this.GETCOLOR());
-		//System.out.println(command);
 		
+		this.view.getPaintPanel().setStatus(this.fillStatus);
 	}
 	
 }

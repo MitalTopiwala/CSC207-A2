@@ -8,6 +8,7 @@ public abstract class Shapes implements Draw{
 	
 	private Color color;
 	private int strokeWidth;
+	static boolean status;
 	
 	
 	public void setStrokeWidth(double d) {
@@ -25,6 +26,10 @@ public abstract class Shapes implements Draw{
 	
 	public Color getColor() {
 		return this.color;
+	}
+	
+	public void setStatus(boolean Status) {
+		Shapes.status = Status;
 	}
 	
 	public void basicStroke(GraphicsContext g) {

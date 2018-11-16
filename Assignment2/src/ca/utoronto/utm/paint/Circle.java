@@ -58,12 +58,19 @@ public class Circle extends Shapes implements Draw{
 		this.colour = c;
 	}
 	
+	
+	
 	public void draw(GraphicsContext g) {
 		this.basicStroke(g);
 		int x = this.getCentre().getX();
 		int y = this.getCentre().getY();
 		int radius = this.getRadius();
 		g.strokeOval(x, y, radius, radius);	
+		if(Shapes.status == true) {
+			g.fillOval(x, y, radius, radius);
+			g.setFill(this.getColour());
+			
+		}
 		//g.fillOval(x, y, radius, radius);
 		//g.setFill(this.getColour());
 }

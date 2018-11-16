@@ -34,6 +34,8 @@ public class PaintModel extends Observable {
 	 */
 	public void addShape(Shapes shape) {
 		
+		shape.setStatus(CCP.getStatus());
+		
 		shape.setColor(CCP.GETCOLOR());
 		
 		System.out.println("paintmodel" + CCP.GETCOLOR());
